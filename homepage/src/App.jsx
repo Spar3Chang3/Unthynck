@@ -7,13 +7,13 @@ export default function App() {
 
     const [ currentImage, setCurrentImage ] = useState('');
     const [ nextImage, setNextImage ] = useState('');
-    const [ transition, setTransition ] = useState('');
+    const [ transition, setTransition ] = useState(''); //finish this idiot
     const [ openModal, setOpenModal ] = useState('-40vw');
     const currentIndex = useRef(1);
 
     const galleryImageLink = {
         backgroundImage: `url(${currentImage})`,
-        transition: transition
+        margin: transition
     }
 
     const modalStyle = {
@@ -139,10 +139,10 @@ export default function App() {
                             loading="lazy"></iframe>
                 </div>
 
-                <hr/>
-
                 <div className={'footer'}>
-
+                    <div className={'footer-report-message'}>
+                        <span>If you experience a problem with our webpage, or have a suggestion, please contact us at <a>improvement@unthynck.me</a></span>
+                    </div>
                 </div>
             </div>
         </>
