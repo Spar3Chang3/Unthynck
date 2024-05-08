@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'unthynck';
+    src: url("./assets/unthynck.ttf") format('truetype');
+}
+
+.body {
+    margin: 0 auto;
+}

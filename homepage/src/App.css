@@ -1,0 +1,222 @@
+@font-face {
+    font-family: 'unthynck'; /* Name you want to use to reference the font */
+    src: url('./assets/unthynck.ttf') format('truetype');
+}
+
+body {
+    margin: 0 auto;
+    min-height: 100vh;
+    max-height: fit-content;
+    width: 100vw;
+    background-color: #1e1e1e;
+    overflow-x: hidden;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    max-height: fit-content;
+    width: 100vw;
+    margin: 0 auto;
+    align-items: center;
+    color: white;
+    font-family: unthynck, serif;
+}
+
+.modal-popout {
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    height: 100%;
+    width: 40%;
+    justify-content: flex-start;
+    z-index: 10;
+    transition: 150ms ease;
+}
+
+.modal-content-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 30vw;
+    background-color: #1f1f1f;
+    box-shadow: 10px 5px 5px black;
+
+    .band-title {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        font-size: xx-large;
+        font-family: unthynck, serif;
+        margin: -1em -0em -0.5em;
+    }
+
+    .spacer {
+        height: 4em;
+        width: 100%;
+    }
+
+    button {
+        cursor: pointer;
+        width: 100%;
+        height: 2em;
+        background-color: whitesmoke;
+        color: black;
+        border: none;
+        border-radius: 12px;
+        font-size: large;
+        margin-top: -1em;
+    }
+
+    button:hover {
+        background-color: rgba(245, 245, 245, 80%);
+    }
+}
+
+.website-links {
+    display: flex;
+    flex-direction: column;
+    height: 60%;
+    width: 100%;
+    align-items: center;
+    margin-top: 5em;
+
+    button {
+        height: 4em;
+        width: 100%;
+        border: none;
+        border-radius: 12px;
+        background-color: rgba(255, 255, 255, 25%);
+        color: black;
+        margin-bottom: 2em;
+    }
+
+    button:hover {
+        background-color: rgba(255, 255, 255, 50%);
+    }
+}
+
+
+.header {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-bottom: 1em;
+    justify-content: center;
+    align-items: center;
+}
+
+.header .menu-container {
+    display: flex;
+    width: 20%;
+    font-size: xx-large;
+    z-index: 2;
+    justify-content: center;
+}
+
+.header .menu {
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    color: whitesmoke;
+    font-size: xx-large;
+    text-align: center;
+    border-radius: 12px;
+}
+
+.header .menu:hover {
+    background: rgba(255, 255, 255, 10%);
+}
+
+.header .band-title {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    font-size: xx-large;
+    cursor: pointer;
+    z-index: 1;
+    font-family: unthynck, serif;
+}
+
+
+.band-title a {
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+    color: white;
+}
+
+.header .spacer {
+    width: 20%;
+}
+
+.gallery-container {
+    display: flex;
+    height: 80vh;
+    width: 80vw;
+    border: 5px black dotted;
+    border-radius: 12px;
+    margin-bottom: 2em;
+    z-index: 3;
+}
+
+.gallery-image {
+    display: flex;
+    height: 80vh;
+    width: 80vw;
+    border-radius: 12px;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.gallery-ui-container {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    button {
+        visibility: hidden;
+    }
+    z-index: 4;
+}
+
+.gallery-ui-container:hover {
+    button {
+        visibility: visible;
+    }
+}
+
+.gallery-ui-container button {
+    height: 2em;
+    width: 1.5em;
+    background: rgba(0, 0, 0, 15%);
+    color: rgba(255, 255, 255);
+    border: none;
+    border-radius: 12px;
+    font-size: xx-large;
+    text-align: center;
+    margin-right: 1em;
+    margin-left: 1em;
+}
+
+.gallery-ui-container button:hover {
+    background: rgba(0, 0, 0, 25%);
+    cursor: pointer;
+}
+
+.gallery-ui-container button:active {
+    transform: scale(0.95);
+}
+
+.spotify-plugin {
+    display: flex;
+    justify-content: center;
+    margin-top: 2em;
+    width: 100%;
+}

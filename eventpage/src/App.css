@@ -1,0 +1,200 @@
+@font-face {
+  font-family: 'unthynck';
+  src: url('./assets/unthynck.ttf') format('truetype');
+}
+
+body {
+  margin: 0 auto;
+  font-family: unthynck, serif;
+  background-color: #1f1f1f;
+}
+
+.modal-popout {
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  height: 100%;
+  width: 40%;
+  justify-content: flex-start;
+  z-index: 10;
+  transition: 250ms ease;
+}
+
+.modal-content-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 30vw;
+  background-color: #1f1f1f;
+  box-shadow: 10px 5px 5px black;
+
+  .band-title {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: xx-large;
+    font-family: unthynck, serif;
+    margin: -1em -0em -0.5em;
+  }
+
+  button {
+    cursor: pointer;
+    width: 100%;
+    height: 2em;
+    background-color: whitesmoke;
+    color: black;
+    border: none;
+    border-radius: 12px;
+    font-size: large;
+    margin-top: -1em;
+  }
+
+  button:hover {
+    background-color: rgba(245, 245, 245, 80%);
+  }
+}
+
+.website-links {
+  display: flex;
+  flex-direction: column;
+  height: 60%;
+  width: 100%;
+  align-items: center;
+  margin-top: 5em;
+
+  button {
+    height: 4em;
+    width: 100%;
+    border: none;
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 25%);
+    color: black;
+    margin-bottom: 2em;
+  }
+
+  button:hover {
+    background-color: rgba(255, 255, 255, 50%);
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  max-height: fit-content;
+  width: 100vw;
+  background-color: #1e1e1e;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-bottom: 1em;
+  justify-content: center;
+  align-items: center;
+}
+
+.header .menu-container {
+  display: flex;
+  width: 20%;
+  font-size: xx-large;
+  z-index: 2;
+  justify-content: center;
+}
+
+.header .menu {
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  color: whitesmoke;
+  font-size: xx-large;
+  text-align: center;
+  border-radius: 12px;
+}
+
+.header .menu:hover {
+  background: rgba(255, 255, 255, 10%);
+}
+
+.header .band-title {
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  font-size: xx-large;
+  z-index: 1;
+  font-family: unthynck, serif;
+}
+
+
+.band-title a {
+  display: flex;
+  flex-direction: row;
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+}
+
+.header .spacer {
+  width: 20%;
+}
+
+.eventCard {
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  width: 100vw;
+  overflow: scroll;
+  align-items: center;
+}
+
+.event {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  position: relative;
+  height: 50vh;
+  width: 80vw;
+  margin-top: 10px;
+  background-color: #1a1a1a;
+  border-radius: 25px;
+  transition: ease;
+  overflow: hidden;
+  color: white;
+  border: 1px dashed white;
+  justify-content: flex-start;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  align-items: center;
+  height: fit-content;
+}
+
+.descriptionInfo {
+  width: 100%;
+  margin-top: 5%;
+  margin-left: 5%;
+  margin-right: 5%;
+  font-size: 2.5vh;
+}
+
+.info {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  margin-left: 1em;
+  margin-right: 1em;
+  margin-bottom: 2em;
+  justify-content: space-between;
+  border-bottom: 2px white dotted;
+}
+
+.info a {
+  text-decoration: none;
+  color: #3b99fc;
+}
