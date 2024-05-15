@@ -132,7 +132,7 @@ export default function App() {
                 </div>
 
                 <div className={'spotify-plugin'}>
-                    <iframe style={{borderRadius: '12px', width: '80%'}}
+                    <iframe style={{borderRadius: '12px', width: '80%',     border: '5px dotted rgb(24, 154, 211)'}}
                             src="https://open.spotify.com/embed/artist/3C3IxXuW9aRAlwvooDiCJM?utm_source=generator"
                             width="50%" height="700" frameBorder="0" allowFullScreen=""
                             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
@@ -140,6 +140,9 @@ export default function App() {
                 </div>
 
                 <div className={'footer'}>
+                    <div className={'footer-copyright-message'}>
+                        <span>© Unthynck - All Rights Reserved</span>
+                    </div>
                     <div className={'footer-report-message'}>
                         <span>If you experience a problem with our webpage, or have a suggestion, please contact us at <a>improvement@unthynck.me</a></span>
                     </div>

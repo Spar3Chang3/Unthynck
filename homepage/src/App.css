@@ -8,7 +8,10 @@ body {
     min-height: 100vh;
     max-height: fit-content;
     width: 100vw;
-    background-color: #1e1e1e;
+    background-image: url("./assets/tv-static.jpg");
+    background-repeat: repeat;
+    background-size: auto;
+    background-position: center;
     overflow-x: hidden;
 }
 
@@ -20,7 +23,7 @@ body {
     width: 100vw;
     margin: 0 auto;
     align-items: center;
-    color: white;
+    color: black;
     font-family: unthynck, serif;
 }
 
@@ -49,7 +52,8 @@ body {
         justify-content: center;
         font-size: xx-large;
         font-family: unthynck, serif;
-        margin: -1em -0em -0.5em;
+        margin: -0.5em -0em -0.5em;
+        color: whitesmoke;
     }
 
     .spacer {
@@ -87,13 +91,13 @@ body {
         width: 100%;
         border: none;
         border-radius: 12px;
-        background-color: rgba(255, 255, 255, 25%);
-        color: black;
+        background-color: rgba(24, 154, 211, 75%);
+        color: whitesmoke;
         margin-bottom: 2em;
     }
 
     button:hover {
-        background-color: rgba(255, 255, 255, 50%);
+        background-color: rgba(24, 154, 211);
     }
 }
 
@@ -102,6 +106,7 @@ body {
     display: flex;
     flex-direction: row;
     width: 100%;
+    margin-top: 1em;
     margin-bottom: 1em;
     justify-content: center;
     align-items: center;
@@ -110,33 +115,37 @@ body {
 .header .menu-container {
     display: flex;
     width: 20%;
-    font-size: xx-large;
+    font-size: xxx-large;
     z-index: 2;
     justify-content: center;
 }
 
 .header .menu {
+    width: 1.25em;
     cursor: pointer;
     border: none;
-    background: transparent;
-    color: whitesmoke;
-    font-size: xx-large;
+    color: black;
+    background: rgba(255, 255, 255, 50%);
+    font-size: xxx-large;
     text-align: center;
     border-radius: 12px;
 }
 
 .header .menu:hover {
-    background: rgba(255, 255, 255, 10%);
+    color: whitesmoke;
+    background: rgba(0, 0 , 0, 50%);
 }
 
 .header .band-title {
     display: flex;
+    background-color: rgba(255, 255, 255, 50%);
     justify-content: center;
     width: 80%;
     font-size: xx-large;
     cursor: pointer;
     z-index: 1;
     font-family: unthynck, serif;
+    border-radius: 12px;
 }
 
 
@@ -144,7 +153,7 @@ body {
     display: flex;
     flex-direction: row;
     text-decoration: none;
-    color: white;
+    color: black;
 }
 
 .header .spacer {
@@ -155,7 +164,7 @@ body {
     display: flex;
     height: 80vh;
     width: 80vw;
-    border: 5px black dotted;
+    border: 5px dotted rgb(24, 154, 211);
     border-radius: 12px;
     margin-bottom: 2em;
     z-index: 3;
@@ -196,8 +205,8 @@ body {
 .gallery-ui-container button {
     height: 2em;
     width: 1.5em;
-    background: rgba(0, 0, 0, 15%);
-    color: rgba(255, 255, 255);
+    background: rgba(24, 154, 211, 25%);
+    color: whitesmoke;
     border: none;
     border-radius: 12px;
     font-size: xx-large;
@@ -207,7 +216,7 @@ body {
 }
 
 .gallery-ui-container button:hover {
-    background: rgba(0, 0, 0, 25%);
+    background: rgba(24, 154, 211, 50%);
     cursor: pointer;
 }
 
@@ -227,10 +236,17 @@ body {
     flex-direction: row;
     height: 15vh;
     width: 100vw;
+    color: whitesmoke;
     margin-top: 2em;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    border-top: 1px solid white;
+    border-top: 2px solid rgb(24, 154, 211);
+    background-color: rgba(0, 0, 0, 50%);
+}
+
+.footer-copyright-message {
+    font-size: 1.5em;
+    font-family: unthynck, serif;
 }
 
 .footer-report-message {
