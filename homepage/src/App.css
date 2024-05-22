@@ -1,5 +1,5 @@
 @font-face {
-    font-family: 'unthynck'; /* Name you want to use to reference the font */
+    font-family: 'unthynck';
     src: url('./assets/unthynck.ttf') format('truetype');
 }
 
@@ -166,6 +166,7 @@ body {
     border-radius: 12px;
     margin-bottom: 2em;
     z-index: 3;
+    overflow: hidden;
 }
 
 .gallery-image {
@@ -258,6 +259,7 @@ body {
 }
 
 @media (max-width: 480px) {
+
     .header {
         flex-direction: column-reverse;
     }
@@ -287,5 +289,49 @@ body {
 
     .band-title a {
         margin-top: -0.5em;
+    }
+
+    .modal-popout {
+        height: 100vh;
+        width: 100vw;
+        justify-content: center;
+        align-items: flex-end;
+    }
+
+    .modal-content-container {
+        flex-direction: column-reverse;
+        height: 80%;
+        width: 100%;
+        overflow: scroll;
+        box-shadow: 0 0 0 8px black;
+        border-radius: 12px;
+        align-items: center;
+
+        .band-title {
+            display: none;
+        }
+
+        .spacer {
+            display: none;
+        }
+
+        button {
+            width: 90%;
+            margin-bottom: 2.5em;
+        }
+    }
+
+    .website-links {
+        margin-top: 0.5em;
+
+        button {
+            height: 3em;
+            width: 90%;
+            border: none;
+            border-radius: 12px;
+            background-color: rgba(24, 154, 211, 75%);
+            color: whitesmoke;
+            margin-bottom: 2em;
+        }
     }
 }

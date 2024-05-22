@@ -1,37 +1,52 @@
 import './App.css';
-import { useEffect, useState, useRef } from 'react';
+import {useEffect, useRef, useState} from 'react';
+
 export default function App() {
 
+    const isMobile = window.innerWidth <= 480;
+    const marginShift = isMobile ? '100vh 0 0 0' : '0 0 0 -40vw';
     const imageLink = 'http://unthynck.me/files/images/';
     const imageNumber = 7;
 
-    const [ currentImage, setCurrentImage ] = useState('');
-    const [ nextImage, setNextImage ] = useState('');
-    const [ transition, setTransition ] = useState(''); //finish this idiot
-    const [ openModal, setOpenModal ] = useState('-40vw');
     const currentIndex = useRef(1);
+    const slideshowImages = useRef([]);
+    const [ openModal, setOpenModal ] = useState(false);
+    const [ currentImage, setCurrentImage ] = useState('');
+    const [ transitionImage, setTransitionImage ] = useState('');
+    const [ transition, setTransition ] = useState(''); //finish this idiot
+    const [ margin, setMargin ] = useState(marginShift);
 
-    const galleryImageLink = {
+    const currentImageLink = {
         backgroundImage: `url(${currentImage})`,
+    }
+
+    const transitionImageLink = {
+        backgroundImage: '',
         margin: transition
     }
 
     const modalStyle = {
-        marginLeft: openModal,
+        margin: margin
     }
 
     const modalBlur = {
-        filter: `blur(${(openModal === '-40vw' ? '0' : '6')}px)`,
-        pointerEvents: (openModal === '-40vw' ? 'auto' : 'none')
+        filter: `blur(${(openModal ? '6' : '0')}px)`,
+        pointerEvents: (openModal ? 'none' : 'auto')
     }
 
+    function setImageArray() {
+        let i;
+        for (i=1; i <= imageNumber; i++) {
+            slideshowImages.current.push(getImageLink(i));
+        }
+    }
 
 
     function clickLeft() {
         if (currentIndex.current > 1) {
             currentIndex.current -= 1;
             setNextImage(currentImage);
-            setCurrentImage((imageLink + 'band' + currentIndex.current + '.jpg'));
+            setCurrentImage(getImageLink(currentIndex.current));
             console.log([currentImage, nextImage]);
             console.log(currentIndex.current);
         } else {
@@ -47,22 +62,21 @@ export default function App() {
             setNextImage(getImageLink(currentIndex.current + 1));
         } else {
             currentIndex.current = 1;
-            setCurrentImage((imageLink + 'band' + 1 + '.jpg'));
-            setNextImage((imageLink + 'band' + 2 + '.jpg'));
+            setCurrentImage(getImageLink(1));
+            setNextImage(getImageLink(2));
         }
     }
 
     function getImageLink(i) {
-        const image = new Image();
-        image.src = `${imageLink + 'band' + i}.jpg`;
-        return `${imageLink + 'band' + i}.jpg`;
+        return new Image().src = `${imageLink + 'band' + i}.jpg`;
     }
 
     function toggleModal() {
-        if (openModal === '-40vw') {
-            setOpenModal('0');
+        setOpenModal(openModal => !openModal);
+        if (openModal) {
+            setMargin(marginShift);
         } else {
-            setOpenModal('-40vw');
+            setMargin('0');
         }
     }
 
@@ -72,9 +86,9 @@ export default function App() {
 
 
     useEffect(() => {
-        setCurrentImage(getImageLink(1));
-        setNextImage(getImageLink(2));
-    }, [1]);
+        setCurrentImage(currentImage => getImageLink(1));
+        setImageArray();
+    }, []);
 
 
     return (
@@ -114,9 +128,12 @@ export default function App() {
                 </div>
 
                 <div className={'gallery-container'}>
-                    <div className={'gallery-image'} style={galleryImageLink}></div>
+                    <div className={'gallery-chunk-loader'}>
+                        <div className={'gallery-image'} style={transitionImageLink}></div>
+                        <div className={'gallery-image'} style={currentImageLink}></div>
+                    </div>
                     <div className={'gallery-ui-container'}>
-                        <div className={'prev-button-container'}>
+                    <div className={'prev-button-container'}>
                             <button className={'pev-button'}
                                     onClick={() => clickLeft()}
                             >◁
