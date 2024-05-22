@@ -150,8 +150,6 @@ body {
 
 
 .band-title a {
-    display: flex;
-    flex-direction: row;
     text-decoration: none;
     color: black;
 }
@@ -256,5 +254,38 @@ body {
        text-decoration: none;
         color: #3b99fc;
         cursor: pointer;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        flex-direction: column-reverse;
+    }
+
+    .header .menu-container {
+        width: 70%;
+        margin-top: 0.25em;
+    }
+
+    .header .menu {
+        height: 100%;
+        width: 100%;
+        color: whitesmoke;
+        background: rgba(0, 0 , 0, 50%);
+        font-size: x-large;
+    }
+
+    .header .menu:hover {
+        color: black;
+        background: rgba(255, 255, 255, 50%);
+    }
+
+    .header .band-title {
+        font-size: x-large;
+        height: 4em;
+    }
+
+    .band-title a {
+        margin-top: -0.5em;
     }
 }

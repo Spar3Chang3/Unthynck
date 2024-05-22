@@ -26,6 +26,7 @@ export default function App() {
     }
 
 
+
     function clickLeft() {
         if (currentIndex.current > 1) {
             currentIndex.current -= 1;

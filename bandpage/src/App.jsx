@@ -4,52 +4,79 @@ import ReactCardFlip from 'react-card-flip';
 
 export default function App() {
 
+    const ParkerBio = () => {
+        return (
+            <div className={'background-image'}></div>
+        )
+    }
+
+    const ShaunBio = () =>  {
+
+    }
+
+    const EthanBio = () =>  {
+
+    }
+
+    const cardStyle = {
+        borderRadius: '12px'
+    }
+
+    const [ memberBios, setMemberBios ] = useState([
+        {id: 0, content: <ParkerBio key={0}/>},
+        {id: 1, content: <ShaunBio key={1}/>},
+        {id: 2, content: <EthanBio key={2}/>}
+    ]);
     const frontImageLinks = ['http:', 'http:', 'http:']; //Parker, Shaun, Ethan
-    const bandMemberCards = useRef([<>{card(0, false)}</>, <>{card(1, false)}</>, <>{card(2, false)}</>]);
-
-    const frontStyle = (cardToStyle) => {
-        const style = {
-
-        }
-        return style;
-    }
-
-    const backStyle = (cardToStyle) => {
-        const style = {
-
-        }
-        return style;
-    }
-
-    const containerStyle = {
-
-    }
 
     /*TODO:
-        * change naming convention to kebab
+        * change css naming convention to kebab
         * add smash bros styling
         * incorporate css for front and back
         * configure width and height
     */
 
-    function card(memberNumber, isFlipped) {
-        return (
-            <ReactCardFlip isFlipped={isFlipped}
-                           flipDirection={'vertical'}
-                           containerClassName={'card-container'}
-            >
-                <div className={'front'}>
-                    <button className={'flip-button'}
-                            onClick={() => flipCard(memberNumber, isFlipped)}>
-                    </button>
+    function Card(memberNumber) {
 
+        const [ isFlipped, setIsFlipped ] = useState(false);
+
+        function DisplayFront() {
+            return (
+                <div className={'front'}>
+                    {
+                        memberBios[memberNumber].content
+                    }
+                    <div className={'flip-button'}>
+                        <button onClick={() => flipCard()}></button>
+                    </div>
                 </div>
+            );
+        }
+
+        function DisplayBack() {
+            return (
                 <div className={'back'}>
                     <button className={'flip-button'}
-                            onClick={() => flipCard(memberNumber, isFlipped)}>
-
+                            onClick={() => flipCard()}>
                     </button>
                 </div>
+            );
+        }
+
+        function flipCard() {
+            setIsFlipped(!(isFlipped));
+        }
+
+        return (
+            <ReactCardFlip isFlipped={isFlipped}
+                           flipDirection={'horizontal'}
+                           containerClassName={'card-container'}
+            >
+
+                <DisplayFront/>
+
+                <DisplayBack/>
+
             </ReactCardFlip>
         );
     }
@@ -59,23 +86,13 @@ export default function App() {
 
     }
 
-    function flipCard(memberNumber, isFlipped) {
-        bandMemberCards[memberNumber] = card(memberNumber, isFlipped);
-    }
-
     return (
         <>
-            <div className={'parker-card'}>
+            <div className={'card'}>
                 {
-                    bandMemberCards.current.at(0)
+                    Card(0)
                 }
             </div>
-            {
-                card(1)
-            }
-            {
-                card(2)
-            }
         </>
     )
 }
