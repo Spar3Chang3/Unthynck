@@ -1,29 +1,18 @@
 import './App.css';
-import {useEffect, useRef, useState} from 'react';
+import { useEffect, useState } from 'react';
+import ImageGallery from 'react-image-gallery';
+import './image-gallery.css';
 
 export default function App() {
 
     const isMobile = window.innerWidth <= 480;
     const marginShift = isMobile ? '100vh 0 0 0' : '0 0 0 -40vw';
     const imageLink = 'http://unthynck.me/files/images/';
-    const imageNumber = 7;
+    const slideNumber = 7;
 
-    const currentIndex = useRef(1);
-    const slideshowImages = useRef([]);
     const [ openModal, setOpenModal ] = useState(false);
-    const [ currentImage, setCurrentImage ] = useState('');
-    const [ transitionImage, setTransitionImage ] = useState('');
-    const [ transition, setTransition ] = useState(''); //finish this idiot
     const [ margin, setMargin ] = useState(marginShift);
-
-    const currentImageLink = {
-        backgroundImage: `url(${currentImage})`,
-    }
-
-    const transitionImageLink = {
-        backgroundImage: '',
-        margin: transition
-    }
+    const [ slides, setSlides ] = useState([]);
 
     const modalStyle = {
         margin: margin
@@ -34,41 +23,19 @@ export default function App() {
         pointerEvents: (openModal ? 'none' : 'auto')
     }
 
-    function setImageArray() {
-        let i;
-        for (i=1; i <= imageNumber; i++) {
-            slideshowImages.current.push(getImageLink(i));
-        }
-    }
-
-
-    function clickLeft() {
-        if (currentIndex.current > 1) {
-            currentIndex.current -= 1;
-            setNextImage(currentImage);
-            setCurrentImage(getImageLink(currentIndex.current));
-            console.log([currentImage, nextImage]);
-            console.log(currentIndex.current);
-        } else {
-            currentIndex.current = imageNumber+1;
-            clickLeft();
-        }
-    }
-
-    function clickRight() {
-        if (currentIndex.current < imageNumber) {
-            currentIndex.current += 1;
-            setCurrentImage(nextImage);
-            setNextImage(getImageLink(currentIndex.current + 1));
-        } else {
-            currentIndex.current = 1;
-            setCurrentImage(getImageLink(1));
-            setNextImage(getImageLink(2));
-        }
-    }
-
     function getImageLink(i) {
-        return new Image().src = `${imageLink + 'band' + i}.jpg`;
+        return `${imageLink + 'band' + i}.jpg`; //'https://example-link/band1.jpg'
+    }
+
+    function getImageArray() {
+        let i;
+        let imageArray = [];
+        for (i=1;i<=slideNumber;i++) {
+            imageArray.push({
+                original: getImageLink(i),
+            });
+        }
+        return imageArray;
     }
 
     function toggleModal() {
@@ -80,14 +47,17 @@ export default function App() {
         }
     }
 
-    function redirect(link) {
+    function redirectInTab(link) {
         window.open(link);
+    }
+
+    function redirectNewTab(link) {
+        //finish this idiot
     }
 
 
     useEffect(() => {
-        setCurrentImage(currentImage => getImageLink(1));
-        setImageArray();
+        setSlides(slides => getImageArray());
     }, []);
 
 
@@ -100,9 +70,9 @@ export default function App() {
                     </div>
                     <button onClick={() => toggleModal()}>Close</button>
                     <div className={'website-links'}>
-                        <button>Upcoming Events ▶</button>
-                        <button>Meet the Band ▶</button>
-                        <button>Contact Us ▶</button>
+                        <button onClick={() => redirectInTab('https://unthynck.me/events')}>Upcoming Events ▶</button>
+                        <button onClick={() => redirectInTab('https://unthynck.me/members')}>Meet the Band ▶</button>
+                        <button onClick={() => redirectInTab('https://unthynck.me/contact')}>Contact Us ▶</button>
                     </div>
                     <div className={'social-links'}>
 
@@ -128,25 +98,8 @@ export default function App() {
                 </div>
 
                 <div className={'gallery-container'}>
-                    <div className={'gallery-chunk-loader'}>
-                        <div className={'gallery-image'} style={transitionImageLink}></div>
-                        <div className={'gallery-image'} style={currentImageLink}></div>
-                    </div>
-                    <div className={'gallery-ui-container'}>
-                    <div className={'prev-button-container'}>
-                            <button className={'pev-button'}
-                                    onClick={() => clickLeft()}
-                            >◁
-                            </button>
-                        </div>
-
-                        <div className={'next-button-container'}>
-                            <button className={'next-button'}
-                                    onClick={() => clickRight()}
-                            >▷
-                            </button>
-                        </div>
-                    </div>
+                    <ImageGallery items={slides}
+                                  lazyLoad={true}/>
                 </div>
 
                 <div className={'spotify-plugin'}>

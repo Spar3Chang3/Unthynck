@@ -3,6 +3,10 @@
     src: url('./assets/unthynck.ttf') format('truetype');
 }
 
+:root {
+
+}
+
 body {
     margin: 0 auto;
     min-height: 100vh;
@@ -167,60 +171,6 @@ body {
     margin-bottom: 2em;
     z-index: 3;
     overflow: hidden;
-}
-
-.gallery-image {
-    display: flex;
-    height: 80vh;
-    width: 80vw;
-    border-radius: 12px;
-    position: absolute;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    overflow: hidden;
-    transition: 100ms ease;
-}
-
-.gallery-ui-container {
-    display: flex;
-    flex-direction: row;
-    height: 100%;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
-    button {
-        visibility: hidden;
-    }
-    z-index: 4;
-}
-
-.gallery-ui-container:hover {
-    button {
-        visibility: visible;
-    }
-}
-
-.gallery-ui-container button {
-    height: 2em;
-    width: 1.5em;
-    background: rgba(24, 154, 211, 25%);
-    color: whitesmoke;
-    border: none;
-    border-radius: 12px;
-    font-size: xx-large;
-    text-align: center;
-    margin-right: 1em;
-    margin-left: 1em;
-}
-
-.gallery-ui-container button:hover {
-    background: rgba(24, 154, 211, 50%);
-    cursor: pointer;
-}
-
-.gallery-ui-container button:active {
-    transform: scale(0.95);
 }
 
 .spotify-plugin {
