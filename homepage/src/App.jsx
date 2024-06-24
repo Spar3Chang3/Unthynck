@@ -98,11 +98,12 @@ export default function App() {
 
                 <div className={'gallery-container'}>
                     <ImageGallery items={slides}
-                                  lazyLoad={true}/>
+                                  lazyLoad={true}
+                                  autoPlay={true}/>
                 </div>
 
                 <div className={'spotify-plugin'}>
-                    <iframe style={{borderRadius: '12px', width: '80%',     border: '5px dotted rgb(24, 154, 211)'}}
+                    <iframe style={{borderRadius: '12px', width: '80%', border: '5px dotted rgb(24, 154, 211)'}}
                             src="https://open.spotify.com/embed/artist/3C3IxXuW9aRAlwvooDiCJM?utm_source=generator"
                             width="50%" height="700" frameBorder="0" allowFullScreen=""
                             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"

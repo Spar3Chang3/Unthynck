@@ -1,0 +1,34 @@
+[
+  {
+    "id": 0,
+    "username": "Brokenjpeg",
+    "password": "tbd",
+    "sessionTokens": [
+      "String of random shit for determining your session"
+    ]
+  },
+  {
+    "id": 1,
+    "username": "Duskdelete",
+    "password": "tbd",
+    "sessionTokens": [
+
+    ]
+  },
+  {
+    "id": 2,
+    "username": "Ethbra",
+    "password": "tbd",
+    "sessionTokens": [
+
+    ]
+  },
+  {
+    "id": 3,
+    "username": "Joebra",
+    "password": "tbd",
+    "sessionTokens": [
+
+    ]
+  }
+]
