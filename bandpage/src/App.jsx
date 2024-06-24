@@ -4,64 +4,17 @@ import ReactCardFlip from 'react-card-flip';
 
 export default function App() {
 
-    const ParkerBio = () => {
-        return (
-            <div className={'background-image'}></div>
-        )
-    }
-
-    const ShaunBio = () =>  {
-
-    }
-
-    const EthanBio = () =>  {
-
-    }
-
-    const cardStyle = {
-        borderRadius: '12px'
-    }
-
-    const [ memberBios, setMemberBios ] = useState([
-        {id: 0, content: <ParkerBio key={0}/>},
-        {id: 1, content: <ShaunBio key={1}/>},
-        {id: 2, content: <EthanBio key={2}/>}
-    ]);
-    const frontImageLinks = ['http:', 'http:', 'http:']; //Parker, Shaun, Ethan
 
     /*TODO:
-        * change css naming convention to kebab
         * add smash bros styling
         * incorporate css for front and back
         * configure width and height
+        * add json configuration for each member for on-the-fly editing
     */
 
     function Card(memberNumber) {
 
         const [ isFlipped, setIsFlipped ] = useState(false);
-
-        function DisplayFront() {
-            return (
-                <div className={'front'}>
-                    {
-                        memberBios[memberNumber].content
-                    }
-                    <div className={'flip-button'}>
-                        <button onClick={() => flipCard()}></button>
-                    </div>
-                </div>
-            );
-        }
-
-        function DisplayBack() {
-            return (
-                <div className={'back'}>
-                    <button className={'flip-button'}
-                            onClick={() => flipCard()}>
-                    </button>
-                </div>
-            );
-        }
 
         function flipCard() {
             setIsFlipped(!(isFlipped));
@@ -73,9 +26,25 @@ export default function App() {
                            containerClassName={'card-container'}
             >
 
-                <DisplayFront/>
+                <div className={'front'}>
+                    <div className={'band-member-portrait'}></div>
+                    <div className={'text-content'}>
 
-                <DisplayBack/>
+                    </div>
+                    <button className={'flip-button'}
+                            onClick={() => flipCard()}>
+                    </button>
+                </div>
+
+                <div className={'back'}>
+                    <div className={'smash-bros-portrait'}></div>
+                    <div className={'text-content'}>
+
+                    </div>
+                    <button className={'flip-button'}
+                            onClick={() => flipCard()}>
+                    </button>
+                </div>
 
             </ReactCardFlip>
         );
@@ -88,7 +57,7 @@ export default function App() {
 
     return (
         <>
-            <div className={'card'}>
+        <div className={'card'}>
                 {
                     Card(0)
                 }

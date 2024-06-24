@@ -1,7 +1,6 @@
 import './App.css';
 import { useEffect, useState } from 'react';
 import ImageGallery from 'react-image-gallery';
-import './image-gallery.css';
 
 export default function App() {
 
@@ -115,7 +114,7 @@ export default function App() {
                         <span>© Unthynck - All Rights Reserved</span>
                     </div>
                     <div className={'footer-report-message'}>
-                        <span>If you experience a problem with our webpage, or have a suggestion, please contact us at <a>improvement@unthynck.me</a></span>
+                        <span>If you experience a problem with our webpage, or can center a div, please contact us at <a>improvement@unthynck.me</a></span>
                     </div>
                 </div>
             </div>

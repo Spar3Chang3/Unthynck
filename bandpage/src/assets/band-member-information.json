@@ -1,0 +1,26 @@
+[
+  {
+    "id": 0,
+    "name": "Parker Hawley",
+    "description": "",
+    "coverPhoto": "https://"
+  },
+  {
+    "id": 1,
+    "name": "Shawn Snyder",
+    "description": "",
+    "coverPhoto": "https://"
+  },
+  {
+    "id": 2,
+    "name": "Ethan Sicilia",
+    "description": "",
+    "coverPhoto": "https://"
+  },
+  {
+    "id": 3,
+    "name": "Joe Finney",
+    "description": "",
+    "coverPhoto": "https://"
+  }
+]
