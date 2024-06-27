@@ -1,6 +1,7 @@
 [
   {
     "id": 0,
+    "name": "Parker",
     "username": "Brokenjpeg",
     "password": "tbd",
     "sessionTokens": [
@@ -9,6 +10,7 @@
   },
   {
     "id": 1,
+    "name": "Shaun",
     "username": "Duskdelete",
     "password": "tbd",
     "sessionTokens": [
@@ -17,6 +19,7 @@
   },
   {
     "id": 2,
+    "name": "Ethan",
     "username": "Ethbra",
     "password": "tbd",
     "sessionTokens": [
@@ -25,6 +28,7 @@
   },
   {
     "id": 3,
+    "name": "Joe",
     "username": "Joebra",
     "password": "tbd",
     "sessionTokens": [
