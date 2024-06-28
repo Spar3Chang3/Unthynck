@@ -2,25 +2,33 @@
   {
     "id": 0,
     "name": "Parker Hawley",
-    "description": "",
+    "age": 16,
+    "ability": "Ear Pierce: this member is known for being the loudest",
+    "description": "Also known as P-Man. The skin beater for Unthynck. Does some vocals here and there. Loves nu metal.",
     "coverPhoto": "https://"
   },
   {
     "id": 1,
-    "name": "Shawn Snyder",
-    "description": "",
+    "name": "Shaun Snyder",
+    "age": 18,
+    "ability": "",
+    "description": "Also known as Stringbean. The low-end for Unthynck. He's one tall boy.",
     "coverPhoto": "https://"
   },
   {
     "id": 2,
     "name": "Ethan Sicilia",
-    "description": "",
+    "age": 17,
+    "ability": "Scream: HAIL PSYBIN",
+    "description": "1Also known as Lou Dog. Geetarz #1 for Unthynck. Also does lead vocals. Quite the entertaining one.",
     "coverPhoto": "https://"
   },
   {
     "id": 3,
     "name": "Joe Finney",
-    "description": "",
+    "age": 17,
+    "ability": "",
+    "description": "Also known as Joey D. Geetarz #2 for Unthynck. Professional tweaker.",
     "coverPhoto": "https://"
   }
 ]

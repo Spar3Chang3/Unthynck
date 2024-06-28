@@ -1,13 +1,14 @@
 import './App.css';
 import { useEffect, useState } from 'react';
 import ImageGallery from 'react-image-gallery';
+import Button from '@mui/material/Button';
 
 export default function App() {
 
     const isMobile = window.innerWidth <= 480;
     const marginShift = isMobile ? '100vh 0 0 0' : '0 0 0 -40vw';
     const imageLink = 'http://unthynck.me/files/images/';
-    const slideNumber = 7;
+    const slideNumber = 10;
 
     const [ openModal, setOpenModal ] = useState(false);
     const [ margin, setMargin ] = useState(marginShift);
@@ -67,11 +68,11 @@ export default function App() {
                     <div className={'band-title'}>
                         <h2>Unthynck</h2>
                     </div>
-                    <button onClick={() => toggleModal()}>Close</button>
+                    <Button variant={"contained"} onClick={() => toggleModal()}>Close</Button>
                     <div className={'website-links'}>
-                        <button onClick={() => redirectInTab('https://unthynck.me/events')}>Upcoming Events ▶</button>
-                        <button onClick={() => redirectInTab('https://unthynck.me/members')}>Meet the Band ▶</button>
-                        <button onClick={() => redirectInTab('https://unthynck.me/contact')}>Contact Us ▶</button>
+                        <Button variant={"contained"} onClick={() => redirectInTab('https://unthynck.me/events')}>Upcoming Events ▶</Button>
+                        <Button variant={"contained"} onClick={() => redirectInTab('https://unthynck.me/members')}>Meet the Band ▶</Button>
+                        <Button variant={"contained"} onClick={() => redirectInTab('https://unthynck.me/contact')}>Contact Us ▶</Button>
                     </div>
                     <div className={'social-links'}>
 

@@ -46,6 +46,7 @@ body {
 .modal-content-container {
     display: flex;
     flex-direction: column;
+    align-items: center;
     height: 100%;
     width: 30vw;
     background-color: #1f1f1f;
@@ -57,7 +58,7 @@ body {
         justify-content: center;
         font-size: xx-large;
         font-family: unthynck, serif;
-        margin: -0.5em -0em -0.5em;
+        margin: -0.5em -0em 1em;
         color: whitesmoke;
     }
 
@@ -68,19 +69,15 @@ body {
 
     button {
         cursor: pointer;
-        width: 100%;
+        width: 85%;
         height: 2em;
-        background-color: whitesmoke;
-        color: black;
+        color: whitesmoke;
         border: none;
         border-radius: 12px;
         font-size: large;
         margin-top: -1em;
     }
 
-    button:hover {
-        background-color: rgba(245, 245, 245, 80%);
-    }
 }
 
 .website-links {
@@ -93,16 +90,12 @@ body {
 
     button {
         height: 4em;
-        width: 100%;
+        width: 90%;
         border: none;
         border-radius: 12px;
         background-color: rgba(24, 154, 211, 75%);
         color: whitesmoke;
         margin-bottom: 2em;
-    }
-
-    button:hover {
-        background-color: rgba(24, 154, 211);
     }
 }
 
