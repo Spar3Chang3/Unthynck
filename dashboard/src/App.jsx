@@ -1,35 +1,52 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import './App.css';
 
-function App() {
-  const [count, setCount] = useState(0)
+export default function App() {
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    return (
+        <>
+            <div className={'header'}>
+                <div className={'welcome-message'}>
+                    <h2>Hello, [PLACEHOLDER]</h2>
+                </div>
+            </div>
+            <div className={'content'}>
+                <div className={'landing-message'}>
+                    <h2>What would you like to do today?</h2>
+                </div>
+                <div className={'member-options-list'}>
+                    <div className={'options-container'}>
+                        <div className={'option'}>
+                            <div className={'add-event-option'}>
+                                <div className={'option-banner'}>
+                                    <h3>Add Event</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div className={'option'}>
+                            <div className={'update-bio-option'}>
+                                <div className={'option-banner'}>
+                                    <h3>Update Biography</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div className={'option'}>
+                            <div className={'change-password-option'}>
+                                <a href={''}>Update Password ▶</a>
+                            </div>
+                            <div className={'upload-pictures-option'}>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className={'footer'}>
+
+            </div>
+        </>
+    )
 }
 
-export default App
+/*
+*
+* potentially need json, not sure yet*/
