@@ -1,6 +1,14 @@
 import './App.css';
+import Button from '@mui/material/Button';
 
 export default function App() {
+
+    const uploadSvg = 'http://unthynck.me/files/vectors/upload-square-icon.svg';
+    //credit to Solar Icons: https://www.svgrepo.com/svg/525570/upload-square
+
+    function handlePhotoUpload() {
+        const file = window.file();
+    }
 
     return (
         <>
@@ -29,12 +37,29 @@ export default function App() {
                                 </div>
                             </div>
                         </div>
-                        <div className={'option'}>
-                            <div className={'change-password-option'}>
-                                <a href={''}>Update Password ▶</a>
-                            </div>
+                        <div className={'additional-options-panel'}>
                             <div className={'upload-pictures-option'}>
+                                <div className={'upload-icon'}>
+                                    <img src={uploadSvg} alt={'upload icon'}/>
+                                </div>
 
+                                <Button variant={'contained'} className={'upload-button'}
+                                        sx={{
+                                            borderRadius: '12px',
+                                            fontSize: 'xx-large',
+                                            fontFamily: "'Calibri', sans-serif"}}>
+                                    <input hidden accept={'image/*'} type={'file'}
+                                           onChange={() => handlePhotoUpload()}/>
+                                    Upload Band Photos
+                                </Button>
+                            </div>
+                            <div className={'change-password-option'}>
+                                <Button onClick={() => window.open('')} variant={'contained'}
+                                        className={'link-button'} sx={{
+                                    borderRadius: '12px',
+                                    fontSize: 'xx-large',
+                                    fontFamily: "'Calibri', sans-serif"
+                                }}>Update Password ▶</Button>
                             </div>
                         </div>
                     </div>

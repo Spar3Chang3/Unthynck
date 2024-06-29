@@ -1,8 +1,10 @@
-<svg viewBox="0 0 100 100">
-    <path d="M50,10 C30,20 20,40 10,50 C20,60 30,80 50,90 C70,80 80,60 90,50 C80,40 70,20 50,10 Z" fill="none" stroke="black" stroke-width="5" />
-    <circle cx="50" cy="50" r="10" fill="black" />
-    <circle cx="37" cy="63" r="5" fill="black" />
-    <circle cx="63" cy="37" r="5" fill="black" />
-    <circle cx="44" cy="70" r="3" fill="black" />
-    <circle cx="70" cy="44" r="3" fill="black" />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <g>
+        <path fill="none" d="M0 0h24v24H0z"/>
+        <path d="M13 10h5l-6 6-6-6h5V4h2v6zm2 8v6H5v-6H3l8-8 8 8h-2z"/>
+    </g>
+    <g transform="translate(5 0)">
+        <path fill="none" d="M0 0h24v24H0z"/>
+        <path d="M2 4h16a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1zm5 4a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/>
+    </g>
 </svg>
