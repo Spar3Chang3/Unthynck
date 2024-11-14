@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fef13861-a6b7-4b36-b196-f43e2a04bbdb" name="Changes" comment="" />
+    <list default="true" id="fef13861-a6b7-4b36-b196-f43e2a04bbdb" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/lib/components/ImageGallery.svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/routes/landing-page/+page.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/header.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/Header.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/+landing-page.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/+layout.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/+layout.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/+page.svelte" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,13 +25,29 @@
         <option value="landing-page" />
         <option value="header" />
         <option value="+layout.svelte" />
+        <option value="image-gallery" />
       </list>
     </option>
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 7
-}]]></component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Spar3Chang3&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Spar3Chang3/Unthynck.git&quot;,
+    &quot;accountId&quot;: &quot;7398f066-a024-4eda-a6df-e25fa531bd3e&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="2oS8BLnQ6O0GGondGQTy6b8q4h0" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -31,17 +56,26 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/trash/WebstormProjects/Unthynck/src/routes",
     "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "prettierjs.PrettierConfiguration.Package": "C:\\Users\\trash\\WebstormProjects\\Unthynck\\node_modules\\prettier",
     "ts.external.directory.path": "C:\\Users\\trash\\WebstormProjects\\Unthynck\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\trash\WebstormProjects\Unthynck\src\routes" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\trash\WebstormProjects\Unthynck\src\routes\landing-page" />
       <recent name="C:\Users\trash\WebstormProjects\Unthynck\static" />
       <recent name="C:\Users\trash\WebstormProjects\Unthynck\src\lib\components" />
     </key>
@@ -62,6 +96,8 @@
       <option name="presentableId" value="Default" />
       <updated>1730851480360</updated>
       <workItem from="1730851484678" duration="1874000" />
+      <workItem from="1731546280042" duration="504000" />
+      <workItem from="1731546866231" duration="2013000" />
     </task>
     <servers />
   </component>

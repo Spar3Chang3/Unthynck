@@ -1,3 +1,6 @@
+<script lang="js">
+	import Header from "$lib/components/Header.svelte";
+</script>
 <style>
     :root {
         --background-standard: url("../../static/standard-background.jpg");
@@ -18,3 +21,7 @@
         }
     }
 </style>
+
+<svelte:head>
+</svelte:head>
+
