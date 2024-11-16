@@ -1,5 +1,5 @@
 <script lang="js">
+	window.open("/landing-page");
 </script>
 <main>
-	<h1>Hello!</h1>
 </main>

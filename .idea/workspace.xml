@@ -4,15 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fef13861-a6b7-4b36-b196-f43e2a04bbdb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/lib/components/ImageGallery.svelte" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/landing-page/+page.svelte" afterDir="false" />
+    <list default="true" id="fef13861-a6b7-4b36-b196-f43e2a04bbdb" name="Changes" comment="Bro I need to take a course on SvelteKit">
+      <change afterPath="$PROJECT_DIR$/src/app.pcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lib/components/Footer.svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lib/utils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lib/utils/Global.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/fonts/unthynck-logo.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/icons/facebook.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/icons/instagram.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/icons/interaction-cursor.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/icons/spotify.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/icons/youtube.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/components/header.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/Header.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/+landing-page.svelte" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/+layout.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/+layout.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/Header.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/Header.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/+layout.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/__layout.svelte" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/+page.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/standard-background.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/backgrounds/standard-background.jpg" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +36,8 @@
         <option value="header" />
         <option value="+layout.svelte" />
         <option value="image-gallery" />
+        <option value="Footer" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -57,7 +69,7 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/trash/WebstormProjects/Unthynck/src/routes",
+    "last_opened_file_path": "C:/Users/trash/WebstormProjects/Unthynck/static",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
     "node.js.detected.package.tslint": "true",
@@ -72,12 +84,15 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\trash\WebstormProjects\Unthynck\static" />
       <recent name="C:\Users\trash\WebstormProjects\Unthynck\src\routes" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\trash\WebstormProjects\Unthynck\src\lib" />
+      <recent name="C:\Users\trash\WebstormProjects\Unthynck\src\lib\utils" />
+      <recent name="C:\Users\trash\WebstormProjects\Unthynck\src\routes" />
+      <recent name="C:\Users\trash\WebstormProjects\Unthynck\static\backgrounds" />
       <recent name="C:\Users\trash\WebstormProjects\Unthynck\src\routes\landing-page" />
-      <recent name="C:\Users\trash\WebstormProjects\Unthynck\static" />
-      <recent name="C:\Users\trash\WebstormProjects\Unthynck\src\lib\components" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -97,11 +112,24 @@
       <updated>1730851480360</updated>
       <workItem from="1730851484678" duration="1874000" />
       <workItem from="1731546280042" duration="504000" />
-      <workItem from="1731546866231" duration="2013000" />
+      <workItem from="1731546866231" duration="12133000" />
     </task>
+    <task id="LOCAL-00001" summary="Bro I need to take a course on SvelteKit">
+      <option name="closed" value="true" />
+      <created>1731549047576</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1731549047576</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Bro I need to take a course on SvelteKit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bro I need to take a course on SvelteKit" />
   </component>
 </project>

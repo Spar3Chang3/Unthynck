@@ -1,9 +1,9 @@
 <script lang="js">
-	import Header from "$lib/components/Header.svelte";
+	import { Header, Footer } from '../lib/components/';
 </script>
 <style>
     :root {
-        --background-standard: url("../../static/standard-background.jpg");
+        --background-standard: url("../../static/backgrounds/standard-background.jpg");
         --surface-standard: #1f1f1f;
         --primary-color: #0d0500;
         --on-primary-color: #F8F0e3;
@@ -22,6 +22,12 @@
     }
 </style>
 
-<svelte:head>
-</svelte:head>
-
+<header>
+	<Header/>
+</header>
+<main>
+	<slot/>
+</main>
+<footer>
+	<Footer/>
+</footer>
