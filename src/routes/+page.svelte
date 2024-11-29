@@ -1,5 +1,8 @@
 <script lang="js">
-	window.open("/landing-page");
+	import { goto } from '$app/navigation';
+	import { onMount } from 'svelte';
+
+	onMount(() => {
+		goto('/landing-page');
+	});
 </script>
-<main>
-</main>

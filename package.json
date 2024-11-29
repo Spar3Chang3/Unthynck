@@ -2,7 +2,7 @@
 	"name": "unthynck",
 	"version": "0.0.1",
 	"scripts": {
-		"dev": "vite dev",
+		"dev": "vite dev --host",
 		"build": "vite build && npm run package",
 		"preview": "vite preview",
 		"package": "svelte-kit sync && svelte-package && publint",
@@ -48,13 +48,17 @@
 		"prettier-plugin-svelte": "^3.2.6",
 		"publint": "^0.2.0",
 		"svelte": "^5.0.0",
-		"tailwind-merge": "^2.5.4",
-		"tailwind-variants": "^0.3.0",
 		"typescript": "^5.3.2",
 		"vite": "^5.0.11",
 		"vitest": "^2.0.4"
 	},
 	"dependencies": {
+		"@react2svelte/image-gallery": "^1.0.1",
+		"@sveltejs/adapter-static": "^3.0.6",
+		"firebase": "^11.0.2",
+		"firebase-tools": "^13.27.0",
+		"lodash": "^4.17.21",
+		"svelte-carousel": "^1.0.25",
 		"tailwindcss": "^3.4.14"
 	}
 }
