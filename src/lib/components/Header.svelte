@@ -1,5 +1,19 @@
 <script lang="js">
 	import { SiteLinks } from "$lib/utils/Global.js";
+	import { onMount } from 'svelte';
+
+	let isMobile = $state(false);
+	let navOpen = $state(false);
+
+	function toggleNav(e) {
+		e.preventDefault();
+		navOpen = !navOpen;
+	}
+
+	onMount(() => {
+		isMobile = window.matchMedia('(max-width: 768px)').matches;
+	});
+
 </script>
 
 <section class="main-header">
@@ -14,12 +28,30 @@
 			</a>
 		</div>
 
-		<div class="navbar">
-			<div class="site-link"><a href={SiteLinks.eventSchedule}>Event Schedule</a></div>
-			<div class="site-link"><a href={SiteLinks.music}>Music</a></div>
-			<div class="site-link"><a href={SiteLinks.meetTheBand}>Meet the Band</a></div>
-			<div class="site-link"><a href={SiteLinks.contactUs}>Contact Us</a></div>
-		</div>
+		{#if isMobile}
+			<div class="mobile-wrapper">
+				<div class="mobile-button-container">
+					<button class="mobile-button" onclick={toggleNav}>☰</button>
+				</div>
+				<div
+					class="mobile-navbar"
+					class:mobile-navbar-expanded={navOpen}
+					class:mobile-navbar-closed={!navOpen}
+				>
+					<div class="site-link"><a href={SiteLinks.eventSchedule}>Event Schedule</a></div>
+					<div class="site-link"><a href={SiteLinks.music}>Music</a></div>
+					<div class="site-link"><a href={SiteLinks.meetTheBand}>Meet the Band</a></div>
+					<div class="site-link"><a href={SiteLinks.contactUs}>Contact Us</a></div>
+				</div>
+			</div>
+		{:else}
+			<div class="navbar">
+				<div class="site-link"><a href={SiteLinks.eventSchedule}>Event Schedule</a></div>
+				<div class="site-link"><a href={SiteLinks.music}>Music</a></div>
+				<div class="site-link"><a href={SiteLinks.meetTheBand}>Meet the Band</a></div>
+				<div class="site-link"><a href={SiteLinks.contactUs}>Contact Us</a></div>
+			</div>
+		{/if}
 
 		<div class="spacer"></div>
 
@@ -38,6 +70,7 @@
 
 			margin: 0 auto;
 			background-color: var(--surface-standard);
+			overflow: hidden;
 	}
 
 	.fixed-header {
@@ -133,5 +166,115 @@
           mask-position: left
       }
   }
+
+	@media only screen and (max-width: 768px) {
+
+			.spacer {
+					display: none;
+			}
+
+			.main-header {
+					position: relative;
+					height: 15vh;
+					overflow: visible;
+			}
+
+			.fixed-header {
+					position: fixed;
+					top: 0;
+					display: grid;
+					grid-template-columns: auto;
+					grid-template-rows: auto auto;
+					height: 15vh;
+					width: 100vw;
+					gap: 1.5rem;
+
+					justify-content: center;
+					align-items: center;
+					z-index: 10;
+			}
+
+			.header-branding {
+					position: relative;
+					display: inline-flex;
+					justify-content: center;
+					align-items: center;
+					font-size: 2rem;
+					height: 5vh;
+					width: 100vw;
+					margin-top: 1rem;
+			}
+
+			.mobile-wrapper {
+					display: flex;
+					flex-direction: column;
+					width: 100vw;
+					height: fit-content;
+					justify-content: center;
+					align-items: center;
+			}
+
+			.mobile-button-container {
+					position: relative;
+					display: flex;
+					justify-content: center;
+					align-content: center;
+					width: 100vw;
+					z-index: 10;
+			}
+
+			.mobile-button {
+					border: 0.1rem solid var(--on-primary-color);
+					font-family: "Comic Sans MS", sans-serif;
+					background-color: var(--secondary-color);
+					color: var(--on-primary-color);
+					width: 80%;
+					font-size: 1rem;
+					transition: 25ms ease-out;
+			}
+
+			.mobile-button:active {
+					transform: scale(0.95);
+			}
+
+      .mobile-navbar {
+          position: relative;
+          width: 90vw;
+
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+					gap: 1.5rem;
+					font-size: 2rem;
+					margin-top: 1rem;
+					padding: 1rem;
+
+          background-color: var(--surface-standard);
+
+          /* Key transition properties */
+          opacity: 0;
+          visibility: hidden;
+          transform: translateY(-20vw);
+          transition:
+                  opacity 0.3s ease,
+                  transform 0.3s ease,
+                  visibility 0.3s;
+
+          z-index: 8;
+      }
+
+      .mobile-navbar-expanded {
+          opacity: 1;
+          visibility: visible;
+          transform: translateY(0);
+      }
+
+      .mobile-navbar a {
+          width: 100%;
+          text-align: center;
+          padding: 0.5rem;
+      }
+	}
 
 </style>

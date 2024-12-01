@@ -66,6 +66,9 @@
 
 				background-color: var(--surface-standard);
 				color: var(--on-primary-color);
+				overflow: hidden;
+
+				font-family: "Comic Sans MS", sans-serif;
 		}
 
 		.footer-branding {
@@ -100,6 +103,26 @@
 
         justify-self: flex-end;
         align-items: center;
+		}
+
+		@media only screen and (max-width: 768px) {
+				.spacer, .footer-branding {
+						display: none;
+				}
+
+				.main-footer {
+						display: grid;
+						grid-template-columns: auto;
+						grid-template-rows: auto auto;
+						justify-content: center;
+						align-items: center;
+
+						height: fit-content;
+				}
+
+				.footer-social-links {
+						height: 10vh;
+				}
 		}
 
 </style>

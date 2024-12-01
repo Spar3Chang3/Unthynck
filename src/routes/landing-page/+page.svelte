@@ -1,11 +1,10 @@
 <script>
-	import ImageGallery from '@react2svelte/image-gallery';
 	import Carousel from 'svelte-carousel';
-	import { writable } from 'svelte/store';
 	import { onMount } from 'svelte';
 	import { initApp, initStorage, getDownloadsFromStorage } from '$lib/utils/Firebase.js';
 
-	const backgroundPath = $state("");
+	let backgroundPath = $state("");
+	let backgroundOpacity = $state(1);
 	let carousel = $state();
 	let showCarousel = $state(false);
 
@@ -31,8 +30,12 @@
 		console.log(slides);
 	}
 
-	function updateSlideBackground(slide) {
-
+	function updateSlideBackground(index) {
+		backgroundOpacity = 0;
+		setTimeout(() => {
+			backgroundPath = slides[index];
+			backgroundOpacity = 1;
+		}, 500);
 	}
 
 	function showPrevSlide(e) {
@@ -52,6 +55,8 @@
 
 		fetchSlides().then(() => {
 			showCarousel = true;
+		}).then(() => {
+			updateSlideBackground(0);
 		});
 
 
@@ -119,13 +124,19 @@
 								particlesToShow={1}
 								particlesToScroll={1}
 								loop={true}
+								let:loaded
+								on:pageChange={
+								e => updateSlideBackground(e.detail)
+								}
 								>
 								<button slot="prev" onclick={showPrevSlide} class="custom-arrow custom-arrow-prev">
 									<i />
 								</button>
-								{#each slides as slide}
+								{#each slides as slide, imageIndex (slide)}
 									<div class="img-container">
-										<img class="slide-img" src={slide} alt="Band members"/>
+										{#if loaded.includes(imageIndex)}
+											<img class="slide-img" src={slide} alt="Band members"/>
+										{/if}
 									</div>
 								{/each}
 								<button slot="next" onclick={showNextSlide} class="custom-arrow custom-arrow-next">
@@ -134,7 +145,8 @@
 							</Carousel>
 			{/if}
 		</div>
-		<div class="slideshow-image-background"></div>
+		<div class="slideshow-image-background"
+				 style="opacity: {backgroundOpacity}; background-image: url({backgroundPath});"></div>
 	</section>
 
 
@@ -179,7 +191,7 @@
 		<div
 			class="spotify-plugin-container" style="opacity: {observeElements[1].isVisible ? 1 : 0}; transform: translateY({observeElements[1].isVisible ? '0' : '100vw'}); transition: opacity 0.4s ease, transform 0.5s ease;"
 		>
-			<iframe style="width: 100%; height: 50vh;"
+			<iframe style="width: 100%; height: 75vh;"
 							src="https://open.spotify.com/embed/artist/3C3IxXuW9aRAlwvooDiCJM?utm_source=generator&theme=0"
 							width="50%" height="700" frameBorder="0" allowFullScreen={false}
 							allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
@@ -227,9 +239,10 @@
 	}
 
 	.slideshow-container {
-			height: 95%;
-			width: 95%;
+			height: 80vh;
+			width: 90vw;
 			overflow: hidden;
+			z-index: 2;
 	}
 
   /* General carousel styling */
@@ -306,7 +319,12 @@
 			position: absolute;
 			height: 100vh;
 			width: 100vw;
-			z-index: -1;
+			z-index: 1;
+			background-position: center;
+			background-size: cover;
+			transition: opacity 550ms ease;
+			background-color: var(--primary-color);
+			filter: blur(12px);
 	}
 
 	.about-wrapper {
@@ -322,6 +340,13 @@
 			align-items: center;
 
 			background-color: transparent;
+
+			font-family: "Comic Sans MS", sans-serif;
+	}
+
+	.about-wrapper a {
+			text-decoration: none;
+			color: var(--link-color);
 	}
 
 	.about-text-container {
@@ -354,8 +379,15 @@
 	.spotify-plugin-container {
 			position: relative;
 			display: block;
-			min-height: 60vh;
+			max-height: 80vh;
 			width: 100%;
+			margin-bottom: 2rem;
+	}
+
+	@media only screen and (max-width: 768px) {
+			.spotify-plugin-container {
+					height: fit-content;
+			}
 	}
 
 </style>
