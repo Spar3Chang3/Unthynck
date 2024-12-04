@@ -1,5 +1,6 @@
 <script>
 	import Carousel from 'svelte-carousel';
+	import { Titles } from '$lib/utils/Global.js';
 	import { onMount } from 'svelte';
 	import { initApp, initStorage, getDownloadsFromStorage } from '$lib/utils/Firebase.js';
 
@@ -7,6 +8,8 @@
 	let backgroundOpacity = $state(1);
 	let carousel = $state();
 	let showCarousel = $state(false);
+
+	let parallaxScrollY = $state([0, 0, 0]);
 
 
 	let isMobile;
@@ -49,6 +52,7 @@
 	}
 
 	onMount(() => {
+		document.title = Titles.landingPage;
 
 		isMobile = window.matchMedia('(max-width: 768px)').matches;
 		slideImagePath = isMobile ? 'images/slideshow/mobile' : 'images/slideshow/desktop';
@@ -89,12 +93,20 @@
 			}
 		});
 
+		const setSlideParallax = () => {
+			parallaxScrollY[0] = window.scrollY;
+		}
+
+		window.addEventListener('scroll', setSlideParallax);
+
 		return () => {
 			Object.values(elementRefs).forEach(element => {
 				if (element) {
 					observer.unobserve(element);
 				}
 			});
+
+			window.removeEventListener('scroll', setSlideParallax);
 		};
 
 	});
@@ -146,7 +158,7 @@
 			{/if}
 		</div>
 		<div class="slideshow-image-background"
-				 style="opacity: {backgroundOpacity}; background-image: url({backgroundPath});"></div>
+					style:opacity="{backgroundOpacity}" style:background-image="url({backgroundPath})" style:margin-top="{parallaxScrollY[0]}px"></div>
 	</section>
 
 
@@ -206,14 +218,14 @@
 
 </section>
 
-<style>
+<style lang="css">
 
 	.landing-page {
 			position: relative;
 			display: flex;
 			flex-direction: column;
 
-			min-height: 80vh;
+			height: fit-content;
 			width: 100vw;
 
 			place-items: center;
@@ -236,6 +248,7 @@
 
 			justify-content: center;
 			align-items: center;
+			overflow: hidden;
 	}
 
 	.slideshow-container {
@@ -341,7 +354,7 @@
 
 			background-color: transparent;
 
-			font-family: "Comic Sans MS", sans-serif;
+			font-family: "Unthynck Text", sans-serif;
 	}
 
 	.about-wrapper a {

@@ -11,6 +11,12 @@
 				font-display: swap;
 		}
 
+		@font-face {
+				font-family: 'Unthynck Text';
+				src: url("/fonts/unthynck-text.ttf") format("truetype");
+
+		}
+
 		:global(html, body) {
 				margin: 0;
 		}
@@ -36,10 +42,15 @@
         }
     }
 
-		main, header, footer{
+		main, header, footer {
 				background-image: url("/backgrounds/standard-background.jpg");
 				background-repeat: repeat;
 				background-size: initial;
+				overflow-x: hidden;
+		}
+
+		main {
+				min-height: 80vh;
 		}
 
 </style>

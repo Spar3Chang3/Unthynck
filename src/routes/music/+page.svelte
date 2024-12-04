@@ -1,5 +1,12 @@
 <script lang="js">
 	import Cassette from '$lib/components/music/Cassette.svelte';
+	import { Titles } from '$lib/utils/Global.js';
+	import { onMount } from 'svelte';
+
+	onMount(() => {
+		document.title = Titles.music
+	});
+
 </script>
 <section class="music">
 		<Cassette />
@@ -12,7 +19,9 @@
 			justify-content: center;
 			align-items: center;
 
-			min-height: 80vh;
+			height: fit-content;
 			width: 100vw;
+
+			overflow-x: hidden;
 	}
 </style>

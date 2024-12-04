@@ -29,6 +29,7 @@ export const IconLinks = {
 	spotify: '/icons/spotify.svg',
 
 	interaction: '/icons/interaction-cursor.svg',
+	loadingIcon: '/icons/spinning-note.gif',
 
 	volumeNone: '/icons/volume-none.svg',
 	volumeLow: '/icons/volume-low.svg',
@@ -38,4 +39,12 @@ export const IconLinks = {
 	playerPause: '/icons/player-pause.svg',
 	playerShuffleOn: '/icons/player-shuffle-on.svg',
 	playerShuffleOff: '/icons/player-shuffle-off.svg'
+}
+
+export const Titles = {
+	landingPage: "Landing Page - Unthynck",
+	meetTheBand: "Meet The Band - Unthynck",
+	eventSchedule: "Event Schedule - Unthynck",
+	music: "Listen - Unthynck",
+	contactUs: "Contact Us - Unthynck"
 }

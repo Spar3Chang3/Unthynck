@@ -1,6 +1,7 @@
 <script lang="js">
 	import { onMount } from 'svelte';
 	import { IconLinks } from '$lib/utils/Global.js';
+	import { audioQueue } from '$lib/components/music/AudioStore.js';
 
 	const defaultAudio = '/audio/default.mp3';
 	const tapeAudio = '/audio/tape.mp3';
@@ -11,7 +12,6 @@
 	let shuffled = $state(false);
 	let currentSong = null;
 	let tapeSfx = null;
-
 
 	let volumeIcon = $derived(applyVolumeIcon());
 	let playIcon = $derived(applyPlayIcon());
@@ -88,6 +88,13 @@
 	onMount(() => {
 		currentSong = new Audio(defaultAudio);
 		tapeSfx = new Audio(tapeAudio);
+
+		return () => {
+			currentSong.stop;
+			currentSong.pause();
+			currentSong.src = '';
+			currentSong = null;
+		}
 	});
 
 </script>

@@ -1,10 +1,10 @@
 <script lang="js">
-	import { getDownloadsFromStorage, getFileFromStorage, initStorage, initApp } from '$lib/utils/Firebase.js';
+	import { getFileFromStorage, initStorage, initApp } from '$lib/utils/Firebase.js';
 	import { onMount } from 'svelte';
+	import { IconLinks } from '$lib/utils/Global.js';
 
 	let showCardBack = $state(false);
-	let portrait = $state("");
-	let imageSet = $state([]);
+	let portrait = $state(IconLinks.loadingIcon);
 
 	let {
 		aboutMe,
@@ -22,8 +22,14 @@
 	}
 
 	async function fetchImages() {
-		imageSet = await getDownloadsFromStorage(imagePath);
-		portrait = await getFileFromStorage(imagePath, "portrait.jpg");
+		let preload = new Image();
+		await getFileFromStorage(imagePath, "portrait.jpg").then((downloadPath) => {
+			preload.src = downloadPath;
+		});
+
+		preload.onload = () => {
+			portrait = preload.src;
+		}
 	}
 
 	onMount(() => {
@@ -38,8 +44,8 @@
 	<button class="flip-button" onclick={toggleCardFlip} aria-label="flip-button"></button>
 	<div class="flip-box-inner" class:show-back={showCardBack}>
 
-		<div class="flip-box-front card" style="display: {showCardBack ? 'hidden' : 'flex' }" >
-			<div class="portrait-container">
+		<div class="flip-box-front card" >
+			<div class="portrait-container" style:opacity="{showCardBack ? '0' : '1'}" style:transition="opacity 500ms ease">
 				<img class="portrait" src={portrait} alt="Band Member portrait" />
 			</div>
 			<div class="interact-tip-container">
@@ -52,9 +58,6 @@
 				<div class="banner">
 					<h1>{name}</h1>
 				</div>
-				<div class="portrait-gallery">
-					<!--	Add a react2svelte image gallery here	-->
-				</div>
 				<div class="type-caption">
 					<h3>{position}</h3>
 				</div>
@@ -65,9 +68,6 @@
 					</div>
 
 					<div class="socials">
-						<div class="socials-shelf">
-							<!-- Add social links here	-->
-						</div>
 					</div>
 				</div>
 			</div>
@@ -136,7 +136,10 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        background-color: black;
+        background-image: url("/backgrounds/card-background.jpg");
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size: cover;
         color: white;
         transform: rotateY(180deg) translateX(6px);
     }
@@ -156,6 +159,16 @@
 				flex-direction: column;
 				height: 100%;
 				width: 100%;
+        font-family: "Unthynck Text", sans-serif;
+				line-height: var(--paragraph-line-height);
+
+				overflow: scroll;
+				scrollbar-width: none;
+				-ms-overflow-style: none;
+
+				::-webkit-scrollbar {
+						display: none;
+				}
 		}
 
 		.portrait-container {
@@ -186,6 +199,11 @@
 				width: 20%;
 		}
 
+    .banner {
+        font-family: "Unthynck Branding", sans-serif;
+				font-size: 2rem;
+    }
+
 		.stats {
         display: flex;
         flex-direction: column;
@@ -210,23 +228,17 @@
     }
 
     .socials {
-        position: absolute;
+        position: relative;
+				display: flex;
+				align-items: center;
         bottom: 0.5rem;
-        height: 5rem;
+        height: fit-content;
         width: 95%;
         backdrop-filter: blur(4px);
         border-radius: 6px;
         overflow: hidden;
+        background-color: var(--frosted-glass);
     }
 
-    .socials-shelf {
-        display: flex;
-        height: 100%;
-        width: 100%;
-        flex-wrap: wrap;
-        align-items: center;
-        background-color: var(--frosted-glass);
-        overflow: hidden;
-    }
 
 </style>

@@ -1,4 +1,7 @@
 <script lang="js">
+	import { onMount } from 'svelte';
+	import { Titles } from '$lib/utils/Global.js';
+
 
 	let inquiry = $state({
 		name: "",
@@ -18,6 +21,9 @@
 		//Add this to firebase realtimeDB, will implement after prompting claude
 	}
 
+	onMount(() => {
+		document.title = Titles.contactUs
+	});
 </script>
 
 <section class="contact-us">
@@ -109,7 +115,7 @@
 				display: flex;
 				flex-direction: column;
 				width: 100vw;
-				min-height: 80vh;
+				height: fit-content;
 
 				justify-content: center;
 				align-items: center;

@@ -69,6 +69,7 @@
 				overflow: hidden;
 
 				font-family: "Comic Sans MS", sans-serif;
+				margin: 0 auto;
 		}
 
 		.footer-branding {

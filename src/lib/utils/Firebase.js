@@ -66,8 +66,6 @@ export async function getFileFromStorage(path, fileName) {
 
 	const storageRef = storeRef(firebaseStorage, path);
 
-	console.log(await listAll(storageRef));
-
 	const listRes = await listAll(storageRef).catch((err) => {
 		console.error("Could not access the referenced bucket: ", err);
 		return null;

@@ -1,6 +1,7 @@
 <script lang="js">
 	import { SiteLinks } from "$lib/utils/Global.js";
 	import { onMount } from 'svelte';
+	import { page } from '$app/stores';
 
 	let isMobile = $state(false);
 	let navOpen = $state(false);
@@ -9,6 +10,10 @@
 		e.preventDefault();
 		navOpen = !navOpen;
 	}
+
+	page.subscribe(() => {
+		navOpen = false;
+	});
 
 	onMount(() => {
 		isMobile = window.matchMedia('(max-width: 768px)').matches;

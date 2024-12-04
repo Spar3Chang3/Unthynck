@@ -1,19 +1,26 @@
 <script lang="js">
 	import { onMount } from 'svelte';
+	import { Titles } from '$lib/utils/Global.js';
 	import { initApp, initDatabase, getDataFromDatabase } from '$lib/utils/Firebase.js';
 	import BandCard from '$lib/components/band/BandCard.svelte';
 
 	const memberDataPath = 'public/members';
-	let memberSet = $state([{}]);
+
+	let memberSet = $state([]);
 
 async function fetchMemberData() {
 		initApp();
 		initDatabase();
-		const members = await getDataFromDatabase(memberDataPath);
-		memberSet = Object.values(members);
+		await getDataFromDatabase(memberDataPath).then((data) => {
+			memberSet = Object.values(data);
+		}).catch((err) => {
+			alert(("Could not obtain members :( Please try refreshing or come back later - " + err));
+		});
+
 	}
 
 	onMount(() => {
+		document.title = Titles.meetTheBand;
 		fetchMemberData();
 	});
 </script>
