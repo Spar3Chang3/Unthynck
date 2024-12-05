@@ -1,5 +1,15 @@
 {
   "projects": {
     "default": "unthynck-band"
-  }
+  },
+  "targets": {
+    "unthynck-band": {
+      "hosting": {
+        "unthynck-band": [
+          "1:909124920050:web:b74ddb694a57702dfca66b"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }

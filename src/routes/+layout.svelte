@@ -1,6 +1,18 @@
 <script lang="js">
+	import { onMount } from 'svelte';
+
 	import Header from '$lib/components/Header.svelte';
 	import Footer from '$lib/components/Footer.svelte';
+
+	/* TODO:
+		* add mobile detector
+	*/
+
+	onMount(() => {
+
+	});
+
+
 </script>
 <style>
 		@font-face {

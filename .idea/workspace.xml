@@ -4,82 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fef13861-a6b7-4b36-b196-f43e2a04bbdb" name="Changes" comment="Made website usable for desktop, mobile support next">
-      <change afterPath="$PROJECT_DIR$/BuildAndDeployWindows.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/assets/0.DjOnp7zV.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/assets/0.m3jeFnrE.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/assets/5.BICWGeMH.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/assets/5.bzQ-e6jc.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/assets/7.BPF5Wd8O.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/assets/7.UJlaAmXV.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/assets/_layout.BQ6cza6b.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/assets/_layout.C8SVP2kJ.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/assets/_page.BICWGeMH.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/assets/_page.bzQ-e6jc.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/assets/_page.jGci5WAL.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/chunks/Firebase.DKs8Wb7O.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/chunks/Firebase._0QSid2b.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/chunks/attributes.DtApaLm5.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/chunks/class.Bvena8yX.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/chunks/each.CqbUBAVf.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/chunks/entry.CmXTGCDg.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/chunks/entry.DwTv25Tk.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/chunks/entry.uxTDNtnX.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/chunks/if.BXGvIym1.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/chunks/index-client.dBdzJ-pE.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/chunks/input.BUiV5rh4.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/chunks/lifecycle.DDKJCusD.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/chunks/props.3DEL7cEI.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/chunks/proxy.DCSCrVS7.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/chunks/render.D9cSBE-q.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/chunks/runtime.Cp1fv9q6.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/chunks/slot.Cauh6bm4.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/chunks/store.z1_eNC_8.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/chunks/template.BtuiirQB.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/entry/app.AxwHA8uV.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/entry/app.Do1kjB44.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/entry/app.PxNAMvqC.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/entry/start.BbreLPr_.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/entry/start.DC_uTE8q.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/entry/start.cXElYVaC.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/nodes/0.BBat_uLY.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/nodes/0.HQob0XLW.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/nodes/1.Cs2O8jdZ.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/nodes/1.hczbGqwF.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/nodes/1.p3Rqyzon.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/nodes/2.B4b561q3.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/nodes/2.BgrLtdYB.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/nodes/2.CxrIYzok.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/nodes/3.CSUHhwgS.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/nodes/5.BOpEPu4v.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/nodes/5.Cw5Q1ctH.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/nodes/7.BnrLeakS.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/nodes/7.CjPrJxFY.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/nodes/7.brKT_wol.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/nodes/8.khL82kyp.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backgrounds/card-background.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/unthynck-text.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/components/music/AudioStore.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/components/music/SongSelection.svelte" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/backgrounds/card-background.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/fonts/unthynck-text.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/icons/spinning-note.gif" afterDir="false" />
+    <list default="true" id="fef13861-a6b7-4b36-b196-f43e2a04bbdb" name="Changes" comment="Update meet-the-band with preloaders, tuned the interaction">
+      <change afterPath="$PROJECT_DIR$/.JsonTrackIndexes/TweakingInRhythm/index.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lib/components/music/Queue.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lib/components/nunja/MP3Json.svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/routes/nunja/+page.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.firebaserc" beforeDir="false" afterPath="$PROJECT_DIR$/.firebaserc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/firebase.json" beforeDir="false" afterPath="$PROJECT_DIR$/firebase.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/_app/version.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/_app/version.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/audio/tape.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/public/audio/tape.mp3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/components/Footer.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/Footer.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/components/Header.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/Header.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/components/band/BandCard.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/band/BandCard.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/components/music/Cassette.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/music/Cassette.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/music/AudioStore.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/music/AudioStore.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lib/utils/Firebase.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/utils/Firebase.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/utils/Global.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/utils/Global.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/+layout.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/+layout.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/contact-us/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/contact-us/+page.svelte" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/landing-page/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/landing-page/+page.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/login/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/.JsonTrackIndexes/AreYouAfraidOfTheDark/index.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/meet-the-band/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/meet-the-band/+page.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/music/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/music/+page.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/audio/tape.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/static/audio/tape.mp3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,11 +35,12 @@
         <option value="image-gallery" />
         <option value="Footer" />
         <option value="Flashcard" />
-        <option value="+page" />
         <option value="CSS File" />
         <option value="Cassette" />
         <option value="SongSelection" />
         <option value="JavaScript File" />
+        <option value="MP3Json" />
+        <option value="+page" />
       </list>
     </option>
   </component>
@@ -145,6 +86,12 @@
     "prettierjs.PrettierConfiguration.Package": "C:\\Users\\trash\\WebstormProjects\\Unthynck\\node_modules\\prettier",
     "ts.external.directory.path": "C:\\Users\\trash\\WebstormProjects\\Unthynck\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "JSON",
+      "PLAIN_TEXT"
+    ]
   }
 }]]></component>
   <component name="RecentsManager">
@@ -187,7 +134,7 @@
       <workItem from="1732825671612" duration="14711000" />
       <workItem from="1733035177086" duration="5263000" />
       <workItem from="1733052707970" duration="6375000" />
-      <workItem from="1733132129918" duration="23357000" />
+      <workItem from="1733132129918" duration="48115000" />
     </task>
     <task id="LOCAL-00001" summary="Bro I need to take a course on SvelteKit">
       <option name="closed" value="true" />
@@ -205,7 +152,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731784890742</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Update meet-the-band with preloaders, tuned the interaction">
+      <option name="closed" value="true" />
+      <created>1733279013333</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1733279013333</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -213,6 +168,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Bro I need to take a course on SvelteKit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bro I need to take a course on SvelteKit" />
+    <MESSAGE value="Update meet-the-band with preloaders, tuned the interaction" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update meet-the-band with preloaders, tuned the interaction" />
   </component>
 </project>

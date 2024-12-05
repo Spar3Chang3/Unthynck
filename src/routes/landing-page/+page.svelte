@@ -2,7 +2,7 @@
 	import Carousel from 'svelte-carousel';
 	import { Titles } from '$lib/utils/Global.js';
 	import { onMount } from 'svelte';
-	import { initApp, initStorage, getDownloadsFromStorage } from '$lib/utils/Firebase.js';
+	import { getDownloadsFromStorage, initStorage } from '$lib/utils/Firebase.js';
 
 	let backgroundPath = $state("");
 	let backgroundOpacity = $state(1);
@@ -26,11 +26,9 @@
 
 
 	async function fetchSlides() {
-		initApp();
 		initStorage();
 		let slideLinks = await getDownloadsFromStorage(slideImagePath);
 		slides = Object.values(slideLinks);
-		console.log(slides);
 	}
 
 	function updateSlideBackground(index) {
@@ -56,6 +54,7 @@
 
 		isMobile = window.matchMedia('(max-width: 768px)').matches;
 		slideImagePath = isMobile ? 'images/slideshow/mobile' : 'images/slideshow/desktop';
+		console.log(isMobile);
 
 		fetchSlides().then(() => {
 			showCarousel = true;
@@ -89,7 +88,6 @@
 		Object.values(elementRefs).forEach(element => {
 			if (element) {
 				observer.observe(element);
-				console.log("Observing element: ", element);
 			}
 		});
 
@@ -168,7 +166,7 @@
 	>
 		<div
 			class="about-text-container"
-			style="opacity: {observeElements[0].isVisible ? 1 : 0}; transform: translateY({observeElements[0].isVisible ? '0' : '200vw'}); transition: opacity 0.4s ease, transform 0.5s ease;"
+			style="opacity: {observeElements[0].isVisible ? 1 : 0}; transform: translateY({observeElements[0].isVisible ? '0' : '100vh'}); transition: opacity 0.4s ease, transform 0.5s ease;"
 		>
 			<div class="about-text">
 				<h2>GRUNGY AND RUSTY</h2>
@@ -201,7 +199,7 @@
 		data-id="1"
 	>
 		<div
-			class="spotify-plugin-container" style="opacity: {observeElements[1].isVisible ? 1 : 0}; transform: translateY({observeElements[1].isVisible ? '0' : '100vw'}); transition: opacity 0.4s ease, transform 0.5s ease;"
+			class="spotify-plugin-container" style="opacity: {observeElements[1].isVisible ? 1 : 0}; transform: translateY({observeElements[1].isVisible ? '0' : '100vh'}); transition: opacity 0.4s ease, transform 0.5s ease;"
 		>
 			<iframe style="width: 100%; height: 75vh;"
 							src="https://open.spotify.com/embed/artist/3C3IxXuW9aRAlwvooDiCJM?utm_source=generator&theme=0"

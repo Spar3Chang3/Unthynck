@@ -1,0 +1,42 @@
+[
+  {
+    "trackNumber": "01",
+    "trackName": "What's There",
+    "trackDuration": 301,
+    "trackPath": "releases/AreYouAfraidOfTheDark/music/01 What's There.mp3",
+    "artworkPath": "releases/AreYouAfraidOfTheDark/art/art.png",
+    "trackDescription": ""
+  },
+  {
+    "trackNumber": "02",
+    "trackName": "Carve",
+    "trackDuration": 85,
+    "trackPath": "releases/AreYouAfraidOfTheDark/music/02 Carve.mp3",
+    "artworkPath": "releases/AreYouAfraidOfTheDark/art/art.png",
+    "trackDescription": ""
+  },
+  {
+    "trackNumber": "03",
+    "trackName": "Nikiteen",
+    "trackDuration": 358,
+    "trackPath": "releases/AreYouAfraidOfTheDark/music/03 Nikiteen.mp3",
+    "artworkPath": "releases/AreYouAfraidOfTheDark/art/art.png",
+    "trackDescription": ""
+  },
+  {
+    "trackNumber": "04",
+    "trackName": "Smylee",
+    "trackDuration": 234,
+    "trackPath": "releases/AreYouAfraidOfTheDark/music/04 Smylee.mp3",
+    "artworkPath": "releases/AreYouAfraidOfTheDark/art/art.png",
+    "trackDescription": ""
+  },
+  {
+    "trackNumber": "05",
+    "trackName": "Fish Fillet",
+    "trackDuration": 312,
+    "trackPath": "releases/AreYouAfraidOfTheDark/music/05 Fish Fillet.mp3",
+    "artworkPath": "releases/AreYouAfraidOfTheDark/art/art.png",
+    "trackDescription": ""
+  }
+]

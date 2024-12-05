@@ -2,11 +2,7 @@ import { initializeApp } from 'firebase/app';
 import { getStorage, ref as storeRef, getDownloadURL, listAll } from 'firebase/storage';
 import { getDatabase, ref as dbRef, get } from 'firebase/database';
 
-let firebaseApp = null;
-let firebaseStorage = null;
-let firebaseDatabase = null;
-
-export const firebaseConfig = {
+const firebaseConfig = {
 
 	apiKey: "AIzaSyAXm0O9pK1Pj2JxCjd-Zlwmn1PQTNlxB6I", //IT'S FINE I SWEAR THE CLIENT NEEDS IT
 
@@ -26,13 +22,19 @@ export const firebaseConfig = {
 
 }
 
-export function initApp() {
-	firebaseApp = initializeApp(firebaseConfig);
+let firebaseApp;
+let firebaseStorage;
+let firebaseDatabase;
 
-	return firebaseApp;
+export function initApp() {
+	return firebaseApp = initializeApp(firebaseConfig);
 }
 
 export function initStorage() {
+	if (!firebaseApp) {
+		initApp();
+	}
+
 	firebaseStorage = getStorage(firebaseApp);
 
 	if (firebaseStorage === null) {
@@ -45,6 +47,10 @@ export function initStorage() {
 }
 
 export function initDatabase() {
+	if (!firebaseApp) {
+		initApp();
+	}
+
 	firebaseDatabase = getDatabase(firebaseApp);
 
 	if (firebaseDatabase === null) {
@@ -56,15 +62,26 @@ export function initDatabase() {
 	return firebaseDatabase;
 }
 
+// Getter functions to access current instances
+export function getFirebaseApp() {
+	if (!firebaseApp) initApp();
+	return firebaseApp;
+}
 
+export function getFirebaseStorage() {
+	if (!firebaseStorage) initStorage();
+	return firebaseStorage;
+}
+
+export function getFirebaseDatabase() {
+	if (!firebaseDatabase) initDatabase();
+	return firebaseDatabase;
+}
 
 export async function getFileFromStorage(path, fileName) {
-	if (firebaseStorage === null) {
-		console.log("Storage appears to not have been initialized! Attempting...");
-		initStorage();
-	}
+	const storage = getFirebaseStorage();
 
-	const storageRef = storeRef(firebaseStorage, path);
+	const storageRef = storeRef(storage, path);
 
 	const listRes = await listAll(storageRef).catch((err) => {
 		console.error("Could not access the referenced bucket: ", err);
@@ -85,15 +102,10 @@ export async function getFileFromStorage(path, fileName) {
 	}
 }
 
-
-
 export async function getDownloadsFromStorage(path) {
-	if (firebaseStorage === null) {
-		console.log("Storage appears to not have been initialized! Attempting...");
-		initStorage(); //ignore return
-	}
+	const storage = getFirebaseStorage();
 
-	const storageRef = storeRef(firebaseStorage, path);
+	const storageRef = storeRef(storage, path);
 
 	const listResult = await listAll(storageRef).catch((err) => {
 		console.error("Error fetching storage list: ", err);
@@ -116,15 +128,10 @@ export async function getDownloadsFromStorage(path) {
 	return urls.filter((url) => url !== null);
 }
 
-
-
 export async function getDataFromDatabase(path) {
-	if (firebaseDatabase === null) {
-		console.log("Database appears to not have been initialized! Attempting...");
-		initDatabase(); //ignore return
-	}
+	const database = getFirebaseDatabase();
 
-	const dataRef = dbRef(firebaseDatabase, path);
+	const dataRef = dbRef(database, path);
 
 	try {
 		const snapshot = await get(dataRef);

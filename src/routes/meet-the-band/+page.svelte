@@ -1,7 +1,7 @@
 <script lang="js">
 	import { onMount } from 'svelte';
 	import { Titles } from '$lib/utils/Global.js';
-	import { initApp, initDatabase, getDataFromDatabase } from '$lib/utils/Firebase.js';
+	import { initDatabase, getDataFromDatabase } from '$lib/utils/Firebase.js';
 	import BandCard from '$lib/components/band/BandCard.svelte';
 
 	const memberDataPath = 'public/members';
@@ -9,7 +9,6 @@
 	let memberSet = $state([]);
 
 async function fetchMemberData() {
-		initApp();
 		initDatabase();
 		await getDataFromDatabase(memberDataPath).then((data) => {
 			memberSet = Object.values(data);
