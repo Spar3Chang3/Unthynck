@@ -1,0 +1,7 @@
+[
+  {
+    "origin": ["https://unthynck.band"],
+    "method": ["GET"],
+    "maxAgeSeconds": 3600
+  }
+]

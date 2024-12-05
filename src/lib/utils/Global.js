@@ -38,7 +38,8 @@ export const IconLinks = {
 	playerPlay: '/icons/player-play.svg',
 	playerPause: '/icons/player-pause.svg',
 	playerShuffleOn: '/icons/player-shuffle-on.svg',
-	playerShuffleOff: '/icons/player-shuffle-off.svg'
+	playerShuffleOff: '/icons/player-shuffle-off.svg',
+	playlistAdd: '/icons/playlist-add.svg',
 }
 
 export const Titles = {

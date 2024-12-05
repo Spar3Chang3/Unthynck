@@ -1,5 +1,6 @@
 <script lang="js">
 	import Cassette from '$lib/components/music/Cassette.svelte';
+	import SongSelection from '$lib/components/music/SongSelection.svelte';
 	import { Titles } from '$lib/utils/Global.js';
 	import { onMount } from 'svelte';
 
@@ -10,6 +11,7 @@
 </script>
 <section class="music">
 		<Cassette />
+		<SongSelection />
 </section>
 <style lang="css">
 	.music {
@@ -21,6 +23,8 @@
 
 			height: fit-content;
 			width: 100vw;
+
+			gap: 8rem;
 
 			overflow-x: hidden;
 	}

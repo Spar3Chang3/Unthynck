@@ -10,7 +10,7 @@
 		if (files.length === 0) return null;
 		const path = files[0].webkitRelativePath || files[0].relativePath;
 		const parts = path.split('/');
-		return parts[0].replace(/\s+/g, '');
+		return parts[0];
 	}
 
 	async function parseMP3File(file, directoryName) {
@@ -27,8 +27,9 @@
 					trackNumber,
 					trackName,
 					trackDuration: Math.round(audio.duration),
-					trackPath: `releases/${directoryName}/music/${file.name}`,
-					artworkPath: `releases/${directoryName}/art/art.png`,
+					trackPath: `releases/${directoryName}/music`,
+					fileName: file.name,
+					artworkPath: `releases/${directoryName}/art`,
 					trackDescription: ''
 				});
 				URL.revokeObjectURL(audio.src);
@@ -76,7 +77,7 @@
 	})
 </script>
 
-<main>
+<section class="nunja">
 	<h1>Music Directory Uploader</h1>
 
 	<div class="upload-section">
@@ -108,14 +109,14 @@
 			</ul>
 		</div>
 	{/if}
-</main>
+</section>
 
 <style>
     :root {
         color-scheme: dark;
     }
 
-    main {
+    .nunja {
         max-width: 800px;
         margin: 0 auto;
         padding: 20px;
@@ -131,6 +132,10 @@
     }
 
     .upload-section {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-content: center;
         margin-bottom: 20px;
     }
 

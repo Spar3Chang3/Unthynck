@@ -1,7 +1,8 @@
 <script lang="js">
 	import { onMount } from 'svelte';
 	import { IconLinks } from '$lib/utils/Global.js';
-	import { audioQueue } from '$lib/components/music/AudioStore.js';
+	import { dequeueAudio, peekAudio, isAudioQueueEmpty } from '$lib/components/music/AudioStore.js';
+	import { getFileFromStorage } from '$lib/utils/Firebase.js';
 
 	const defaultAudio = '/audio/default.mp3';
 	const tapeAudio = '/audio/tape.mp3';
@@ -10,8 +11,20 @@
 	let muted = $state(false);
 	let paused = $state(true);
 	let shuffled = $state(false);
-	let currentSong = null;
-	let tapeSfx = null;
+	let currentSong = $state(null);
+	let tapeSfx = $state(null);
+	let duration = $state(0);
+
+	let reelAnimation = $derived([
+		{
+			animationPlayState: `${paused ? 'paused' : 'running'}`,
+			animationDuration: `${Math.round(duration)}s`
+		},
+		{
+			animationPlayState: `${paused ? 'paused' : 'running'}`,
+			animationDuration: `${Math.round(duration)}s`
+		}
+	]);
 
 	let volumeIcon = $derived(applyVolumeIcon());
 	let playIcon = $derived(applyPlayIcon());
@@ -60,6 +73,8 @@
 		} else {
 			currentSong.play();
 		}
+
+
 	}
 
 	function mute(e) {
@@ -85,15 +100,36 @@
 		shuffled = !shuffled;
 	}
 
+	function nextInQueue() {
+		const audioData = dequeueAudio();
+		return getFileFromStorage(audioData.trackPath, audioData.fileName);
+	}
+
 	onMount(() => {
-		currentSong = new Audio(defaultAudio);
+		if (isAudioQueueEmpty()) {
+			currentSong = new Audio(defaultAudio);
+		} else {
+			currentSong = new Audio();
+			currentSong.src = nextInQueue();
+		}
+
 		tapeSfx = new Audio(tapeAudio);
+		tapeSfx.volume = 0.25;
+		duration = Math.round(currentSong.duration);
+
+		currentSong.addEventListener('loadedmetadata', () => {
+			duration = Math.round(currentSong.duration);
+		});
 
 		return () => {
 			currentSong.stop;
 			currentSong.pause();
 			currentSong.src = '';
 			currentSong = null;
+
+			tapeSfx.pause();
+			tapeSfx.src = '';
+			tapeSfx = null;
 		}
 	});
 
@@ -112,17 +148,23 @@
 			</div>
 			<div class="player">
 				<div class="tape">
-					<div class="circle" id="circle1">
+					<div class="circle" id="circle1" style:animation-play-state="{reelAnimation[0].animationPlayState}">
 						<div class="teeth"></div>
 						<div class="teeth"></div>
 						<div class="teeth"></div>
 						<div class="teeth"></div>
 					</div>
 					<div class="visor">
-						<div class="left-reel reel"></div>
-						<div class="right-reel reel"></div>
+						<div class="left-reel reel"
+								 style:animation-duration="{reelAnimation[0].animationDuration}"
+								 style:animation-play-state="{reelAnimation[0].animationPlayState}"
+						></div>
+						<div class="right-reel reel"
+								 style:animation-duration="{reelAnimation[1].animationDuration}"
+								 style:animation-play-state="{reelAnimation[1].animationPlayState}"
+						></div>
 					</div>
-					<div class="circle" id="circle2">
+					<div class="circle" id="circle2" style:animation-play-state="{reelAnimation[1].animationPlayState}">
 						<div class="teeth"></div>
 						<div class="teeth"></div>
 						<div class="teeth"></div>
@@ -133,32 +175,74 @@
 			<div class="label-color"></div>
 		</div>
 	</div>
-</section>
 
-<br/>
-
-<section class="media-controls">
-	<div class="playback-control">
-		<button class="control-button" onclick={updatePlayback}><img class="icon" src={playIcon} alt="playback control" title={paused ? "Music Paused" : "Music Playing"}/></button>
-	</div>
-	<div class="volume-control">
-		<button class="control-button" onclick={mute} title={muted ? "Music Muted" : "Music Unmuted"}><img class="icon" src={volumeIcon} alt="volume control"/></button>
-		<input
-			type="range"
-			bind:value={volume}
-			min="0"
-			max="100"
-			class="volume-slider"
-			disabled={muted}
-			title={volume}
+	<div class="media-controls">
+		<div class="playback-control">
+			<button class="control-button" onclick={updatePlayback}><img class="icon" src={playIcon} alt="playback control" title={paused ? "Music Paused" : "Music Playing"}/></button>
+		</div>
+		<div class="volume-control">
+			<button class="control-button" onclick={mute} title={muted ? "Music Muted" : "Music Unmuted"}><img class="icon" src={volumeIcon} alt="volume control"/></button>
+			<input
+				type="range"
+				bind:value={volume}
+				min="0"
+				max="100"
+				class="volume-slider"
+				disabled={muted}
+				title={volume}
 			/>
-	</div>
-	<div class="shuffle-control">
-		<button class="control-button" onclick={shuffle} title={shuffled ? "Shuffling Enabled" : "Shuffling Disabled"}><img class="icon" src={shuffleIcon} alt="shuffle control"/></button>
+		</div>
+		<div class="shuffle-control">
+			<button class="control-button" onclick={shuffle} title={shuffled ? "Shuffling Enabled" : "Shuffling Disabled"}><img class="icon" src={shuffleIcon} alt="shuffle control"/></button>
+		</div>
 	</div>
 </section>
+
 
 <style lang="css">
+
+    /* Animations */
+
+    @keyframes spin {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    @keyframes shrink {
+        0% {
+            width: 100px;
+        }
+        100% {
+            width: 0;
+        }
+    }
+
+    @keyframes grow {
+        0% {
+            width: 0;
+        }
+        100% {
+            width: 100px;
+        }
+    }
+
+		.cassette {
+				display: flex;
+				flex-direction: column;
+
+				height: fit-content;
+				width: 90vw;
+
+				justify-content: center;
+				align-items: center;
+
+				gap: 4rem;
+		}
+
     *,
     *::before,
     *::after {
@@ -259,14 +343,15 @@
         justify-content: center;
         width: 100%;
         height: 40%;
-        background-color: #faac52;
+        background-color: var(--secondary-color);
     }
 
     .label-color {
-        background-color: #fc5214;
+        background-color: var(--secondary-container);
         height: 100px;
         width: 100%;
         margin-top: 10px;
+				filter: opacity(0.8);
     }
 
     .tape {
@@ -289,8 +374,7 @@
         width: 70px;
         background-color: #f4edd6;
         border-radius: 50%;
-        animation: rotate 3s infinite linear;
-        animation-play-state: paused;
+        animation: spin 3s infinite linear;
     }
 
     .teeth {
@@ -323,26 +407,34 @@
         position: absolute;
         left: 50%;
         transform: translate(-50%, -50%);
-        top: 30px;
+        top: 35px;
         height: 40px;
-        width: 160px;
+        width: 180px;
         background-color: #eeebe0;
     }
 
-    .reel, .left-reel {
+    .left-reel {
         position: absolute;
-        height: 65px;
-        width: 65px;
-        background-color: #69696b;
-        border-radius: 50%;
-        top: -10px;
-        left: -20px;
-        animation-play-state: paused;
+        height: 100px;
+				width: 100px;
+        background-color: var(--primary-color);
+				border-radius: 50%;
+        top: -30px;
+        left: -30px;
+				animation-fill-mode: forwards;
+				animation: shrink infinite linear;
     }
 
     .right-reel {
-        left: 120px;
-        animation-play-state: paused;
+        position: absolute;
+        height: 100px;
+				width: 100px;
+        background-color: var(--primary-color);
+				border-radius: 50%;
+        top: -30px;
+        right: -30px;
+				animation-fill-mode: forwards;
+				animation: grow infinite linear;
     }
 
 		/* Media Controls */
@@ -359,7 +451,6 @@
 				width: fit-content;
 				background-color: var(--secondary-color);
 
-				margin-top: 4rem;
 				padding: 1rem;
 				gap: 4rem;
 
@@ -403,47 +494,15 @@
 				color: var(--link-color);
 		}
 
-    /* Animations */
-
-    @keyframes rotate {
-        100% {
-            transform: rotate(360deg);
-        }
-    }
-
-    @keyframes first-circle-rotate {
-        0% {
-            transform: scale(1);
-        }
-
-        50% {
-            transform: scale(1.5);
-        }
-
-        100% {
-            transform: scale(1);
-        }
-    }
-
-    @keyframes second-circle-rotate {
-        0% {
-            transform: scale(1);
-        }
-
-        50% {
-            transform: scale(0.72);
-        }
-
-        100% {
-            transform: scale(1);
-        }
-    }
-
     /* Responsive */
 
-    @media screen and (max-width: 400px) {
+    @media screen and (max-width: 768px) {
         .cassette-body {
             transform: scale(0.50);
         }
+
+				.media-controls {
+						transform: scale(0.75);
+				}
     }
 </style>

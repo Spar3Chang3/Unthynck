@@ -1,33 +1,31 @@
 import { initializeApp } from 'firebase/app';
-import { getStorage, ref as storeRef, getDownloadURL, listAll } from 'firebase/storage';
-import { getDatabase, ref as dbRef, get } from 'firebase/database';
+import { getDownloadURL, getStorage, listAll, ref as storeRef } from 'firebase/storage';
+import { get, getDatabase, ref as dbRef } from 'firebase/database';
 
 const firebaseConfig = {
+	apiKey: 'AIzaSyAXm0O9pK1Pj2JxCjd-Zlwmn1PQTNlxB6I', //IT'S FINE I SWEAR THE CLIENT NEEDS IT
 
-	apiKey: "AIzaSyAXm0O9pK1Pj2JxCjd-Zlwmn1PQTNlxB6I", //IT'S FINE I SWEAR THE CLIENT NEEDS IT
+	authDomain: 'unthynck-band.firebaseapp.com',
 
-	authDomain: "unthynck-band.firebaseapp.com",
+	databaseURL: 'https://unthynck-band-default-rtdb.firebaseio.com',
 
-	databaseURL: "https://unthynck-band-default-rtdb.firebaseio.com",
+	projectId: 'unthynck-band',
 
-	projectId: "unthynck-band",
+	storageBucket: 'unthynck-band.appspot.com',
 
-	storageBucket: "unthynck-band.appspot.com",
+	messagingSenderId: '909124920050',
 
-	messagingSenderId: "909124920050",
+	appId: '1:909124920050:web:b74ddb694a57702dfca66b',
 
-	appId: "1:909124920050:web:b74ddb694a57702dfca66b",
-
-	measurementId: "G-99L1JC49Z1"
-
-}
+	measurementId: 'G-99L1JC49Z1'
+};
 
 let firebaseApp;
 let firebaseStorage;
 let firebaseDatabase;
 
 export function initApp() {
-	return firebaseApp = initializeApp(firebaseConfig);
+	return (firebaseApp = initializeApp(firebaseConfig));
 }
 
 export function initStorage() {
@@ -38,7 +36,7 @@ export function initStorage() {
 	firebaseStorage = getStorage(firebaseApp);
 
 	if (firebaseStorage === null) {
-		console.log("App appears to not have been initialized! Attempting...");
+		console.log('App appears to not have been initialized! Attempting...');
 		initApp();
 		return initStorage();
 	}
@@ -54,7 +52,7 @@ export function initDatabase() {
 	firebaseDatabase = getDatabase(firebaseApp);
 
 	if (firebaseDatabase === null) {
-		console.log("App appears to not have been initialized! Attempting...");
+		console.log('App appears to not have been initialized! Attempting...');
 		initApp();
 		return initDatabase();
 	}
@@ -84,19 +82,19 @@ export async function getFileFromStorage(path, fileName) {
 	const storageRef = storeRef(storage, path);
 
 	const listRes = await listAll(storageRef).catch((err) => {
-		console.error("Could not access the referenced bucket: ", err);
+		console.error('Could not access the referenced bucket: ', err);
 		return null;
 	});
 
 	if (listRes === null) {
-		return "";
+		return '';
 	}
 
-	const fileRef = listRes.items.find(item => item.name === fileName);
+	const fileRef = listRes.items.find((item) => item.name === fileName);
 
 	if (!fileRef) {
-		console.error("Could not find the file from storage: ", fileName);
-		return "";
+		console.error('Could not find the file from storage: ', fileName);
+		return '';
 	} else {
 		return getDownloadURL(fileRef);
 	}
@@ -108,7 +106,7 @@ export async function getDownloadsFromStorage(path) {
 	const storageRef = storeRef(storage, path);
 
 	const listResult = await listAll(storageRef).catch((err) => {
-		console.error("Error fetching storage list: ", err);
+		console.error('Error fetching storage list: ', err);
 		return null;
 	});
 
@@ -118,7 +116,7 @@ export async function getDownloadsFromStorage(path) {
 
 	const urlPromises = listResult.items.map((itemRef) => {
 		return getDownloadURL(itemRef).catch((err) => {
-			console.error("Error fetching download URL for item(s): ", err);
+			console.error('Error fetching download URL for item(s): ', err);
 			return null;
 		});
 	});
@@ -142,7 +140,34 @@ export async function getDataFromDatabase(path) {
 			return []; // Return empty array if no data
 		}
 	} catch (error) {
-		console.error("Error fetching data:", error);
+		console.error('Error fetching data:', error);
 		return [];
 	}
+}
+
+export async function getJsonIndexDownloads(parentPath) {
+	const storage = getFirebaseStorage();
+	const dirRef = storeRef(storage, parentPath);
+	let indexJsonUrls = [];
+
+	await listAll(dirRef)
+		.then(async (subDirs) => {
+			const promises = subDirs.prefixes.map(async (subDir) => {
+				const subDirContents = await listAll(subDir);
+				const index = subDirContents.items.find((item) => item.name === 'index.json');
+
+				if (index) {
+					return await getDownloadURL(index);
+				}
+				return null;
+			});
+
+			const results = await Promise.all(promises);
+			indexJsonUrls = results.filter((url) => url !== null);
+		})
+		.catch((err) => {
+			console.error('Could not find json index: ', err);
+		});
+
+	return indexJsonUrls;
 }

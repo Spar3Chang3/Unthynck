@@ -3,48 +3,54 @@
     "trackNumber": "01",
     "trackName": "Hail Psybin",
     "trackDuration": 194,
-    "trackPath": "releases/TweakinginRhythm/music/01 Hail Psybin.mp3",
-    "artworkPath": "releases/TweakinginRhythm/art/art.png",
+    "trackPath": "releases/Tweaking in Rhythm/music",
+    "fileName": "01 Hail Psybin.mp3",
+    "artworkPath": "releases/Tweaking in Rhythm/art",
     "trackDescription": ""
   },
   {
     "trackNumber": "02",
     "trackName": "Aluminium",
     "trackDuration": 120,
-    "trackPath": "releases/TweakinginRhythm/music/02 Aluminium.mp3",
-    "artworkPath": "releases/TweakinginRhythm/art/art.png",
+    "trackPath": "releases/Tweaking in Rhythm/music",
+    "fileName": "02 Aluminium.mp3",
+    "artworkPath": "releases/Tweaking in Rhythm/art",
     "trackDescription": ""
   },
   {
     "trackNumber": "03",
     "trackName": "Dirty Ass Nail",
     "trackDuration": 75,
-    "trackPath": "releases/TweakinginRhythm/music/03 Dirty Ass Nail.mp3",
-    "artworkPath": "releases/TweakinginRhythm/art/art.png",
+    "trackPath": "releases/Tweaking in Rhythm/music",
+    "fileName": "03 Dirty Ass Nail.mp3",
+    "artworkPath": "releases/Tweaking in Rhythm/art",
     "trackDescription": ""
   },
   {
     "trackNumber": "04",
     "trackName": "Tweaking In Rhythm",
     "trackDuration": 191,
-    "trackPath": "releases/TweakinginRhythm/music/04 Tweaking In Rhythm.mp3",
-    "artworkPath": "releases/TweakinginRhythm/art/art.png",
+    "trackPath": "releases/Tweaking in Rhythm/music",
+    "fileName": "04 Tweaking In Rhythm.mp3",
+    "artworkPath": "releases/Tweaking in Rhythm/art",
     "trackDescription": ""
   },
   {
     "trackNumber": "05",
     "trackName": "Stinney Jr",
     "trackDuration": 131,
-    "trackPath": "releases/TweakinginRhythm/music/05 Stinney Jr.mp3",
-    "artworkPath": "releases/TweakinginRhythm/art/art.png",
+    "trackPath": "releases/Tweaking in Rhythm/music",
+    "fileName": "05 Stinney Jr.mp3",
+    "artworkPath": "releases/Tweaking in Rhythm/art",
     "trackDescription": ""
   },
   {
     "trackNumber": "06",
     "trackName": "Wrong With The Girl",
     "trackDuration": 226,
-    "trackPath": "releases/TweakinginRhythm/music/06 Wrong With The Girl.mp3",
-    "artworkPath": "releases/TweakinginRhythm/art/art.png",
+    "trackPath": "releases/Tweaking in Rhythm/music",
+    "fileName": "06 Wrong With The Girl.mp3",
+    "artworkPath": "releases/Tweaking in Rhythm/art",
     "trackDescription": ""
   }
 ]
