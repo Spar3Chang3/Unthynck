@@ -139,8 +139,8 @@
 								e => updateSlideBackground(e.detail)
 								}
 								>
-								<button slot="prev" onclick={showPrevSlide} class="custom-arrow custom-arrow-prev">
-									<i />
+								<button slot="prev" onclick={showPrevSlide} class="custom-arrow custom-arrow-prev" aria-label="Navigate to Previous Slide">
+									<i></i>
 								</button>
 								{#each slides as slide, imageIndex (slide)}
 									<div class="img-container">
@@ -149,8 +149,8 @@
 										{/if}
 									</div>
 								{/each}
-								<button slot="next" onclick={showNextSlide} class="custom-arrow custom-arrow-next">
-									<i />
+								<button slot="next" onclick={showNextSlide} class="custom-arrow custom-arrow-next" aria-label="Navigate to Next Slide">
+									<i></i>
 								</button>
 							</Carousel>
 			{/if}

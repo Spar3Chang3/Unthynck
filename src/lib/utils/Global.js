@@ -9,7 +9,7 @@ export function RedirectOutWindow(link) {
 export const SiteLinks = {
 	landingPage: 'https://Unthynck.band/landing-page',
 	meetTheBand: 'https://Unthynck.band/meet-the-band',
-	eventSchedule: 'https://Unthynck.band/event-schedule',
+	eventSchedule: 'https://calendar.google.com/calendar/u/7?cid=NTQwYzQ0OWJhNjBkMzJhZTBhYzA1MmM4NzNmM2ZmMzc0ZDMyOTA5NTkxYzYzYmY5NWRmMmVmMWEyM2VjNDY1NUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t',
 	music: 'https://Unthynck.band/music',
 	contactUs: 'https://Unthynck.band/contact-us',
 }
@@ -40,6 +40,7 @@ export const IconLinks = {
 	playerShuffleOn: '/icons/player-shuffle-on.svg',
 	playerShuffleOff: '/icons/player-shuffle-off.svg',
 	playlistAdd: '/icons/playlist-add.svg',
+	playlistRemove: '/icons/playlist-remove.svg',
 }
 
 export const Titles = {

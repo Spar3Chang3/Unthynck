@@ -422,7 +422,7 @@
         top: -30px;
         left: -30px;
 				animation-fill-mode: forwards;
-				animation: shrink infinite linear;
+				animation: shrink linear;
     }
 
     .right-reel {
@@ -434,7 +434,7 @@
         top: -30px;
         right: -30px;
 				animation-fill-mode: forwards;
-				animation: grow infinite linear;
+				animation: grow linear;
     }
 
 		/* Media Controls */

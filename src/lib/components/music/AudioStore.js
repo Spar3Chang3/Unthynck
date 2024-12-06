@@ -1,33 +1,29 @@
 import { writable, get } from 'svelte/store';
-import { Queue } from '$lib/components/music/Queue.js';
 
-const audioQueue = new Queue();
+export const audioStore = writable([]);
 
-export const audioStore = writable(audioQueue);
 
+// Add an item to the queue
 export const enqueueAudio = (item) => {
-	const store = get(audioStore);
-	if (Array.isArray(item)) {
-		store.enqueueArray(item);
-	} else {
-		store.enqueue(item);
-	}
-	audioStore.set(store);
-}
+	audioStore.update((queue) => [...queue, item]); // Create a new array with the new item added
+};
 
+// Remove and return the first item from the queue
 export const dequeueAudio = () => {
-	const store = get(audioStore);
-	const dequeuedAudio = store.dequeue();
-	audioStore.set(store);
-	return dequeuedAudio;
-}
+	let audio = null;
+	audioStore.update((queue) => {
+		audio = queue[0]; // Get the first item
+		return queue.slice(1); // Return a new array without the first item
+	});
+	return audio;
+};
 
 export const peekAudio = () => {
 	const store = get(audioStore);
-	return store.peek();
+	return store[0];
 }
 
 export const isAudioQueueEmpty = () => {
 	const store = get(audioStore);
-	return store.isEmpty();
+	return store.length === 0;
 }
