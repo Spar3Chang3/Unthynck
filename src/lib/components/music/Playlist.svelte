@@ -1,7 +1,6 @@
 <script lang="js">
 	import { audioStore } from '$lib/components/music/AudioStore.js';
-	import { IconLinks } from '$lib/utils/Global.js';
-	import { getFileFromStorage } from '$lib/utils/Firebase.js';
+	import SongWidget from '$lib/components/music/SongWidget.svelte';
 	import { onMount } from 'svelte';
 
 	let currentQueue = $state([{
@@ -9,19 +8,6 @@
 		artworkPath: null
 	}]);
 	let viewCurrentQueue = $state(false);
-	let currentAlbumCover = $state(IconLinks.loadingIcon);
-
-	async function fetchAlbumArt() {
-		const preload = new Image();
-
-		await getFileFromStorage(currentQueue[0].artworkPath, 'art.png').then((src) => {
-			preload.src = src;
-		});
-
-		preload.onload = () => {
-			currentAlbumCover = preload.src;
-		}
-	}
 
 	function togglePlaylistView(e) {
 		e.preventDefault();
@@ -32,7 +18,6 @@
 		const unsubscribe = audioStore.subscribe((queue) => {
 			currentQueue = queue;
 			console.log(queue);
-			fetchAlbumArt();
 		});
 
 		return(() => {
@@ -45,10 +30,7 @@
 <section class="playlist">
 	<div class="song-up-next-container">
 		<h2>Up Next: </h2>
-		<div class="song-up-next">
-			<img class="song-album-cover" src={currentAlbumCover} alt="Song Album Cover"/>
-			<p>{currentQueue[0].trackName}</p>
-		</div>
+		<SongWidget bind:song={currentQueue[0]} />
 		<button class="view-playlist-button" onclick={togglePlaylistView}>
 			View Playlist
 		</button>
@@ -56,11 +38,8 @@
 
 	{#if viewCurrentQueue }
 		<div class="playlist-container">
-			{#each currentQueue as song}
-				<div class="song-up-next">
-					<img class="song-album-cover" src={getFileFromStorage(song.artworkPath, 'art.png')} alt="Song Album Cover"/>
-					<p>{song.trackName}</p>
-				</div>
+			{#each currentQueue as song, index}
+				<SongWidget song={song} index={index} />
 			{/each}
 		</div>
 	{/if}
@@ -90,6 +69,7 @@
 			justify-items: center;
 			align-items: center;
 			text-align: center;
+			padding: 0.5rem;
 
 			color: var(--on-secondary-color);
 			background-color: var(--primary-color);
@@ -99,31 +79,6 @@
 			font-family: "Unthynck Branding", sans-serif;
 
 			font-size: 4rem;
-	}
-
-	.song-up-next {
-			display: grid;
-			grid-template-columns: 1fr;
-			grid-template-rows: auto auto;
-
-			justify-content: center;
-			align-items: center;
-
-			height: fit-content;
-			width: 6rem;
-
-			padding: 0.5rem;
-
-      background-color: var(--secondary-color);
-			font-family: "Unthynck Text", sans-serif;
-			font-size: 1rem;
-	}
-
-	.song-album-cover {
-			height: 6rem;
-			width: 6rem;
-
-			object-fit: contain;
 	}
 
 	.view-playlist-button {

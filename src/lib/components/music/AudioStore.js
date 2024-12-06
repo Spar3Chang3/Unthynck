@@ -18,6 +18,14 @@ export const dequeueAudio = () => {
 	return audio;
 };
 
+export const removeAudio = (index) => {
+	console.log(index);
+	audioStore.update((queue) => {
+		queue.splice(index, 1);
+		return queue;
+	});
+}
+
 export const peekAudio = () => {
 	const store = get(audioStore);
 	return store[0];

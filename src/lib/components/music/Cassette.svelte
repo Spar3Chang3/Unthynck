@@ -1,8 +1,8 @@
 <script lang="js">
 	import { onMount } from 'svelte';
 	import { IconLinks } from '$lib/utils/Global.js';
-	import { dequeueAudio, peekAudio, isAudioQueueEmpty } from '$lib/components/music/AudioStore.js';
 	import { getFileFromStorage } from '$lib/utils/Firebase.js';
+	import { audioStore, dequeueAudio, isAudioQueueEmpty } from '$lib/components/music/AudioStore.js';
 
 	const defaultAudio = '/audio/default.mp3';
 	const tapeAudio = '/audio/tape.mp3';
@@ -14,6 +14,9 @@
 	let currentSong = $state(null);
 	let tapeSfx = $state(null);
 	let duration = $state(0);
+	let currentSongName = $state();
+
+	let currentQueue = $state();
 
 	let reelAnimation = $derived([
 		{
@@ -62,7 +65,7 @@
 	function updatePlayback(e) {
 		e.preventDefault();
 
-		if (!currentSong && !tapeSfx) {
+		if (!currentSong && !tapeSfx || isAudioQueueEmpty() && currentSong.currentTime === currentSong.duration) {
 			return;
 		}
 
@@ -100,9 +103,17 @@
 		shuffled = !shuffled;
 	}
 
-	function nextInQueue() {
+	async function nextInQueue() {
+		if (isAudioQueueEmpty()) {
+			return;
+		}
 		const audioData = dequeueAudio();
-		return getFileFromStorage(audioData.trackPath, audioData.fileName);
+		currentSongName = audioData.fileName;
+		await getFileFromStorage(audioData.trackPath, audioData.fileName).then((src) => {
+			currentSong.src = src;
+		});
+		paused = false;
+		currentSong.play();
 	}
 
 	onMount(() => {
@@ -110,8 +121,13 @@
 			currentSong = new Audio(defaultAudio);
 		} else {
 			currentSong = new Audio();
-			currentSong.src = nextInQueue();
+			nextInQueue();
 		}
+
+		const unsubscribe = audioStore.subscribe((queue) => {
+			currentQueue = queue;
+			console.log(queue);
+		});
 
 		tapeSfx = new Audio(tapeAudio);
 		tapeSfx.volume = 0.25;
@@ -119,6 +135,11 @@
 
 		currentSong.addEventListener('loadedmetadata', () => {
 			duration = Math.round(currentSong.duration);
+		});
+
+		currentSong.addEventListener('ended', () => {
+			paused = true;
+			nextInQueue();
 		});
 
 		return () => {
@@ -130,6 +151,8 @@
 			tapeSfx.pause();
 			tapeSfx.src = '';
 			tapeSfx = null;
+
+			unsubscribe();
 		}
 	});
 
@@ -144,6 +167,9 @@
 		<div class="label">
 			<div class="label-descp">
 				<div class="line"></div>
+				<div class="song-name">
+					<h3>{currentSongName}</h3>
+				</div>
 				<div class="line"></div>
 			</div>
 			<div class="player">
@@ -337,6 +363,13 @@
         height: 2px;
         width: 95%;
     }
+
+		.song-name {
+				position: absolute;
+				top: 25px;
+				font-family: "Unthynck Branding", sans-serif;
+				font-size: 2rem;
+		}
 
     .player {
         display: flex;

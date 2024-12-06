@@ -5,64 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fef13861-a6b7-4b36-b196-f43e2a04bbdb" name="Changes" comment="Start implementing AudioStore across music components">
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/assets/7.BR581EtC.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/assets/_page.BR581EtC.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/chunks/Global.CHN6X77_.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/chunks/Global.Pv3MWMcT.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/chunks/each.DfX4q5Xw.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/chunks/entry.BGnbomFb.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/chunks/entry.CrzyS0MP.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/chunks/if.Ck0J_65a.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/chunks/index-client.2-vHILIg.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/chunks/index.fZE6by7T.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/chunks/input.1XdjuRsO.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/chunks/input.upwfFbcf.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/chunks/lifecycle.JrtzkzPc.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/chunks/props.BinKfw78.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/chunks/proxy.BCqRXuL-.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/chunks/render.DYv6prKW.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/chunks/runtime.CujgLOHB.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/chunks/slot.Dz2NIPiP.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/chunks/store.BVwix2HP.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/chunks/stores.C7ph_DhP.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/chunks/stores.Ct2YHPiE.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/chunks/template.GUaYdGvl.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/chunks/this.CLTXWt5D.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/chunks/utils.1sHAIxVS.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/entry/app.C6Qsa0Np.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/entry/app.CZJJI10j.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/entry/start.BgkvFwSD.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/entry/start.C-mXQb47.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/nodes/0.CEvs7IVX.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/nodes/0.uVml3oZP.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/nodes/1.BHTE5_EY.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/nodes/1.C7kk38KD.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/nodes/2.BMXnWKxU.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/nodes/2.Df54fqIZ.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/nodes/3.B2Qc2AEv.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/nodes/3.C4mMIGP9.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/nodes/5.Bsp6-srH.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/nodes/5.C8edTGfH.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/nodes/6.C00_rR9X.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/nodes/6.d3Aofn9B.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/nodes/7.DIgpto_E.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/nodes/7.F4rc5dMk.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/nodes/8.ChxwaqvD.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/icons/playlist-add.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/icons/playlist-remove.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/components/music/Playlist.svelte" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/components/music/SongWidget.svelte" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/icons/playlist-remove.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/_app/version.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/_app/version.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/Header.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/Header.svelte" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lib/components/music/AlbumWidget.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/music/AlbumWidget.svelte" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lib/components/music/AudioStore.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/music/AudioStore.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lib/components/music/Cassette.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/music/Cassette.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/components/music/Queue.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/utils/Global.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/utils/Global.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/landing-page/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/landing-page/+page.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/music/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/music/+page.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/music/Playlist.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/music/Playlist.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/music/SongWidget.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/music/SongWidget.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/audio/default.mp3" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,11 +101,11 @@
       <recent name="C:\Users\trash\WebstormProjects\Unthynck\static" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\trash\WebstormProjects\Unthynck\static\audio" />
       <recent name="C:\Users\trash\WebstormProjects\Unthynck\static\icons" />
       <recent name="C:\Users\trash\WebstormProjects\Unthynck\static\fonts" />
       <recent name="C:\Users\trash\WebstormProjects\Unthynck\static\backgrounds" />
       <recent name="C:\Users\trash\WebstormProjects\Unthynck\public" />
-      <recent name="C:\Users\trash\WebstormProjects\Unthynck\static\unthynck-text" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -181,7 +133,9 @@
       <workItem from="1733035177086" duration="5263000" />
       <workItem from="1733052707970" duration="6375000" />
       <workItem from="1733132129918" duration="75357000" />
-      <workItem from="1733401970782" duration="13674000" />
+      <workItem from="1733401970782" duration="13775000" />
+      <workItem from="1733473238860" duration="6677000" />
+      <workItem from="1733480381046" duration="148000" />
     </task>
     <task id="LOCAL-00001" summary="Bro I need to take a course on SvelteKit">
       <option name="closed" value="true" />
@@ -223,7 +177,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733403671244</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Start implementing AudioStore across music components">
+      <option name="closed" value="true" />
+      <created>1733465144827</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1733465144827</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

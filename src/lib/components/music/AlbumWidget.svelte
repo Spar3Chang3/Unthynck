@@ -235,6 +235,13 @@
 			height: 100%;
 			width: 100%;
 			object-fit: cover;
+
+  }
+
+	.icon:active {
+			transform: scale(0.95);
+			opacity: 0.8;
+      box-shadow: var(--secondary-container) 0 24px 24px;
 	}
 
 </style>

@@ -43,7 +43,7 @@
 					class:mobile-navbar-expanded={navOpen}
 					class:mobile-navbar-closed={!navOpen}
 				>
-					<div class="site-link"><a href={SiteLinks.eventSchedule}>Event Schedule</a></div>
+					<div class="site-link"><a href={SiteLinks.eventSchedule} target="_blank">Event Schedule</a></div>
 					<div class="site-link"><a href={SiteLinks.music}>Music</a></div>
 					<div class="site-link"><a href={SiteLinks.meetTheBand}>Meet the Band</a></div>
 					<div class="site-link"><a href={SiteLinks.contactUs}>Contact Us</a></div>
