@@ -1,1 +1,0 @@
-import"../chunks/disclose-version.Bg9kRutz.js";import{p,a}from"../chunks/runtime.BenPUt-j.js";import{i as r}from"../chunks/lifecycle.BYJU183W.js";import{o as t}from"../chunks/index-client.GFVulxwk.js";import{g as i}from"../chunks/entry.PKh8cmMD.js";function c(m,o){p(o,!1),t(()=>{i("/landing-page")}),r(),a()}export{c as component};

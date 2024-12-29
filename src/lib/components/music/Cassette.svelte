@@ -130,7 +130,7 @@
 		});
 
 		tapeSfx = new Audio(tapeAudio);
-		tapeSfx.volume = 0.25;
+		tapeSfx.volume = 0.5;
 		duration = Math.round(currentSong.duration);
 
 		currentSong.addEventListener('loadedmetadata', () => {

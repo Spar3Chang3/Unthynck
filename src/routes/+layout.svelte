@@ -54,14 +54,11 @@
         }
     }
 
-		main, header, footer {
+		main {
 				background-image: url("/backgrounds/standard-background.jpg");
 				background-repeat: repeat;
 				background-size: initial;
 				overflow-x: hidden;
-		}
-
-		main {
 				min-height: 80vh;
 		}
 

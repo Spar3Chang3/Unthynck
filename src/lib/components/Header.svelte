@@ -9,6 +9,7 @@
 	function toggleNav(e) {
 		e.preventDefault();
 		navOpen = !navOpen;
+		console.log("Nav open?", navOpen);
 	}
 
 	page.subscribe(() => {
@@ -34,7 +35,9 @@
 		</div>
 
 		{#if isMobile}
-			<div class="mobile-wrapper">
+			<div class="mobile-wrapper"
+
+			>
 				<div class="mobile-button-container">
 					<button class="mobile-button" onclick={toggleNav}>☰</button>
 				</div>
@@ -64,18 +67,16 @@
 
 </section>
 
-<style>
+<style lang="css">
 	.main-header {
 			position: relative;
-			display: inline-flex;
-			height: 10vh;
+			height: auto;
+			max-height: 10vh;
 			width: 100vw;
-			justify-content: center;
-			align-items: center;
 
+			top: 0;
 			margin: 0 auto;
 			background-color: var(--surface-standard);
-			overflow: hidden;
 	}
 
 	.fixed-header {
@@ -84,25 +85,39 @@
 			display: inline-grid;
 			grid-template-columns: auto auto auto auto;
 			grid-template-rows: auto;
-			height: inherit;
+
+			height: 10vh;
 			width: inherit;
 
 			background-color: var(--surface-standard);
 			z-index: 10;
+			margin: 0;
 	}
 
 	.header-branding {
 			position: relative;
 			display: flex;
-			height: inherit;
+			max-height: 5vh;
 			width: fit-content;
 
-			font-size: 3rem;
 			align-items: center;
 			justify-self: flex-start;
+			object-fit: contain;
 
 			text-shadow: 10px 10px 10px var(--secondary-color);
 	}
+
+	.header-branding a {
+			display: flex;
+			font-size: 3rem;
+			height: inherit;
+			max-width: 100%;
+			padding-right: 10px;
+
+			justify-content: center;
+			align-items: center;
+	}
+
 
   .navbar {
       position: relative;
@@ -179,44 +194,48 @@
 			}
 
 			.main-header {
-					position: relative;
-					height: 15vh;
+					height: auto;
+					min-height: 15vh;
+					width: 100vw;
 					overflow: visible;
 			}
 
 			.fixed-header {
 					position: fixed;
-					top: 0;
 					display: grid;
 					grid-template-columns: auto;
-					grid-template-rows: auto auto;
+					grid-template-rows: 1fr 1fr;
 					height: 15vh;
-					width: 100vw;
-					gap: 1.5rem;
+					width: inherit;
 
 					justify-content: center;
 					align-items: center;
 					z-index: 10;
+					overflow: visible;
 			}
 
 			.header-branding {
-					position: relative;
-					display: inline-flex;
+					display: flex;
 					justify-content: center;
-					align-items: center;
-					font-size: 2rem;
-					height: 5vh;
+					align-items: flex-start;
+					min-height: 9vh;
 					width: 100vw;
-					margin-top: 1rem;
+					z-index: 10;
 			}
+
+      .header-branding a {
+          font-size: 2.5rem;
+					max-height: 8vh;
+      }
 
 			.mobile-wrapper {
 					display: flex;
 					flex-direction: column;
-					width: 100vw;
-					height: fit-content;
+					width: inherit;
+					max-height: 6vh;
 					justify-content: center;
 					align-items: center;
+					z-index: 8;
 			}
 
 			.mobile-button-container {
@@ -233,6 +252,7 @@
 					font-family: "Comic Sans MS", sans-serif;
 					background-color: var(--secondary-color);
 					color: var(--on-primary-color);
+					height: 100%;
 					width: 80%;
 					font-size: 1rem;
 					transition: 25ms ease-out;
@@ -243,13 +263,14 @@
 			}
 
       .mobile-navbar {
-          position: relative;
+          position: fixed;
           width: 90vw;
 
           display: flex;
           flex-direction: column;
           justify-content: center;
           align-items: center;
+					align-self: center;
 					gap: 1.5rem;
 					font-size: 2rem;
 					margin-top: 1rem;
@@ -258,22 +279,38 @@
           background-color: var(--surface-standard);
 
           /* Key transition properties */
-          opacity: 0;
-          visibility: hidden;
-          transform: translateY(-20vw);
           transition:
                   opacity 0.3s ease,
                   transform 0.3s ease,
                   visibility 0.3s;
 
-          z-index: 8;
+					pointer-events: none;
+					touch-action: none;
+					z-index: 1;
       }
+
+			/*
+				* TODO:
+				* fix the mobile bug of blocking pointer events in navbar
+			*/
 
       .mobile-navbar-expanded {
           opacity: 1;
           visibility: visible;
-          transform: translateY(0);
+					pointer-events: auto;
+					touch-action: auto;
+          transform: translateY(18vh);
+					z-index: 8;
       }
+
+			.mobile-navbar-closed {
+					visibility: hidden;
+          transform: translateY(-20vw);
+					opacity: 0;
+					pointer-events: none;
+					touch-action: none;
+					z-index: 1;
+			}
 
       .mobile-navbar a {
           width: 100%;
