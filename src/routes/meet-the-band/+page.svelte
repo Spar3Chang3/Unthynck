@@ -1,7 +1,7 @@
 <script lang="js">
 	import { onMount } from 'svelte';
-	import { Titles } from '$lib/utils/Global.js';
-	import { initDatabase, getDataFromDatabase } from '$lib/utils/Firebase.js';
+	import { Titles } from '$lib/index.js';
+	import { initDatabase, getDataFromDatabase } from '$lib/firebase.js';
 	import BandCard from '$lib/components/band/BandCard.svelte';
 
 	const memberDataPath = 'public/members';

@@ -5,514 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fef13861-a6b7-4b36-b196-f43e2a04bbdb" name="Changes" comment="Finish backbone of music, it works!!!">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_1_2024_7_22_AM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_1_2024_7_22_AM__Changes_.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lib/components/layout/Footer.svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lib/components/layout/Header.svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lib/components/layout/Modal.svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lib/firebase.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/routes/+error.svelte" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BuildAndDeployWindows.bat" beforeDir="false" afterPath="$PROJECT_DIR$/BuildAndDeployWindows.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/404.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/env.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/assets/0.BIFyOv_4.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/assets/0.BYiI9AE8.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/assets/0.D7mi0HJC.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/assets/0.DjOnp7zV.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/assets/0.DqAbC4OS.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/assets/0.dNhnZTf9.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/assets/0.m3jeFnrE.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/assets/3.BeLmeypp.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/assets/3.Wl57N1io.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/assets/5.BICWGeMH.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/assets/5.D55d3J6B.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/assets/5.bzQ-e6jc.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/assets/5.e338JG80.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/assets/6.vGFnj9ib.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/assets/7.BAbLZEmU.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/assets/7.BPF5Wd8O.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/assets/7.BR581EtC.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/assets/7.BuCJ3nGz.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/assets/7.C2vhyg3K.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/assets/7.CRikCPOI.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/assets/7.D8ssX4bP.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/assets/7.DIVClOFT.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/assets/7.DfubwOG8.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/assets/7.UJlaAmXV.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/assets/7.vGFnj9ib.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/assets/8.4EdPAXSK.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/assets/8.BAbLZEmU.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/assets/8.C6RmiBEb.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/assets/8.DggskGEn.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/assets/8.Di0drG4M.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/assets/_layout.4ZOXzlPv.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/assets/_layout.52xvCDEd.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/assets/_layout.BQ6cza6b.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/assets/_layout.Bqrdp7BQ.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/assets/_layout.C8SVP2kJ.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/assets/_layout.CO9H5kUX.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/assets/_layout.FrZvoNBG.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/assets/_page.4EdPAXSK.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/assets/_page.4V_0r7Cm.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/assets/_page.B7jUseTl.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/assets/_page.BAbLZEmU.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/assets/_page.BICWGeMH.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/assets/_page.BR581EtC.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/assets/_page.BeLmeypp.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/assets/_page.BuCJ3nGz.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/assets/_page.C0AovXAG.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/assets/_page.C6RmiBEb.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/assets/_page.CRikCPOI.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/assets/_page.D55d3J6B.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/assets/_page.DIVClOFT.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/assets/_page.DO7dUy1Q.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/assets/_page.DggskGEn.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/assets/_page.Di0drG4M.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/assets/_page.MEGrCswt.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/assets/_page.Wl57N1io.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/assets/_page.bzQ-e6jc.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/assets/_page.jGci5WAL.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/Firebase.B1lxj9eF.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/Firebase.Cf5g2HsZ.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/Firebase.DKBRVz5G.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/Firebase.DKs8Wb7O.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/Firebase.DSZICgop.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/Firebase.Dluiv_HF.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/Firebase._0QSid2b.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/Global.CHN6X77_.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/Global.CQlnZuhM.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/Global.Dx0hi3i_.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/Global.Pv3MWMcT.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/Global.QRsl_VQR.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/Global.YDv5xU0l.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/Global.qXj1oen3.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/Global.rZwQt2GV.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/attributes.BtmMgZhR.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/attributes.DX39N_JJ.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/attributes.DtApaLm5.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/attributes.Q33ISrhl.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/class.Bvena8yX.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/disclose-version.Bg9kRutz.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/each.BDlHyYkj.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/each.BITf7U-Z.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/each.BPzAaTas.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/each.C4nSG80h.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/each.CZ3eI19S.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/each.CqbUBAVf.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/each.DfX4q5Xw.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/each.Du9v5K9f.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/entry.8DLnfQCh.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/entry.B-Ss3o2D.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/entry.B6e2d5b8.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/entry.BGnbomFb.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/entry.BMD_XXXO.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/entry.BVKDTHdM.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/entry.BbG70tOZ.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/entry.BhgR2p_C.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/entry.Bhn-SsuX.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/entry.Bhv7QGGU.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/entry.Bvf9Q_8X.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/entry.BzO5FB9w.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/entry.C0wXTZAL.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/entry.CJU9idVa.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/entry.CMfufm_y.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/entry.CPmbPuKV.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/entry.Cb6uHIKB.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/entry.CmXTGCDg.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/entry.CnfoeIf7.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/entry.CrzyS0MP.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/entry.DHkHgS5Y.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/entry.DIczzEmT.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/entry.DIfODVMg.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/entry.DJ20-xyJ.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/entry.DR4PuGHN.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/entry.DdtPAW1P.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/entry.DhLaKx3L.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/entry.DqTxkAq_.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/entry.DwTv25Tk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/entry.KBDCFxxZ.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/entry.KF0WSLFa.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/entry.PKh8cmMD.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/entry.kbAZzIWm.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/entry.laykxJwj.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/entry.pekKtBEX.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/entry.uxTDNtnX.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/events.CearVJok.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/if.BXGvIym1.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/if.Byosc3I8.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/if.Ck0J_65a.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/if.JLO0GBqD.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/if.cHizNwOR.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/if.vGGyft-f.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/if.xCVPXrLy.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/if.zW0AoowE.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/index-client.2-vHILIg.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/index-client.8_MlTCsB.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/index-client.BhmIk07o.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/index-client.GFVulxwk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/index-client.IZMx1DiG.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/index-client.WLY2KhCe.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/index-client.dBdzJ-pE.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/index-client.wA5R3esb.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/index.FgZZ6e5B.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/index.fZE6by7T.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/input.1XdjuRsO.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/input.BR2JJ7HF.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/input.BRm4Rrop.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/input.BUiV5rh4.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/input.BmHTm4GM.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/input.BtlA8ZOr.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/input.C278g3Xx.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/input.CL7YN4xF.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/input.upwfFbcf.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/lifecycle.BQOhzoWn.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/lifecycle.BYJU183W.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/lifecycle.BfzA1LnJ.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/lifecycle.C3XcLQts.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/lifecycle.DDKJCusD.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/lifecycle.DQZFIib4.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/lifecycle.D_RbAZOS.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/lifecycle.JrtzkzPc.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/props.3DEL7cEI.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/props.BFvY_s_i.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/props.Be6I91EN.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/props.BinKfw78.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/props.BjqCnqa2.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/props.CCJXln1l.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/props.JViQqo7D.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/props.MRobIv2-.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/proxy.0PXur3Bm.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/proxy.BBbqMt33.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/proxy.BCqRXuL-.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/proxy.CVFpn86m.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/proxy.D4tmu_d7.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/proxy.DCSCrVS7.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/proxy.DE6t_P0E.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/proxy.DdAI0Lm3.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/render.B5b9gsi9.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/render.B_pDp-yp.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/render.BjEt2VPh.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/render.C5x3Ex4e.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/render.D9cSBE-q.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/render.DKZKIgwe.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/render.DYv6prKW.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/render.mxvNtETV.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/runtime.8aERoiLu.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/runtime.B4SQLpdX.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/runtime.BenPUt-j.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/runtime.Cp1fv9q6.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/runtime.CujgLOHB.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/runtime.b1WfW1_i.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/runtime.fSrusJsf.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/runtime.lwYzDcGd.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/slot.BaO9Y_hA.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/slot.CSV8Y9UO.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/slot.Cauh6bm4.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/slot.Cgk7yH3k.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/slot.Cit0qenz.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/slot.Ck-1D939.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/slot.Dz2NIPiP.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/slot.djoHGUKv.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/store.2V2XTQXH.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/store.BEh2r4zG.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/store.BGe7FJga.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/store.BTNHnzk1.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/store.BVwix2HP.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/store.BgdwmhOE.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/store.COeAFyu-.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/store.z1_eNC_8.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/stores.-ZiAoIF_.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/stores.3IPSpIKy.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/stores.BJ0SYCtU.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/stores.BLStvr09.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/stores.BMFafgFs.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/stores.BOOQNUXZ.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/stores.BTGUsrUc.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/stores.BVAuALDc.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/stores.Bx_fm_Hv.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/stores.C65RGG2Y.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/stores.C7ph_DhP.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/stores.CDxOs7gp.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/stores.CKAiPWxe.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/stores.CKBv0B4i.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/stores.CWuaATOh.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/stores.CZ-1key6.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/stores.Ct2YHPiE.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/stores.CyKk1WAZ.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/stores.DZ2HrWzT.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/stores.DpYlF_rT.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/stores.DsUfopbE.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/stores.Dx-k3_KJ.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/stores.DxMQh363.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/stores.DyTjPTba.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/stores.Ni9a7SOl.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/stores.RmLxpFRD.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/stores.YrSDJZmi.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/stores.dli52icU.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/stores.f53lOO3b.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/stores.vXMkn8dz.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/style.PwPRnE0L.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/template.BVjtYTo8.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/template.BtuiirQB.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/template.Cv82tJgS.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/template.DcwmSksp.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/template.GUaYdGvl.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/template.KGaW6SBn.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/template.MTczrOfA.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/template.tWMG4ekI.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/this.CLTXWt5D.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/utils.1sHAIxVS.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/utils.BUMml7Ov.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/entry/app.1hajAp7K.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/entry/app.2wR5KPcI.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/entry/app.AxwHA8uV.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/entry/app.B2-GDXM_.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/entry/app.B3tLiXr5.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/entry/app.BAZkiNSc.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/entry/app.BBCU-r7b.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/entry/app.BDVPZJ2E.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/entry/app.BTp14sD7.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/entry/app.BV17ZiB5.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/entry/app.BaDW9PdN.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/entry/app.Be1nNjqd.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/entry/app.Buqz8c-X.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/entry/app.C21MPFfi.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/entry/app.C6LIg5xS.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/entry/app.C6Qsa0Np.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/entry/app.CBYUTfnp.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/entry/app.CBnUhPlF.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/entry/app.CHgW6tjK.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/entry/app.CZJJI10j.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/entry/app.Ca_PVlg9.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/entry/app.ClO16iUv.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/entry/app.CnE_3lq9.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/entry/app.CxFjTpSW.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/entry/app.DKf-hskc.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/entry/app.DKv7RaNa.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/entry/app.Dey-UX_h.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/entry/app.Do1kjB44.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/entry/app.Do4P_8MD.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/entry/app.HIacdwOV.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/entry/app.JDFw-xW4.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/entry/app.JvNbKB6O.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/entry/app.PxNAMvqC.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/entry/app.Q5gZHpxg.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/entry/app.RuudEuby.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/entry/app.YjzYYQef.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/entry/start.B3fN4gC3.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/entry/start.BBNsiHPg.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/entry/start.BD5pnXXj.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/entry/start.BDkww_FY.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/entry/start.BU1_0Tto.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/entry/start.B_HryKiH.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/entry/start.BbreLPr_.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/entry/start.BcP3Celx.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/entry/start.BgkvFwSD.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/entry/start.BoDsa_L8.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/entry/start.C-mXQb47.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/entry/start.C1esTtEQ.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/entry/start.COHu1GtI.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/entry/start.CXWJ_cFt.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/entry/start.CY4PLN3_.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/entry/start.Cisxh1-p.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/entry/start.Cixk42bn.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/entry/start.CkMdHlT3.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/entry/start.Cp2je4vM.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/entry/start.Cw19Cx0p.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/entry/start.D79vLDS2.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/entry/start.DC_uTE8q.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/entry/start.DFHFcmvv.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/entry/start.DGvM12OR.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/entry/start.DS8DC5aN.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/entry/start.DZ94SMMN.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/entry/start.DhJkiWBd.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/entry/start.Dn4qAkzY.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/entry/start.Drj-upmZ.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/entry/start.GxABu_sf.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/entry/start.GzrpFyTQ.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/entry/start.HRJw-f9z.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/entry/start.LbhFd6Km.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/entry/start.Oi0cgXLO.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/entry/start.cXElYVaC.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/entry/start.omJmuUEO.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/0.BBat_uLY.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/0.BG6E2bOG.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/0.BJftLvbi.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/0.BKwZ6GBw.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/0.BUinok1n.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/0.BZW-N43c.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/0.Bg9s8zU3.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/0.BkM0a72g.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/0.BmnbR-hN.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/0.BsQSWElX.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/0.BtPgyCK8.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/0.Bxw8SKat.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/0.C2VVLDN0.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/0.CEvs7IVX.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/0.CKdDi3dm.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/0.C_97Y5O8.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/0.Cd8NgTFQ.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/0.Cp5RDY1l.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/0.D-DCQRNm.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/0.DBtPH4y-.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/0.DC5BlXBM.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/0.DKrtE15u.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/0.DarM7vio.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/0.Dg_jFlFz.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/0.DoJUqtlq.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/0.DxSSeqyZ.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/0.DzcJzdQL.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/0.HQob0XLW.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/0.WnkkOfht.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/0.eI1j7Gar.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/0.f_KfH2yW.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/0.hPpXmVL7.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/0.uVml3oZP.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/0.vFPNCD8W.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/1.-8oI8IyS.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/1.38ZX2yJR.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/1.AdBPfC7p.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/1.B03-FWQV.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/1.B5Uz5iEE.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/1.B8TG7-qT.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/1.B8VSTc2E.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/1.BHTE5_EY.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/1.BHkzJ87J.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/1.BMUxENG_.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/1.B_5VY177.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/1.BdiNEqsm.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/1.BjzMvpFX.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/1.BkXrn6M6.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/1.Bl6EA8j-.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/1.Btd1BN87.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/1.C5_8gT2p.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/1.C7GAETw-.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/1.C7kk38KD.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/1.C89KkgXY.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/1.CAu0iCW8.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/1.CJgpQAFu.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/1.CTrnyWcF.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/1.CizvJfve.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/1.Cs2O8jdZ.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/1.Ct9oGJlj.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/1.D2_EfPh0.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/1.D_CFZS9z.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/1.Dai-L3kD.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/1.Dbg-pavU.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/1.DluVKg5g.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/1.Dr5tmPNv.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/1.LjRPRH7x.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/1.hczbGqwF.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/1.p3Rqyzon.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/1.zc2wlkvM.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/2.1GmmA13r.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/2.3inLAvdy.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/2.3txJ-KBS.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/2.B1YdmBE8.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/2.B4b561q3.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/2.BMXnWKxU.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/2.BXCjgxYb.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/2.BZQgrTIB.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/2.B_fjclta.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/2.Beo3TUSB.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/2.BgrLtdYB.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/2.BkOBZOhJ.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/2.C4kZKBut.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/2.C6Isp0Dj.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/2.CG86mTUi.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/2.Cc719arX.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/2.Cussx5v-.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/2.CxrIYzok.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/2.DNRYACD5.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/2.DO6U3Nnl.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/2.DQO3y08B.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/2.DRQF4ec3.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/2.Df54fqIZ.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/2.DgCqOeSN.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/2.DlrcJoyO.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/2.Dm1iRZja.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/2.DmHs8iZW.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/2.DtXYidU5.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/2.KnrhxqZH.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/2.PuWAvGSx.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/2.dzI6vhnI.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/2.j0eNwgXc.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/2.obXw-4ZL.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/2.pg-d4Z5U.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/2.sv5ErYRJ.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/2.w9utqV5A.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/3.B1VEwU76.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/3.B2Qc2AEv.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/3.BGlo-3OI.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/3.BbvEdprJ.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/3.BkslJFXx.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/3.Bt610QWG.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/3.Bvm32Yp5.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/3.C4mMIGP9.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/3.CSUHhwgS.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/3.CU8Cx1vw.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/3.DIC-VkfT.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/4.RBcn971s.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/5.0VnqeuyM.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/5.BOpEPu4v.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/5.Bsp6-srH.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/5.C8edTGfH.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/5.CJc0XkdR.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/5.CPfXoLCh.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/5.CS0dQxZC.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/5.CfNJNUkA.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/5.CqOTkvhF.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/5.Cw5Q1ctH.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/5.DehsZRVD.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/5.DrPrCgSJ.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/5.Iw6VrN4K.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/5.jRz21RJQ.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/5.lfN57Txe.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/5.snU5htrG.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/6.C00_rR9X.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/6.CHCbEI34.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/6.CbdCWNho.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/6.RBcn971s.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/6.Un28jvfd.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/6.XSc65Mxo.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/6.aSQO-EKo.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/6.d3Aofn9B.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/7.B4j1jHgw.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/7.BKUbWJK6.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/7.BZ_nGKUs.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/7.Bj_Fr65J.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/7.BnrLeakS.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/7.C5xX_qqQ.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/7.CE_lhhoH.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/7.CjPrJxFY.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/7.CzQRMmSv.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/7.DAV_7uvG.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/7.DHJ7QRGL.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/7.DIgpto_E.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/7.DLlYEIh_.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/7.DWsGJtHv.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/7.DYFygtlU.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/7.DvGYYoz3.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/7.F4rc5dMk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/7.Y-7851Fz.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/7.brKT_wol.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/7.leUCbl3n.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/8.B3h7UAo6.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/8.B3onDjVx.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/8.BJtY-0kV.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/8.Bff750MY.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/8.CDrGefsW.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/8.CJyvmZnD.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/8.CTYcaGRf.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/8.ChxwaqvD.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/8.Cji_Xr6b.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/8.Cy-hkrDd.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/8.DjsySMHk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/8.YsdAmxvl.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/8.khL82kyp.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/8.sTj8HCNI.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/version.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/audio/default.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/public/audio/default.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lib/components/Header.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/Header.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/band/BandCard.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/band/BandCard.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/music/AlbumWidget.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/music/AlbumWidget.svelte" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lib/components/music/Cassette.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/music/Cassette.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/music/Playlist.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/music/Playlist.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/music/SongSelection.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/music/SongSelection.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/music/SongWidget.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/music/SongWidget.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/+layout.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/+layout.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/+page.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/landing-page/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/landing-page/+page.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/meet-the-band/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/meet-the-band/+page.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/music/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/music/+page.svelte" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -565,39 +78,39 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/trash/WebstormProjects/Unthynck/static/audio&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;C:\\Users\\trash\\WebstormProjects\\Unthynck\\node_modules\\prettier&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\trash\\WebstormProjects\\Unthynck\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/trash/WebstormProjects/Unthynck",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "prettierjs.PrettierConfiguration.Package": "C:\\Users\\trash\\WebstormProjects\\Unthynck\\node_modules\\prettier",
+    "ts.external.directory.path": "C:\\Development\\Editors\\WebStorm\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
-      &quot;JSON&quot;,
-      &quot;PLAIN_TEXT&quot;
+  "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "JSON",
+      "PLAIN_TEXT"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\trash\WebstormProjects\Unthynck" />
       <recent name="C:\Users\trash\WebstormProjects\Unthynck\static\audio" />
       <recent name="C:\Users\trash\WebstormProjects\Unthynck\static\icons" />
       <recent name="C:\Users\trash\WebstormProjects\Unthynck\public" />
       <recent name="C:\Users\trash\WebstormProjects\Unthynck\public\backgrounds" />
-      <recent name="C:\Users\trash\WebstormProjects\Unthynck\static" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\trash\WebstormProjects\Unthynck\static\audio" />
@@ -641,6 +154,9 @@
       <workItem from="1734934195028" duration="1264000" />
       <workItem from="1735435925944" duration="545000" />
       <workItem from="1735436485297" duration="10718000" />
+      <workItem from="1735970822542" duration="27000" />
+      <workItem from="1735970854921" duration="3959000" />
+      <workItem from="1735983933489" duration="314000" />
     </task>
     <task id="LOCAL-00001" summary="Bro I need to take a course on SvelteKit">
       <option name="closed" value="true" />

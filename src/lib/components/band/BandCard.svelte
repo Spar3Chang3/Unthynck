@@ -1,7 +1,7 @@
 <script lang="js">
-	import { getFileFromStorage, initStorage, initApp } from '$lib/utils/Firebase.js';
+	import { getFileFromStorage, initStorage, initApp } from '$lib/firebase.js';
 	import { onMount } from 'svelte';
-	import { IconLinks } from '$lib/utils/Global.js';
+	import { IconLinks } from '$lib/index.js';
 
 	let showCardBack = $state(false);
 	let portrait = $state(IconLinks.loadingIcon);

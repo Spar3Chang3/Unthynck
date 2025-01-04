@@ -1,8 +1,8 @@
 <script>
 	import Carousel from 'svelte-carousel';
-	import { Titles } from '$lib/utils/Global.js';
+	import { Titles } from '$lib/index.js';
 	import { onMount } from 'svelte';
-	import { getDownloadsFromStorage, initStorage } from '$lib/utils/Firebase.js';
+	import { getDownloadsFromStorage, initStorage } from '$lib/firebase.js';
 
 	let backgroundPath = $state("");
 	let backgroundOpacity = $state(1);
@@ -12,7 +12,7 @@
 	let parallaxScrollY = $state([0, 0, 0]);
 
 
-	let isMobile;
+	let isMobile = $state(false);
 	let slideImagePath;
 
 	let slides = $state([]);
@@ -23,6 +23,22 @@
 	]);
 
 	let elementRefs = $state([null, null]);
+
+	function setupMediaListeners() {
+		const mobileQuery = window.matchMedia('(max-width: 768px)');
+
+		// Set initial values
+		isMobile = mobileQuery.matches;
+
+		const updateMobile = (e) => isMobile = e.matches;
+		// Add listeners
+		mobileQuery.addEventListener('change', updateMobile);
+
+		// Return cleanup function
+		return () => {
+			mobileQuery.removeEventListener('change', updateMobile);
+		};
+	}
 
 
 	async function fetchSlides() {
@@ -52,9 +68,8 @@
 	onMount(() => {
 		document.title = Titles.landingPage;
 
-		isMobile = window.matchMedia('(max-width: 768px)').matches;
+		const cleanup = setupMediaListeners();
 		slideImagePath = isMobile ? 'images/slideshow/mobile' : 'images/slideshow/desktop';
-		console.log(isMobile);
 
 		fetchSlides().then(() => {
 			showCarousel = true;
@@ -98,6 +113,8 @@
 		window.addEventListener('scroll', setSlideParallax);
 
 		return () => {
+			cleanup;
+
 			Object.values(elementRefs).forEach(element => {
 				if (element) {
 					observer.unobserve(element);
@@ -171,26 +188,22 @@
 			<div class="about-text">
 				<h2>GRUNGY AND RUSTY</h2>
 				<p>
-					&emsp; A product of the 217, Unthynck is a band with unconditional LOVE for our hometown:
+					A product of the 217, Unthynck is a band with unconditional LOVE for our hometown:
 					<a href="https://springfield.com">Springfield, IL</a>
 				</p>
 
 				<p>
-					&emsp;Our sound is a blend of grunge, hardcore punk, alt metal, thrash, and more.
+					Our sound is a blend of grunge, hardcore punk, alt metal, thrash, and more.
 					If you're looking for vibes, or just hailing Psybin, you've come to the right place.
 					From the basement to Parker's bedroom to you ears, we're here to stay
 				</p>
 
 				<p>
-					&emsp;Check out our latest albums, get to know us, and find your next night out.
+					Check out our latest albums, get to know us, and find your next night out.
 					Catch us on Spotify, Apple Music, YouTube, or right here!
 				</p>
 			</div>
 		</div>
-<!--		<div class="about-image-background">-->
-<!--			<img src="#" alt="#"/>-->
-<!--		</div>-->
-
 		</section>
 
 	<section
@@ -231,7 +244,7 @@
 
 			margin: 0 auto;
 
-			color: var(--on-primary-color);
+			color: var(--text-standard);
 			overflow: hidden;
 
 			gap: 8rem;

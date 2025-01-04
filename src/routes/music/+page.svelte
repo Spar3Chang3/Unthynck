@@ -2,7 +2,7 @@
 	import Cassette from '$lib/components/music/Cassette.svelte';
 	import SongSelection from '$lib/components/music/SongSelection.svelte';
 	import Playlist from '$lib/components/music/Playlist.svelte';
-	import { Titles } from '$lib/utils/Global.js';
+	import { Titles } from '$lib/index.js';
 	import { onMount } from 'svelte';
 
 	onMount(() => {

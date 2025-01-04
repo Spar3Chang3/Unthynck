@@ -1,7 +1,7 @@
 <script lang="js">
 	import { onMount } from 'svelte';
-	import { IconLinks } from '$lib/utils/Global.js';
-	import { getFileFromStorage } from '$lib/utils/Firebase.js';
+	import { IconLinks } from '$lib/index.js';
+	import { getFileFromStorage } from '$lib/firebase.js';
 	import { audioStore, dequeueAudio, isAudioQueueEmpty } from '$lib/components/music/AudioStore.js';
 
 	const defaultAudio = '/audio/default.mp3';
@@ -376,11 +376,11 @@
         justify-content: center;
         width: 100%;
         height: 40%;
-        background-color: var(--secondary-color);
+        background-color: var(--banner-accent);
     }
 
     .label-color {
-        background-color: var(--secondary-container);
+        background-color: var(--secondary-color);
         height: 100px;
         width: 100%;
         margin-top: 10px;
@@ -487,7 +487,6 @@
 				padding: 1rem;
 				gap: 4rem;
 
-				border: 0.1rem solid var(--secondary-container);
 		}
 
 		.icon {

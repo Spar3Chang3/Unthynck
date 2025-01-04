@@ -181,11 +181,6 @@
 			animation: shimmer 1.5s infinite alternate
 	}
 
-  @keyframes shimmer {
-      100% {
-          mask-position: left
-      }
-  }
 
 	@media only screen and (max-width: 768px) {
 

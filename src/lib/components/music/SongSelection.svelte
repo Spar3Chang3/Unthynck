@@ -1,6 +1,6 @@
 <script lang="js">
 	import { onMount } from 'svelte';
-	import { getJsonIndexDownloads, initStorage } from '$lib/utils/Firebase.js';
+	import { getJsonIndexDownloads, initStorage } from '$lib/firebase.js';
 	import { enqueueAudio } from '$lib/components/music/AudioStore.js';
 	import AlbumWidget from '$lib/components/music/AlbumWidget.svelte';
 
@@ -30,8 +30,8 @@
 </script>
 
 <section class="song-selection">
-	{#each indexArr as album}
-		<AlbumWidget album={album} />
+	{#each indexArr as album, key}
+		<AlbumWidget album={album} index={key} />
 	{/each}
 </section>
 
@@ -42,5 +42,6 @@
 			height: fit-content;
 			width: 95vw;
 			gap: 2rem;
+			margin-bottom: 50vh;
 	}
 </style>

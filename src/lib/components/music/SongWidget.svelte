@@ -1,6 +1,6 @@
 <script lang="js">
-	import { IconLinks } from '$lib/utils/Global.js';
-	import { getFileFromStorage } from '$lib/utils/Firebase.js';
+	import { IconLinks } from '$lib/index.js';
+	import { getFileFromStorage } from '$lib/firebase.js';
 	import { removeAudio } from '$lib/components/music/AudioStore.js';
 
 	let currentAlbumCover = $state(IconLinks.loadingIcon);
@@ -60,9 +60,9 @@
       padding: 0.5rem;
 
       background-color: var(--secondary-color);
-      font-family: "Unthynck Text", sans-serif;
+      font-family: var(--font-standard);
       font-size: 1rem;
-			color: var(--on-secondary-color);
+			color: var(--text-standard);
 	}
 
 	.song-widget-art-container {
@@ -84,9 +84,8 @@
 	}
 
 	.dequeue-song-button {
-      height: 2rem;
-      width: 2rem;
-
+			height: 2rem;
+			width: 2rem;
 			background: transparent;
 			border: none;
 			cursor: pointer;

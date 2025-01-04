@@ -71,7 +71,7 @@
 			text-align: center;
 			padding: 0.5rem;
 
-			color: var(--on-secondary-color);
+			color: var(--text-standard);
 			background-color: var(--primary-color);
 	}
 
@@ -82,7 +82,7 @@
 	}
 
 	.view-playlist-button {
-			border: 0.1rem solid var(--on-secondary-color);
+			border: none;
 			background-color: var(--secondary-color);
 
 			height: fit-content;

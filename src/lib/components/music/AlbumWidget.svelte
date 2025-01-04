@@ -1,10 +1,10 @@
 <script lang="js">
-	import { getFileFromStorage } from '$lib/utils/Firebase.js';
+	import { getFileFromStorage } from '$lib/firebase.js';
 	import { onMount } from 'svelte';
-	import { IconLinks } from '$lib/utils/Global.js';
+	import { IconLinks } from '$lib/index.js';
 	import { enqueueAudio } from '$lib/components/music/AudioStore.js';
 
-	let { album = [] } = $props();
+	let { album = [], index } = $props();
 
 	let albumArt = $state(IconLinks.loadingIcon);
 	let songsVisible = $state(false);
@@ -32,6 +32,14 @@
 		e.preventDefault();
 
 		songsVisible = !songsVisible;
+
+		const widget = document.getElementById(index).querySelector('.widget-content');
+
+		widget.scrollIntoView({
+			behavior: 'smooth',
+			block: 'center',
+		});
+
 	}
 
 	function addToQueue(song) {
@@ -56,7 +64,7 @@
 
 </script>
 
-<div class="album-widget"
+<div class="album-widget" id="{index}"
 		 style:height="{songContainer.height}"
 		 style:width="{songContainer.width}"
 		>
@@ -64,12 +72,17 @@
 		<img class="album-cover" src="{albumArt}" alt="Album Cover"/>
 		<button class="widget-extend-button" onclick={toggleWidget} aria-label="Playlist add Button"></button>
 	</div>
-	{#if songsVisible}
-		<div class="album-widget-title">
+		<div class="album-widget-title"
+				 style:opacity={songsVisible ? 1 : 0}
+				 style:visibility={songsVisible ? 'visible' : 'hidden'}
+		>
 			<h2>{formatAlbumName()}</h2>
 		</div>
 
-		<div class="widget-content">
+		<div class="widget-content"
+				 style:opacity={songsVisible ? 1 : 0}
+				 style:visibility={songsVisible ? 'visible' : 'hidden'}
+		>
 			{#each album as song}
 				<div class="widget-song">
 					<div class="widget-song-info item1">
@@ -91,7 +104,6 @@
 				</div>
 			{/each}
 		</div>
-	{/if}
 </div>
 
 <style lang="css">
@@ -102,9 +114,9 @@
 			flex-wrap: wrap;
 			gap: 2rem;
 
-			color: var(--on-secondary-color);
+			color: var(--text-standard);
 
-			transition: 250ms ease-in-out;
+			transition: height 300ms ease, width 300ms ease;
 			background-color: var(--primary-color);
 			padding: 1rem;
 	}
@@ -124,20 +136,28 @@
 			object-fit: cover;
 	}
 
+
 	.widget-extend-button {
 			position: absolute;
 			height: 8rem;
 			width: 8rem;
 
-			border: 0.1rem solid var(--secondary-container);
+			border: none;
 			background-color: transparent;
 	}
 
+
 	.album-widget-title {
-			display: inline-flex;
+			position: absolute;
+			display: flex;
 			align-items: center;
-			font-family: "Unthynck Branding", sans-serif;
+
+			white-space: pre;
+
+			font-family: var(--font-special);
 			font-size: 2rem;
+			transform: translateX(10rem);
+      		transition: opacity 500ms ease;
 	}
 
 	.widget-content {
@@ -149,9 +169,12 @@
 
 			justify-content: center;
 			align-content: center;
+
+			white-space: pre;
 			gap: 0.5rem;
 			overflow: hidden;
-	}
+      		transition: opacity 500ms ease;
+  }
 
 	.widget-song {
 			position: relative;
@@ -241,7 +264,7 @@
 	.icon:active {
 			transform: scale(0.95);
 			opacity: 0.8;
-      box-shadow: var(--secondary-container) 0 24px 24px;
+      box-shadow: var(--secondary-color) 0 24px 24px;
 	}
 
 </style>

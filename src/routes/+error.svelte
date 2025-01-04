@@ -1,30 +1,30 @@
-<meta http-equiv="Refresh" content="4;/landing-page">
-<style>
-	.redirect {
+<script lang="js">
+	import { page } from '$app/state';
+</script>
+
+<style lang="css">
+	.error {
 			display: flex;
 			flex-direction: column;
 
-			height: 79.8vh;
+			min-height: 79.8vh;
 			width: 100vw;
-
-			justify-content: center;
-			align-items: center;
-
-			color: var(--text-standard);
-			background-color: var(--background-standard);
-	}
-	.content {
-			display: flex;
-			flex-direction: column;
 
 			justify-content: center;
 			align-items: center;
 			text-align: center;
 
       font-family: var(--font-special);
+			color: var(--text-standard);
+	}
 
-			font-size: var(--banner-text-size);
-			animation: glitch .4s infinite alternate;
+	.error-content {
+			display: flex;
+			flex-direction: row;
+			width: fit-content;
+
+			font-size: 2rem;
+			animation: glitch .5s infinite alternate;
 	}
 
   @keyframes glitch {
@@ -37,13 +37,12 @@
       }
       70% {  text-shadow: none; transform: none; }
   }
-
 </style>
-<title>Connecting to page</title>
 
-<section class="redirect">
-	<div class="content">
-		<h1>You are being redirected</h1>
-		<h2>Please wait...</h2>
+<section class="error">
+	<div class="error-content">
+		<h2>{page.status}</h2>
+		<h1>&nbsp;│&nbsp;</h1>
+		<h2>{page.error.message}</h2>
 	</div>
 </section>
