@@ -3,9 +3,12 @@
 	import { onMount } from 'svelte';
 	import { IconLinks } from '$lib/index.js';
 	import { enqueueAudio } from '$lib/components/music/AudioStore.js';
+	import Toast from '$lib/components/layout/Toast.svelte';
 
 	let { album = [], index } = $props();
 
+	let showToast = $state(false);
+	let toastSong = $state('???');
 	let albumArt = $state(IconLinks.loadingIcon);
 	let songsVisible = $state(false);
 	let songContainer = $derived({
@@ -44,6 +47,8 @@
 
 	function addToQueue(song) {
 		enqueueAudio(song);
+		toastSong = song.trackName;
+		showToast = true;
 	}
 
 	async function fetchAlbumArt() {
@@ -104,6 +109,13 @@
 				</div>
 			{/each}
 		</div>
+	{#if showToast}
+		<Toast
+			message="Added {toastSong} to queue"
+			duration={3000}
+			onClose={() => showToast = false}
+		/>
+	{/if}
 </div>
 
 <style lang="css">

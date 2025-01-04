@@ -90,6 +90,7 @@
 
 	.navigation a {
 			position: relative;
+			display: flex;
 
 			font-size: clamp(0.5rem, 2rem, 3rem);
 			text-decoration: none;
@@ -124,6 +125,14 @@
       white-space: nowrap;
   }
 
+	@media only screen and (min-width: 1200px) {
+			.navigation {
+					width: 50%;
+					padding-left: 25%;
+					padding-right: 25%;
+			}
+	}
+
 	@media only screen and (max-width: 768px) {
 
 			.fixed-navbar {
@@ -132,7 +141,7 @@
 			.shimmer {
 					margin-top: -1vh;
 			}
-			.navigation-modal a{
+			.navigation-modal a {
 					color: var(--text-standard);
 			}
 			.navigation {

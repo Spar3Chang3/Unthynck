@@ -4,28 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fef13861-a6b7-4b36-b196-f43e2a04bbdb" name="Changes" comment="Finish backbone of music, it works!!!">
-      <change afterPath="$PROJECT_DIR$/src/lib/components/layout/Footer.svelte" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/components/layout/Header.svelte" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/components/layout/Modal.svelte" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/firebase.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/+error.svelte" afterDir="false" />
+    <list default="true" id="fef13861-a6b7-4b36-b196-f43e2a04bbdb" name="Changes" comment="Enforce svelte 5 better, improve music">
+      <change afterPath="$PROJECT_DIR$/src/lib/components/layout/Toast.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/discord.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/discord.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/components/Header.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/Header.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/components/band/BandCard.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/band/BandCard.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/Footer.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/Header.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/layout/Header.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/layout/Header.svelte" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lib/components/music/AlbumWidget.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/music/AlbumWidget.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/components/music/Cassette.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/music/Cassette.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/components/music/Playlist.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/music/Playlist.svelte" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lib/components/music/SongSelection.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/music/SongSelection.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/components/music/SongWidget.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/music/SongWidget.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/+layout.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/+layout.svelte" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/+page.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/landing-page/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/landing-page/+page.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/meet-the-band/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/meet-the-band/+page.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/music/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/music/+page.svelte" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +39,7 @@
         <option value="AlbumWidget" />
         <option value="Playlist" />
         <option value="SongWidget" />
+        <option value="Toast" />
       </list>
     </option>
   </component>
@@ -78,39 +68,39 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/trash/WebstormProjects/Unthynck",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.standard": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.standard": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "prettierjs.PrettierConfiguration.Package": "C:\\Users\\trash\\WebstormProjects\\Unthynck\\node_modules\\prettier",
-    "ts.external.directory.path": "C:\\Development\\Editors\\WebStorm\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/trash/WebstormProjects/Unthynck/node_modules&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;C:\\Users\\trash\\WebstormProjects\\Unthynck\\node_modules\\prettier&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Development\\Editors\\WebStorm\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
-      "JSON",
-      "PLAIN_TEXT"
+  &quot;keyToStringList&quot;: {
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;JSON&quot;,
+      &quot;PLAIN_TEXT&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\trash\WebstormProjects\Unthynck\node_modules" />
+      <recent name="C:\Users\trash\WebstormProjects\Unthynck\node_modules\@sveltejs\kit\src\runtime" />
       <recent name="C:\Users\trash\WebstormProjects\Unthynck" />
       <recent name="C:\Users\trash\WebstormProjects\Unthynck\static\audio" />
       <recent name="C:\Users\trash\WebstormProjects\Unthynck\static\icons" />
-      <recent name="C:\Users\trash\WebstormProjects\Unthynck\public" />
-      <recent name="C:\Users\trash\WebstormProjects\Unthynck\public\backgrounds" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\trash\WebstormProjects\Unthynck\static\audio" />
@@ -156,7 +146,10 @@
       <workItem from="1735436485297" duration="10718000" />
       <workItem from="1735970822542" duration="27000" />
       <workItem from="1735970854921" duration="3959000" />
-      <workItem from="1735983933489" duration="314000" />
+      <workItem from="1735983933489" duration="1114000" />
+      <workItem from="1735985671469" duration="16000" />
+      <workItem from="1735985695175" duration="161000" />
+      <workItem from="1736029113550" duration="3183000" />
     </task>
     <task id="LOCAL-00001" summary="Bro I need to take a course on SvelteKit">
       <option name="closed" value="true" />
@@ -214,7 +207,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733480651336</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Enforce svelte 5 better, improve music">
+      <option name="closed" value="true" />
+      <created>1735984974456</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1735984974456</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -227,6 +228,7 @@
     <MESSAGE value="Prep music to implement audioQueue store" />
     <MESSAGE value="Start implementing AudioStore across music components" />
     <MESSAGE value="Finish backbone of music, it works!!!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finish backbone of music, it works!!!" />
+    <MESSAGE value="Enforce svelte 5 better, improve music" />
+    <option name="LAST_COMMIT_MESSAGE" value="Enforce svelte 5 better, improve music" />
   </component>
 </project>

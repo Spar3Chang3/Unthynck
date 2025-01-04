@@ -1,10 +1,36 @@
-<meta http-equiv="Refresh" content="4;/landing-page">
+<meta http-equiv="Refresh" content="3;/landing-page">
+<script lang="js">
+	import { onMount } from 'svelte'
+
+	let count = $state(3);
+	let interval = $state();
+
+	function startCounter() {
+		interval = setInterval(() => {
+			count--;
+
+			if (count === 0) {
+				clearInterval(interval);
+			}
+		}, 1000);
+	}
+
+	onMount(() => {
+		startCounter();
+
+		return(() => {
+			if (interval) {
+				clearInterval(interval);
+			}
+		});
+	});
+</script>
 <style>
 	.redirect {
 			display: flex;
 			flex-direction: column;
 
-			height: 79.8vh;
+			height: 80vh;
 			width: 100vw;
 
 			justify-content: center;
@@ -22,8 +48,8 @@
 			text-align: center;
 
       font-family: var(--font-special);
-
-			font-size: var(--banner-text-size);
+			font-size: 3rem;
+			line-height: 2rem;
 			animation: glitch .4s infinite alternate;
 	}
 
@@ -45,5 +71,6 @@
 	<div class="content">
 		<h1>You are being redirected</h1>
 		<h2>Please wait...</h2>
+		<h2>{count}</h2>
 	</div>
 </section>
