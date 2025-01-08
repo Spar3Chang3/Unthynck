@@ -1,6 +1,6 @@
 <script lang="js">
 	import { onMount } from 'svelte';
-	import { Titles } from '$lib/utils/Global.js';
+	import { Titles } from '$lib/index.js';
 
 
 	let inquiry = $state({
@@ -34,6 +34,7 @@
 	{:else}
 		<div class="contact-prompt">
 			<h2>Want Unthynck to play for you? We're open for commission!</h2>
+			<h3 style="font-size: 1.5rem;">THIS FEATURE IS STILL IN ALPHA, NO DATA WILL BE SENT TO SERVER</h3>
 		</div>
 		<div class="contact-info">
 			<form onsubmit={submitForm}>
@@ -75,13 +76,13 @@
 							<option value={type} class="user-option">{type}</option>
 						{/each}
 					</select>
+						<div class="confusion-prompt"
+								 style:opacity={inquiry.type === confusionPrompt ? 1 : 0}
 
-					{#if inquiry.type === confusionPrompt}
-						<div class="confusion-prompt">
+						>
 							<p class="confusion-prompt" style="color: red">Please do not put your personal message in the box below</p>
 							<p class="confusion-prompt">We will contact you later for the personal message if your inquiry is accepted</p>
 						</div>
-					{/if}
 				</div>
 
 				<br/>
@@ -121,25 +122,32 @@
 				align-items: center;
 
 				font-family: "Comic Sans MS", sans-serif;
-				color: var(--on-primary-color);
+				color: var(--text-standard);
 
-				gap: 5rem;
+				gap: 3rem;
+		}
+
+		.contact-prompt {
+				text-align: center;
+				margin-top: 2rem;
+				font-family: var(--font-standard);
+				font-size: 2rem;
 		}
 
 		.contact-info, .submitted-prompt {
 				position: relative;
 				display: flex;
 				flex-direction: column;
-				width: fit-content;
+				width: 80vw;
 				height: fit-content;
 
-				padding: 8rem;
+				padding: 2rem;
 
 				justify-content: center;
 				align-items: center;
 
 				background-color: var(--primary-color);
-				border: 0.1rem solid var(--secondary-color);
+				font-family: var(--font-standard);
 				font-size: 1.8rem;
 
 				margin-bottom: 2rem;
@@ -150,13 +158,13 @@
 				flex-direction: column;
 				width: 100%;
 				height: fit-content;
-
 		}
 
 		.user-input {
 				height: 2rem;
-				font-size: 1rem;
-				font-family: "Comic Sans MS", sans-serif;
+				font-size: 1.2rem;
+				font-family: Roboto Light, sans-serif;
+				margin-bottom: 1rem;
 		}
 
 		.user-dropdown, .user-message {
@@ -164,21 +172,21 @@
 				flex-direction: column;
 				width: 100%;
 				text-align: center;
-				font-family: "Comic Sans MS", sans-serif;
+				font-family: var(--font-standard);
 		}
 
 		.inquiry-type {
-				font-size: 1rem;
-				font-family: "Comic Sans MS", sans-serif;
+				font-size: 1.5rem;
+				font-family: var(--font-standard);
 		}
 
 		.inquiry-type-input {
-				font-family: "Comic Sans MS", sans-serif;
+				font-family: Roboto Light, sans-serif;
 				font-size: 1rem;
 		}
 
 		.user-option {
-				font-family: "Comic Sans MS", sans-serif;
+				font-family: var(--font-standard);
 				font-size: 1rem;
 		}
 
@@ -186,15 +194,15 @@
 				display: flex;
 				flex-direction: column;
 				flex-wrap: wrap;
-				word-wrap: break-word;
-
+				text-wrap: wrap;
+				line-height: 1rem;
 				font-size: 1.2rem;
 				width: 100%;
 		}
 
 		.business-message-input {
-				font-family: "Comic Sans MS", sans-serif;
-				font-size: 1rem;
+				font-family: Roboto Light, sans-serif;
+				font-size: 1.2rem;
 
 		}
 
@@ -210,13 +218,17 @@
 
     .submit-button {
         font-size: 1.2rem;
-        color: var(--on-secondary-color);
+        color: var(--text-standard);
         background-color: var(--secondary-color);
-        padding: 0.5rem;
+        padding: 0.5rem 2rem 0.5rem 2rem;
 
         border-radius: 0;
-        border: 0.1rem solid var(--on-primary-color);
-				font-family: "Comic Sans MS", sans-serif;
+				border: none;
+				font-family: var(--font-standard);
     }
+
+		.submit-button:active {
+				transform: scale(0.95);
+		}
 
 </style>

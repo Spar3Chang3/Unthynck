@@ -72,6 +72,7 @@
         }
 
         overflow-x: hidden;
+        background-color: #000000;
     }
 
     :global(html, body) {

@@ -79,7 +79,7 @@
   .navigation {
 			position: relative;
       display: grid;
-      grid-template-columns: auto auto auto auto;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
       grid-template-rows: 1fr;
 
       min-height: 50px;
@@ -91,6 +91,9 @@
 	.navigation a {
 			position: relative;
 			display: flex;
+
+			justify-content: center;
+			align-items: center;
 
 			font-size: clamp(0.5rem, 2rem, 3rem);
 			text-decoration: none;
@@ -127,7 +130,7 @@
 
 	@media only screen and (min-width: 1200px) {
 			.navigation {
-					width: 50%;
+					width: 60%;
 					padding-left: 25%;
 					padding-right: 25%;
 			}
@@ -184,7 +187,7 @@
 <section class="relative-navbar">
 	<div class="fixed-navbar">
 		<div class="header-branding">
-			<a href="https://unthynck.band/" class="shimmer">
+			<a href={SiteLinks.landingPage} class="shimmer">
 				<h1>Unthynck</h1>
 			</a>
 		</div>

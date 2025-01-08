@@ -1,8 +1,8 @@
-<meta http-equiv="Refresh" content="3;/landing-page">
+<meta http-equiv="Refresh" content="1;/landing-page">
 <script lang="js">
 	import { onMount } from 'svelte'
 
-	let count = $state(3);
+	let count = $state(2);
 	let interval = $state();
 
 	function startCounter() {
