@@ -17,7 +17,6 @@
 	onMount(() => {
 		const unsubscribe = audioStore.subscribe((queue) => {
 			currentQueue = queue;
-			console.log(queue);
 		});
 
 		return(() => {

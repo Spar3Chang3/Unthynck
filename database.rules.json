@@ -5,10 +5,13 @@
       ".read": true,
       ".write": false
     },
-    
     "private": {
       ".read": false,
       ".write": false
+    },
+    "contact": {
+      ".read": false,
+      ".write": true
     }
   }
 }

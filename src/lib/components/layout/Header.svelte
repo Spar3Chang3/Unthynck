@@ -143,6 +143,7 @@
 			}
 			.shimmer {
 					margin-top: -1vh;
+					font-size: 2rem;
 			}
 			.navigation-modal a {
 					color: var(--text-standard);

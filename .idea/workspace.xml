@@ -4,25 +4,95 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fef13861-a6b7-4b36-b196-f43e2a04bbdb" name="Changes" comment="Tweaks all around, major css update to contact-us">
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_30_2024_11_32_PM_[Changes]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_30_2024_11_32_PM__Changes_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_31_2024_7_03_PM_[Changes]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_31_2024_7_03_PM__Changes_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_1_7_2025_5_06_PM_[Changes]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_1_7_2025_5_06_PM__Changes_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_1_7_2025_5_11_PM_[Changes]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_1_7_2025_5_11_PM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/discord.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/discord.xml" afterDir="false" />
+    <list default="true" id="fef13861-a6b7-4b36-b196-f43e2a04bbdb" name="Changes" comment="Contact-us properly works!">
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_1_7_2025_10_26_PM_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_1_7_2025_10_26_PM__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/_app/immutable/assets/0.CGXQEFjT.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/_app/immutable/assets/2.DmEpJ3gN.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/_app/immutable/assets/3.BFkTycPd.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/_app/immutable/assets/5.Db6ZQfyr.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/_app/immutable/assets/_layout.DHQMpyjA.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/_app/immutable/assets/_page.BFkTycPd.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/_app/immutable/assets/_page.Db6ZQfyr.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/_app/immutable/assets/_page.DmEpJ3gN.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/_app/immutable/chunks/each.D0Pwmnqw.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/_app/immutable/chunks/entry.D_LYdq4C.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/_app/immutable/chunks/if.I0_TII3s.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/_app/immutable/chunks/index-client.DbyKbbhq.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/_app/immutable/chunks/index.BulT-dvm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/_app/immutable/chunks/index.CEORl0OW.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/_app/immutable/chunks/input.Bm4fFobX.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/_app/immutable/chunks/lifecycle.DpDvCw1V.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/_app/immutable/chunks/props.wRmurA5N.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/_app/immutable/chunks/proxy.F_J2AGxx.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/_app/immutable/chunks/render.BpUttAOF.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/_app/immutable/chunks/template.B6k_Tk7a.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/_app/immutable/chunks/this.ByRBVGu9.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/_app/immutable/entry/app.DlaSX2Ra.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/_app/immutable/entry/start.C9XMT5Qx.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/_app/immutable/nodes/0.D56uDo71.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/_app/immutable/nodes/1.DIriyfhu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/_app/immutable/nodes/2.C4VrMfEN.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/_app/immutable/nodes/3.B6FdR0-A.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/_app/immutable/nodes/6.-mM8GuE1.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/_app/immutable/nodes/7.Ct_MAphw.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/_app/immutable/nodes/8.B1qi0XEy.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/icons/hand-click.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/icons/loader.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/icons/hand-click.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/icons/loader.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database.rules.json" beforeDir="false" afterPath="$PROJECT_DIR$/database.rules.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/_app/immutable/assets/0.CwMcm2ky.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/_app/immutable/assets/2.2DCRsBY7.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/_app/immutable/assets/3.Wl57N1io.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/_app/immutable/assets/5.CZ2QBhcQ.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/_app/immutable/assets/7.B2lqyIP9.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/_app/immutable/assets/_page.zjSKEC7E.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/_app/immutable/assets/_layout.12FFfkG7.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/_app/immutable/assets/_page.2DCRsBY7.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/_app/immutable/assets/_page.B2lqyIP9.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/_app/immutable/assets/7.zjSKEC7E.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/_app/immutable/assets/_page.CZ2QBhcQ.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/_app/immutable/assets/_page.Wl57N1io.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/attributes.CdDkqNi2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/each.CmlMm4eT.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/entry.C54WJVC9.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/events.Dwqh_hTn.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/firebase.DcofS6UJ.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/_app/immutable/chunks/firebase.-1CFgVdz.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/if.vB35G9Pt.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/index-client.PJFtGBc-.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/index.-nxUdwdU.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/index.Br-Csc3i.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/input.CQxb1yWM.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/lifecycle.DPwG_aij.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/props.OAQlePv7.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/proxy.TeBb5cww.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/render.Dr4UWjeq.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/runtime.itU1-eAt.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/template.CiIwdCRR.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/this.czsSTkoI.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/_app/immutable/entry/app.CDmBDmQc.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/_app/immutable/entry/start.CWvCIvb6.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/0.Dj70Icvu.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/1.DGcfLpTQ.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/2.BXBJj7Ax.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/3.BiTUgfiR.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/5.ZyMngDPc.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/_app/immutable/nodes/5.B3IRYdiw.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/6.Bbqfs3tW.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/7.B09zZyus.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/8.H6JHiWSF.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/_app/version.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/_app/version.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/icons/interaction-cursor.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/band/BandCard.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/band/BandCard.svelte" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lib/components/layout/Header.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/layout/Header.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/utils.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/utils/Firebase.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/utils/Global.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/+layout.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/+layout.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/+page.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/layout/Toast.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/layout/Toast.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/music/Cassette.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/music/Cassette.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/music/Playlist.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/music/Playlist.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/firebase.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/firebase.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/contact-us/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/contact-us/+page.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/landing-page/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/landing-page/+page.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/icons/interaction-cursor.svg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,11 +162,12 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "prettierjs.PrettierConfiguration.Package": "C:\\Users\\trash\\WebstormProjects\\Unthynck\\node_modules\\prettier",
-    "ts.external.directory.path": "C:\\Development\\Editors\\JetBrains\\WebStorm\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
+    "ts.external.directory.path": "C:\\Development\\Editors\\WebStorm\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
     "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "ECMA Script Level 4",
       "JSON",
       "PLAIN_TEXT"
     ]
@@ -111,8 +182,8 @@
       <recent name="C:\Users\trash\WebstormProjects\Unthynck\static\icons" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\trash\WebstormProjects\Unthynck\static\audio" />
       <recent name="C:\Users\trash\WebstormProjects\Unthynck\static\icons" />
+      <recent name="C:\Users\trash\WebstormProjects\Unthynck\static\audio" />
       <recent name="C:\Users\trash\WebstormProjects\Unthynck\static\fonts" />
       <recent name="C:\Users\trash\WebstormProjects\Unthynck\static\backgrounds" />
       <recent name="C:\Users\trash\WebstormProjects\Unthynck\public" />
@@ -121,7 +192,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-WS-243.22562.222" />
+        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-WS-243.22562.112" />
       </set>
     </attachedChunks>
   </component>
@@ -158,6 +229,7 @@
       <workItem from="1735985671469" duration="16000" />
       <workItem from="1735985695175" duration="161000" />
       <workItem from="1736029113550" duration="3183000" />
+      <workItem from="1736311001907" duration="6448000" />
     </task>
     <task id="LOCAL-00001" summary="Bro I need to take a course on SvelteKit">
       <option name="closed" value="true" />
@@ -238,6 +310,7 @@
     <MESSAGE value="Finish backbone of music, it works!!!" />
     <MESSAGE value="Enforce svelte 5 better, improve music" />
     <MESSAGE value="Tweaks all around, major css update to contact-us" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tweaks all around, major css update to contact-us" />
+    <MESSAGE value="Contact-us properly works!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Contact-us properly works!" />
   </component>
 </project>

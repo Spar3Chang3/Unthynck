@@ -16,8 +16,6 @@
 	let duration = $state(0);
 	let currentSongName = $state();
 
-	let currentQueue = $state();
-
 	let reelAnimation = $derived([
 		{
 			animationPlayState: `${paused ? 'paused' : 'running'}`,

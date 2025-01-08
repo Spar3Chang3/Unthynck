@@ -49,7 +49,7 @@
 				<img class="portrait" src={portrait} alt="Band Member portrait" />
 			</div>
 			<div class="interact-tip-container">
-				<img class="interact-tip" src="/icons/interaction-cursor.svg" alt="Interaction Hint Icon - click card to flip" />
+				<img class="interact-tip" src={IconLinks.interaction} alt="Interaction Hint Icon - click card to flip" />
 			</div>
 		</div>
 

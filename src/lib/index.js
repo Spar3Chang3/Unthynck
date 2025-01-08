@@ -6,6 +6,27 @@ export function RedirectOutWindow(link) {
     window.open(link, '_blank');
 }
 
+export function GetFullDate() {
+    const date = new Date();
+
+// Get the UTC components
+    const day = String(date.getUTCDate()).padStart(2, '0');
+    const month = String(date.getUTCMonth() + 1).padStart(2, '0'); // +1 for 0-based month indexing
+    const year = String(date.getUTCFullYear());  // Get UTC year
+    const hours = String(date.getUTCHours()).padStart(2, '0');
+    const minutes = String(date.getUTCMinutes()).padStart(2, '0');
+    const seconds = String(date.getUTCSeconds()).padStart(2, '0');
+
+// Get the timezone offset in minutes (local to UTC)
+    const zone = String(date.getTimezoneOffset());  // In minutes, positive if local is behind UTC
+
+    return {
+      day: `${day}/${month}/${year}`,
+      time: `${hours}:${minutes}:${seconds}`,
+      zone: zone
+    }
+}
+
 export const SiteLinks = {
     landingPage: 'https://Unthynck.band/landing-page',
     meetTheBand: 'https://Unthynck.band/meet-the-band',
@@ -28,8 +49,9 @@ export const IconLinks = {
     youtube: '/icons/youtube.svg',
     spotify: '/icons/spotify.svg',
 
-    interaction: '/icons/interaction-cursor.svg',
+    interaction: '/icons/hand-click.svg',
     loadingIcon: '/icons/spinning-note.gif',
+    loader: '/icons/loader.svg',
 
     volumeNone: '/icons/volume-none.svg',
     volumeLow: '/icons/volume-low.svg',

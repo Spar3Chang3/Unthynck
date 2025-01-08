@@ -189,7 +189,7 @@
 				<h2>GRUNGY AND RUSTY</h2>
 				<p>
 					A product of the 217, Unthynck is a band with unconditional LOVE for our hometown:
-					<a href="https://springfield.com">Springfield, IL</a>
+					<a href="https://www.springfield.il.us/">Springfield, IL</a>
 				</p>
 
 				<p>
@@ -358,7 +358,7 @@
 
 			min-height: fit-content;
 			width: 90vw;
-			overflow-x: hidden;
+			overflow: hidden;
 
 			justify-content: center;
 			align-items: center;
@@ -371,6 +371,7 @@
 	.about-wrapper a {
 			text-decoration: none;
 			color: var(--link-color);
+			overflow: hidden;
 	}
 
 	.about-text-container {

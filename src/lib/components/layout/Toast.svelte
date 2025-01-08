@@ -28,10 +28,9 @@
         bottom: 1rem;
         left: 50%;
         transform: translateX(-50%) translateY(2rem);
-        background-color: var(--secondary-color);
+        background-color: var(--banner-accent);
         color: var(--text-standard);
         padding: 0.75rem 1.5rem;
-        border-radius: 0.5rem;
         box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         opacity: 0;
         transition: all 0.3s ease-in-out;

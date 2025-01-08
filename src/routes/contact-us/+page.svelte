@@ -1,40 +1,65 @@
 <script lang="js">
 	import { onMount } from 'svelte';
-	import { Titles } from '$lib/index.js';
+	import { Titles, IconLinks, GetFullDate } from '$lib/index.js';
+	import { initDatabase, pushToContact } from '$lib/firebase.js';
 
 
 	let inquiry = $state({
 		name: "",
 		email: "",
 		type: "",
-		businessMessage: "",
+		businessMessage: ""
 	});
 
-	let submitted = $state(false);
+	let submitted = $state(0); //0, unsubmitted, 1, loading, 2, submitted successfully, -1, error submitting
 
 	const inquiryTypes = [ 'Cameo', 'Performance', 'Personal Message'];
 	const confusionPrompt = inquiryTypes[2]; //If they select personal message, I don't want the message they send to be the personal message, but rather the context
 
-	const submitForm = (e) => {
+	async function submitForm(e) {
 		e.preventDefault();
-		submitted = true;
-		//Add this to firebase realtimeDB, will implement after prompting claude
+
+		submitted = 1;
+
+		try {
+			const res = await pushToContact({ ...inquiry, date: GetFullDate() });
+
+			if (res.statusCode === 200) {
+				submitted = 2;
+				console.log(res.message);
+			} else {
+				console.log("Unknown response with no error: ", res.statusCode, res.message);
+			}
+		} catch (err) {
+			// Handle errors from pushToContact
+			if (err.statusCode === 500) {
+				submitted = -1;
+				console.log("Error submitting to server", err.message);
+			} else {
+				console.log('Unexpected error:', err);
+			}
+		}
 	}
 
 	onMount(() => {
 		document.title = Titles.contactUs
+
+		initDatabase();
 	});
 </script>
 
 <section class="contact-us">
-	{#if submitted}
+	{#if submitted === 2}
 		<div class="submitted-prompt">
 			<h4 style="color: green">Thanks! We'll get back to you as soon as we can.</h4>
+		</div>
+	{:else if submitted === 1}
+		<div class="loading-model">
+			<img src={IconLinks.loader} alt="Loading Icon"/>
 		</div>
 	{:else}
 		<div class="contact-prompt">
 			<h2>Want Unthynck to play for you? We're open for commission!</h2>
-			<h3 style="font-size: 1.5rem;">THIS FEATURE IS STILL IN ALPHA, NO DATA WILL BE SENT TO SERVER</h3>
 		</div>
 		<div class="contact-info">
 			<form onsubmit={submitForm}>
@@ -134,6 +159,18 @@
 				font-size: 2rem;
 		}
 
+		.loading-model {
+				height: fit-content;
+				width: fit-content;
+				animation: rotate 1s infinite linear;
+		}
+
+		.loading-model img {
+				height: 10vh;
+				width: 10vh;
+				object-fit: contain;
+		}
+
 		.contact-info, .submitted-prompt {
 				position: relative;
 				display: flex;
@@ -229,6 +266,15 @@
 
 		.submit-button:active {
 				transform: scale(0.95);
+		}
+
+		@keyframes rotate {
+				from {
+						transform: rotate(0deg);
+				}
+				to {
+						transform: rotate(360deg);
+				}
 		}
 
 </style>
