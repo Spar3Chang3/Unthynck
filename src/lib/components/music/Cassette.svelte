@@ -16,6 +16,8 @@
 	let duration = $state(0);
 	let currentSongName = $state();
 
+	let currentQueue = $state();
+
 	let reelAnimation = $derived([
 		{
 			animationPlayState: `${paused ? 'paused' : 'running'}`,
@@ -124,7 +126,6 @@
 
 		const unsubscribe = audioStore.subscribe((queue) => {
 			currentQueue = queue;
-			console.log(queue);
 		});
 
 		tapeSfx = new Audio(tapeAudio);
@@ -156,7 +157,7 @@
 
 </script>
 
-<section class="cassette">
+<section class="cassette" id="cassette">
 	<div class="cassette-body">
 		<div class="dots"></div>
 		<div class="dots"></div>

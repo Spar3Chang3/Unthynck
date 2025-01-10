@@ -27,7 +27,9 @@
 	}
 
 	$effect(() => {
-		fetchAlbumArt();
+		if (song.artworkPath) {
+			fetchAlbumArt();
+		}
 	});
 
 </script>

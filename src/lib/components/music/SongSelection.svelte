@@ -28,10 +28,7 @@
 
 </script>
 
-<section class="song-selection">
-	<div class="interact-tip">
-		<h2>Add a song to the playlist to get started:</h2>
-	</div>
+<section class="song-selection" id="song-selection">
 	{#each indexArr as album, key}
 		<AlbumWidget album={album} index={key} />
 	{/each}
@@ -44,17 +41,6 @@
 			height: fit-content;
 			width: 95vw;
 			gap: 2rem;
-			padding-bottom: 50vh;
-	}
-
-	.interact-tip {
-			width: fit-content;
-			padding: 0 1rem 0 1rem;
-
-			font-family: var(--font-special);
-			font-size: 2rem;
-			line-height: 1.5rem;
-			color: var(--text-standard);
-			background-color: var(--primary-color);
+			padding: 2rem;
 	}
 </style>
