@@ -4,36 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fef13861-a6b7-4b36-b196-f43e2a04bbdb" name="Changes" comment="Add a client-side captcha to contact-us">
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/assets/3.BFkTycPd.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/assets/5.Db6ZQfyr.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/assets/6.vGFnj9ib.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/assets/7.C1mj3gNE.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/assets/8.DggskGEn.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/assets/_page.BFkTycPd.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/class.Bvena8yX.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/each.DGSep0UY.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/firebase.-1CFgVdz.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/if.DML_PgDJ.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/index-client.CHxRNfLn.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/index.B5OfHpNx.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/index.ceLrBuKH.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/input.Cka1-gbJ.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/lifecycle.C8kLH1f3.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/props.DNKNdPue.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/proxy.DLfti-hq.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/render.CvTPB3-6.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/template.BBsDH0qk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/this.R1HgDf1x.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/2.BGqNZ8Gn.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/3.B_q4PoiH.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/4.BkRNxWVr.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/5.DEQoYUXF.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/6.BrVC6sM2.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/7.DymT2flY.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/8.CHnDUD1i.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/version.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/_app/version.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+    <list default="true" id="fef13861-a6b7-4b36-b196-f43e2a04bbdb" name="Changes" comment="Accidentally delete rules files, whoops">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/contact-us/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/contact-us/+page.svelte" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,11 +98,11 @@
       <recent name="C:\Users\trash\WebstormProjects\Unthynck\static\icons" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\trash\WebstormProjects\Unthynck" />
       <recent name="C:\Users\trash\WebstormProjects\Unthynck\static\icons" />
       <recent name="C:\Users\trash\WebstormProjects\Unthynck\static\audio" />
       <recent name="C:\Users\trash\WebstormProjects\Unthynck\static\fonts" />
       <recent name="C:\Users\trash\WebstormProjects\Unthynck\static\backgrounds" />
-      <recent name="C:\Users\trash\WebstormProjects\Unthynck\public" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -182,7 +155,7 @@
       <workItem from="1737383601200" duration="159000" />
       <workItem from="1737383777595" duration="3000" />
       <workItem from="1737384081268" duration="3835000" />
-      <workItem from="1737951720664" duration="6508000" />
+      <workItem from="1737951720664" duration="7241000" />
     </task>
     <task id="LOCAL-00001" summary="Bro I need to take a course on SvelteKit">
       <option name="closed" value="true" />
@@ -272,7 +245,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737978961198</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Accidentally delete rules files, whoops">
+      <option name="closed" value="true" />
+      <created>1737979403426</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1737979403426</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -290,6 +271,7 @@
     <MESSAGE value="Contact-us properly works!" />
     <MESSAGE value="Tweak Music but still no mobile support" />
     <MESSAGE value="Add a client-side captcha to contact-us" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add a client-side captcha to contact-us" />
+    <MESSAGE value="Accidentally delete rules files, whoops" />
+    <option name="LAST_COMMIT_MESSAGE" value="Accidentally delete rules files, whoops" />
   </component>
 </project>

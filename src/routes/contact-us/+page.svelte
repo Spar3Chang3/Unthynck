@@ -127,9 +127,12 @@
 					></textarea>
 				</div>
 
-				<div class="submit-button-container">
+				<div class="captcha">
 					<Captcha bind:isHuman={submitNotDisabled} />
-					<button type="submit" class="submit-button {!submitNotDisabled ? 'disabled' : ''}" disabled={!submitNotDisabled}>
+				</div>
+
+				<div class="submit-button-container">
+					<button type="submit" class="submit-button {submitNotDisabled ? '' : 'disabled'}" disabled={!submitNotDisabled}>
 						Send Inquiry
 					</button>
 				</div>
