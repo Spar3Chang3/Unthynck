@@ -279,7 +279,6 @@
 		}
 
 		.disabled {
-				filter: opacity(0.85);
 				background-color: #5d5d5d;
 				cursor: not-allowed;
 		}

@@ -171,7 +171,7 @@
 
 <div class="captcha-container">
 
-	{#if gameStarted && !isHuman}
+	{#if gameStarted}
 
 		<h2>Prove You're Human</h2>
 		<p>
@@ -182,6 +182,7 @@
 		<div class="game-area" class:game-area-completed={gameCompleted}>
 			{#if !gameCompleted}
 				<button
+					type="button"
 					class="circle"
 					style="top: {circlePosition.y}px; left: {circlePosition.x}px"
 					onclick={handleCircleClick}
