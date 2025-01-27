@@ -19,6 +19,7 @@
 		startCounter();
 
 		return(() => {
+
 			if (interval) {
 				clearInterval(interval);
 			}
