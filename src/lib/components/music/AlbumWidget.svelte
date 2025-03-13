@@ -99,7 +99,8 @@
 				<div class="widget-song">
 					<div class="widget-song-info item1">
 						<div class="widget-song-name">
-							<h4>{song.trackNumber}&emsp;{song.trackName}</h4>
+							<h4>{song.trackNumber}&emsp;</h4>
+							<h4>{song.trackName}</h4>
 						</div>
 					</div>
 					<div class="widget-song-util item2">

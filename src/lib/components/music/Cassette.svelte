@@ -36,6 +36,8 @@
 	let playIcon = $derived(applyPlayIcon());
 	let shuffleIcon = $derived(applyShuffleIcon());
 
+	let allSongs = $state([]);
+
 	function applyPlayIcon() {
 		if (paused) {
 			return IconLinks.playerPlay;
@@ -100,15 +102,38 @@
 		}
 	}
 
+
+	//This shuffle is quite basic, BUT it DOES work... I think...
 	function shuffle(e) {
 		e.preventDefault();
 		shuffled = !shuffled;
+
+		if (shuffled) {
+			while (currentQueue.length < 10) {
+				getNextShuffle();
+			}
+		}
+	}
+
+	function getNextShuffle() {
+		if (allSongs.length === 0) {
+			allSongs = document.querySelectorAll('.add-to-queue-button');
+		}
+
+		const randomIndex = Math.floor(Math.random() * allSongs.length);
+
+		allSongs[randomIndex].click();
 	}
 
 	async function nextInQueue() {
+		if (shuffled) {
+			getNextShuffle();
+		}
+
 		if (isAudioQueueEmpty()) {
 			return;
 		}
+
 		const audioData = dequeueAudio();
 		currentSongName = audioData.fileName;
 		await getFileFromStorage(audioData.trackPath, audioData.fileName).then((src) => {
@@ -280,7 +305,7 @@
 				justify-content: center;
 				align-items: center;
 
-				gap: 4rem;
+				gap: 2rem;
 		}
 
     *,
@@ -546,11 +571,13 @@
 				.cassette {
 						justify-items: auto;
 						gap: 0;
+						margin-top: -0.75rem;
 				}
 
 				.media-controls {
-						transform: scale(0.75);
+						transform: scale(0.85);
 						gap: 1.5rem;
+						margin-top: -2.5rem;
 				}
     }
 </style>

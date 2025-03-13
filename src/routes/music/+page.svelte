@@ -52,6 +52,7 @@
 	<div class="interact-tip">
 		<h2
 			style:visibility={songsAdded ? 'hidden' : 'visible'}
+			style:height={songsAdded ? '0' : ''}
 		>Add a song to the playlist to get started</h2>
 		<button class="song-selection-jump jump" onclick={jumpToSongSelection}>
 			Jump to Songs
@@ -112,6 +113,7 @@
 			font-family: var(--font-standard);
 			font-size: 1.5rem;
 			transition: all 100ms ease;
+			cursor: pointer;
 
       box-shadow: 0 4px 5px rgba(0, 0, 0, 0.08);
 
