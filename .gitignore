@@ -25,3 +25,6 @@ vite.config.ts.timestamp-*
 database.rules.json
 storage.rules
 /.firebase
+
+#WebStorm
+/.idea
