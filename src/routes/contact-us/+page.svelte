@@ -2,6 +2,7 @@
 	import { onMount } from 'svelte';
 	import { Titles, IconLinks, GetFullDate } from '$lib/index.js';
 	import { initDatabase, pushToContact } from '$lib/firebase.js';
+	import Captcha from '$lib/components/layout/Captcha.svelte';
 
 
 	let inquiry = $state({
@@ -12,6 +13,8 @@
 	});
 
 	let submitted = $state(0); //0, unsubmitted, 1, loading, 2, submitted successfully, -1, error submitting
+
+	let submitNotDisabled = $state(false);
 
 	const inquiryTypes = [ 'Cameo', 'Performance', 'Personal Message'];
 	const confusionPrompt = inquiryTypes[2]; //If they select personal message, I don't want the message they send to be the personal message, but rather the context
@@ -124,8 +127,12 @@
 					></textarea>
 				</div>
 
+				<div class="captcha">
+					<Captcha bind:isHuman={submitNotDisabled} />
+				</div>
+
 				<div class="submit-button-container">
-					<button type="submit" class="submit-button">
+					<button type="submit" class="submit-button {submitNotDisabled ? '' : 'disabled'}" disabled={!submitNotDisabled}>
 						Send Inquiry
 					</button>
 				</div>
@@ -244,7 +251,9 @@
 		}
 
 		.submit-button-container {
+				position: relative;
 				display: flex;
+				flex-direction: column;
 				width: 100%;
 
         justify-content: center;
@@ -262,10 +271,16 @@
         border-radius: 0;
 				border: none;
 				font-family: var(--font-standard);
+				cursor: pointer;
     }
 
 		.submit-button:active {
 				transform: scale(0.95);
+		}
+
+		.disabled {
+				background-color: #5d5d5d;
+				cursor: not-allowed;
 		}
 
 		@keyframes rotate {
