@@ -24,19 +24,7 @@
 			width: fit-content;
 
 			font-size: 2rem;
-			animation: glitch .5s infinite alternate;
 	}
-
-  @keyframes glitch {
-      0% {
-          text-shadow: -4px 6px 0 var(--banner-accent), 4px -6px 0 var(--banner-standard);
-          transform: translateY(-0.5rem);
-      }
-      40% {
-          text-shadow: 4px -6px 0 var(--banner-standard), -4px 6px 0 var(--banner-accent);
-      }
-      70% {  text-shadow: none; transform: none; }
-  }
 </style>
 
 <section class="error">

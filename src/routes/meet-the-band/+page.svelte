@@ -1,17 +1,19 @@
 <script lang="js">
 	import { onMount } from 'svelte';
-	import { Titles } from '$lib/index.js';
+	import { IconLinks, Titles } from '$lib/index.js';
 	import { initDatabase, getDataFromDatabase } from '$lib/firebase.js';
 	import BandCard from '$lib/components/band/BandCard.svelte';
 
 	const memberDataPath = 'public/members';
 
 	let memberSet = $state([]);
+	let membersRetrieved = $state(false);
 
 async function fetchMemberData() {
 		initDatabase();
 		await getDataFromDatabase(memberDataPath).then((data) => {
 			memberSet = Object.values(data);
+			console.log(memberSet);
 		}).catch((err) => {
 			alert(("Could not obtain members :( Please try refreshing or come back later - " + err));
 		});
@@ -20,21 +22,32 @@ async function fetchMemberData() {
 
 	onMount(() => {
 		document.title = Titles.meetTheBand;
-		fetchMemberData();
+		fetchMemberData().then(() => {
+			membersRetrieved = true;
+		});
 	});
 </script>
 
 <section class="meet-the-band">
-	{#each memberSet as member}
-		<BandCard
-			name={member.name}
-			hp={member.hp}
-			id={member.id}
-			aboutMe={member.aboutMe}
-			imagePath={member.imagePath}
-			position={member.position}
-		/>
-	{/each}
+	<div class="band-members-container">
+		{#if membersRetrieved}
+			{#each memberSet as member}
+				<BandCard
+					name={member.name}
+					hp={member.hp}
+					id={member.id}
+					aboutMe={member.aboutMe}
+					imagePath={member.imagePath}
+					position={member.position}
+					instagramLink={member.instagramLink}
+				/>
+			{/each}
+		{:else}
+			<div class="loading-model">
+				<img src={IconLinks.loader} alt="Loading Icon" />
+			</div>
+		{/if}
+	</div>
 </section>
 
 <style lang="css">
@@ -42,15 +55,42 @@ async function fetchMemberData() {
 	.meet-the-band {
 			position: relative;
 			display: flex;
+
+			min-height: 80dvh;
+			width: 100dvw;
+	}
+
+	.band-members-container {
+			position: relative;
+			display: flex;
 			flex-direction: row;
 			flex-wrap: wrap;
-			min-height: 80vh;
-			width: 100vw;
+
+			height: 100%;
+			width: 100%;
 
 			justify-content: center;
 			align-items: center;
 
 			overflow-x: hidden;
+			padding-top: 2rem;
 	}
+
+  .loading-model img {
+      height: 10vh;
+      width: 10vh;
+      object-fit: contain;
+
+      animation: rotate 1s infinite linear;
+  }
+
+  @keyframes rotate {
+      from {
+          transform: rotate(0deg);
+      }
+      to {
+          transform: rotate(360deg);
+      }
+  }
 
 </style>

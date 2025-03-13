@@ -2,8 +2,10 @@
 	import { onMount } from 'svelte';
 	import { getJsonIndexDownloads, initStorage } from '$lib/firebase.js';
 	import AlbumWidget from '$lib/components/music/AlbumWidget.svelte';
+	import { IconLinks } from '$lib/index.js';
 
 	let indexArr = $state([]);
+	let indexRetrieved = $state(false);
 
 	async function getJsons() {
 		initStorage();
@@ -23,15 +25,23 @@
 	}
 
 	onMount(() => {
-		getJsons();
+		getJsons().then(() => {
+			indexRetrieved = true;
+		});
 	});
 
 </script>
 
 <section class="song-selection" id="song-selection">
-	{#each indexArr as album, key}
-		<AlbumWidget album={album} index={key} />
-	{/each}
+	{#if indexRetrieved}
+		{#each indexArr as album, key}
+			<AlbumWidget album={album} index={key} />
+		{/each}
+	{:else}
+		<div class="loading-model">
+			<img src={IconLinks.loader} alt="Loading Icon" />
+		</div>
+	{/if}
 </section>
 
 <style lang="css">
@@ -39,8 +49,34 @@
 			display: flex;
 			flex-direction: column;
 			height: fit-content;
-			width: 95vw;
+			width: 95dvw;
 			gap: 2rem;
 			padding: 2rem;
 	}
+
+  .loading-model {
+			display: flex;
+
+      height: fit-content;
+      width: 100%;
+
+			justify-content: center;
+  }
+
+  .loading-model img {
+      height: 10vh;
+      width: 10vh;
+      object-fit: contain;
+
+      animation: rotate 1s infinite linear;
+  }
+
+  @keyframes rotate {
+      from {
+          transform: rotate(0deg);
+      }
+      to {
+          transform: rotate(360deg);
+      }
+  }
 </style>

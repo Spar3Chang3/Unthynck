@@ -6,6 +6,7 @@
 	import { onMount } from 'svelte';
 
 	let showUpButton = $state(false);
+	let songsAdded = $state(false);
 
 	function jumpToSongSelection(e) {
 		e.preventDefault();
@@ -49,7 +50,9 @@
 </script>
 <section class="music">
 	<div class="interact-tip">
-		<h2>Add a song to the playlist to get started</h2>
+		<h2
+			style:visibility={songsAdded ? 'hidden' : 'visible'}
+		>Add a song to the playlist to get started</h2>
 		<button class="song-selection-jump jump" onclick={jumpToSongSelection}>
 			Jump to Songs
 		</button>
@@ -57,7 +60,7 @@
 
 		<Cassette />
 
-		<Playlist />
+		<Playlist bind:songsAdded={songsAdded} />
 
 		<SongSelection />
 
@@ -107,8 +110,10 @@
 			background-color: var(--secondary-color);
 			color: var(--text-standard);
 			font-family: var(--font-standard);
-			font-size: 2rem;
+			font-size: 1.5rem;
 			transition: all 100ms ease;
+
+      box-shadow: 0 4px 5px rgba(0, 0, 0, 0.08);
 
 			opacity: 1;
 			visibility: visible;
@@ -118,6 +123,10 @@
 			transform: scale(0.95);
       opacity: 0.8;
   }
+
+	.cassette-jump {
+			font-size: 3rem;
+	}
 
   .jump-to-top {
       position: fixed;
@@ -129,5 +138,28 @@
 	.hidden {
 			opacity: 0;
 			visibility: hidden;
+	}
+
+	@media only screen and (max-width: 768px) {
+
+			.music {
+					gap: 1rem;
+			}
+
+			.interact-tip {
+					font-size: 2rem;
+					line-height: 2rem;
+					text-align: center;
+
+					gap: 0;
+			}
+
+			.jump {
+					font-size: 1.2rem;
+			}
+
+			.cassette-jump {
+					font-size: 2rem;
+			}
 	}
 </style>

@@ -146,7 +146,7 @@
 					font-size: 2rem;
 			}
 			.navigation-modal a {
-					color: var(--text-standard);
+					color: var(--link-color);
 			}
 			.navigation {
 					display: flex;
@@ -169,7 +169,7 @@
 					background-color: var(--secondary-color);
           color:whitesmoke;
 					border: 0.1vh solid var(--banner-accent);
-					transition: 50ms ease;
+					transition: 200ms ease;
 			}
 			.nav-vis-button:active {
 					background-color: var(--banner-accent);

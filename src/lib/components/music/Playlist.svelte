@@ -1,5 +1,5 @@
 <script lang="js">
-	import { audioStore } from '$lib/components/music/AudioStore.js';
+	import { audioStore, isAudioQueueEmpty } from '$lib/components/music/AudioStore.js';
 	import SongWidget from '$lib/components/music/SongWidget.svelte';
 	import { onMount } from 'svelte';
 
@@ -8,7 +8,7 @@
 		artworkPath: null
 	}]);
 	let viewCurrentQueue = $state(false);
-	let songsAdded = $derived(!(currentQueue.some(song => (song.trackName === null && song.artworkPath === null))));
+	let { songsAdded = $bindable(false) } = $props();
 
 	function togglePlaylistView(e) {
 		e.preventDefault();
@@ -18,6 +18,7 @@
 	onMount(() => {
 		const unsubscribe = audioStore.subscribe((queue) => {
 			currentQueue = queue;
+			songsAdded = !isAudioQueueEmpty();
 		});
 
 		return(() => {
@@ -33,7 +34,7 @@
 		{#if songsAdded}
 		<SongWidget bind:song={currentQueue[0]} />
 		{:else}
-			<h3 style="font-size: 1.8rem; font-family: var(--font-standard)">No songs have been added to queue</h3>
+			<h3 class="playlist-empty-notifier">No songs are up next</h3>
 		{/if}
 		<button class="view-playlist-button" onclick={togglePlaylistView}>
 			View Playlist
@@ -82,7 +83,12 @@
 	.song-up-next-container h2 {
 			font-family: "Unthynck Branding", sans-serif;
 
-			font-size: 4rem;
+			font-size: 3rem;
+	}
+
+	.playlist-empty-notifier {
+      font-size: 1.2rem;
+			font-family: var(--font-standard)
 	}
 
 	.view-playlist-button {
@@ -93,7 +99,7 @@
 			width: fit-content;
 			padding: 0.5rem;
 
-			font-size: 1.2rem;
+			font-size: 1.5rem;
 			font-family: "Unthynck Text", sans-serif;
 			color: var(--on-primary-color);
 
@@ -117,6 +123,21 @@
 			gap: 1rem;
 			margin-top: 0.5rem;
 			padding: 0.5rem;
+	}
+
+	@media only screen and (max-width: 768px) {
+			.song-up-next-container h2 {
+					font-size: 2rem;
+			}
+
+			.playlist-empty-notifier {
+					font-size: 1rem;
+					text-rendering: optimizeLegibility;
+      }
+
+			.view-playlist-button {
+					font-size: 1rem;
+      }
 	}
 
 </style>

@@ -137,15 +137,6 @@
 	<section class="slideshow-wrapper">
 		<div class="slideshow-container">
 			{#if showCarousel}
-<!--				<Carousel-->
-<!--					bind:this={carousel}-->
-<!--					autoplay-->
-<!--					autoplayDuration={5000}-->
-<!--					>-->
-<!--					<img class="slide-img" src={slides[0]} alt="slide"/>-->
-<!--					<img class="slide-img" src="#" alt="slide"/>-->
-<!--				</Carousel>-->
-
 							<Carousel
 								bind:this={carousel}
 								autoplay={true}

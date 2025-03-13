@@ -104,4 +104,16 @@
       opacity: 0.8;
   }
 
+	@media only screen and (max-width: 768px) {
+			.song-widget {
+					max-height: 8rem;
+			}
+
+			.song-widget-art-container, .song-widget-art {
+					visibility: hidden;
+					height: 0;
+					width: 0;
+			}
+	}
+
 </style>

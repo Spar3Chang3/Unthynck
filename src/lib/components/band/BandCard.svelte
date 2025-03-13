@@ -11,7 +11,7 @@
 		hp,
 		id,
 		imagePath,
-		instagramLink,
+		instagramLink = "#",
 		name,
 		position
 	} = $props();
@@ -41,7 +41,7 @@
 </script>
 
 <div class="flip-box">
-	<button class="flip-button" onclick={toggleCardFlip} aria-label="flip-button"></button>
+	<button class="flip-button" style:height={showCardBack ? '80%' : '100%'} onclick={toggleCardFlip} aria-label="flip-button"></button>
 	<div class="flip-box-inner" class:show-back={showCardBack}>
 
 		<div class="flip-box-front card" >
@@ -68,6 +68,9 @@
 					</div>
 
 					<div class="socials">
+						<a href={instagramLink} target="_blank">
+							<img src={IconLinks.instagram} alt={"Instagram"}/>
+						</a>
 					</div>
 				</div>
 			</div>
@@ -83,18 +86,16 @@
     h1 {
         margin: 0 0 5px;
     }
-    /* The flip box container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
     .flip-box {
 				position: relative;
         background-color: transparent;
         width: 320px;
         height: 480px;
         margin: 0 20px 40px;
-        border: 1px solid #f1f1f1;
-        perspective: 1000px; /* Remove this if you don't want the 3D effect */
+        perspective: 1000px;
+				z-index: 5;
     }
 
-    /* This container is needed to position the front and back side */
     .flip-box-inner {
         position: relative;
         width: 100%;
@@ -107,17 +108,16 @@
 		.flip-button {
 				position: absolute;
 				width: 100%;
-				height: 100%;
 				border: none;
 				background-color: transparent;
-				z-index: 10;
+				cursor: pointer;
+				z-index: 8;
 		}
 
     .show-back {
         transform: rotateY(180deg);
     }
 
-    /* Position the front and back side */
     .flip-box-front, .flip-box-back {
         position: absolute;
         width: 100%;
@@ -126,12 +126,10 @@
         backface-visibility: hidden;
     }
 
-    /* Style the front side */
     .flip-box-front {
         background-color: #000;
     }
 
-    /* Style the back side */
     .flip-box-back {
         display: flex;
         flex-direction: column;
@@ -144,13 +142,12 @@
         transform: rotateY(180deg) translateX(6px);
     }
 
-
-    /* Add some shadows to create a card effect */
     .card {
 				height: inherit;
 				width: inherit;
 				overflow: hidden;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        border: 1px solid #f1f1f1;
     }
 
 		.content {
@@ -159,8 +156,7 @@
 				flex-direction: column;
 				height: 100%;
 				width: 100%;
-        font-family: "Unthynck Text", sans-serif;
-				line-height: var(--paragraph-line-height);
+        font-family: var(--font-standard);
 
 				overflow: scroll;
 				scrollbar-width: none;
@@ -225,20 +221,38 @@
         align-content: center;
         text-align: left;
         width: 90%;
+				line-height: 1.25rem;
     }
 
     .socials {
-        position: relative;
+        position: absolute;
 				display: flex;
-				align-items: center;
-        bottom: 0.5rem;
+
         height: fit-content;
-        width: 95%;
+        width: 90%;
+
+				justify-content: flex-end;
+        align-items: center;
+				padding: 0.5rem;
+
         backdrop-filter: blur(4px);
-        border-radius: 6px;
+				border-radius: 6px;
         overflow: hidden;
-        background-color: var(--frosted-glass);
+        background-color: rgba(255, 255, 255, 0.2);
+				bottom: 0.5rem;
+
+				z-index: 10;
     }
 
+    .socials a > img {
+        height: inherit;
+        width: 3rem;
+        margin: 0 auto;
+        transition: 250ms ease;
+    }
+
+    .socials a:hover > img {
+        transform: scale(1.1);
+    }
 
 </style>

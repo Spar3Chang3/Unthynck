@@ -83,8 +83,7 @@
 		<button class="widget-extend-button" onclick={toggleWidget} aria-label="Playlist add Button"></button>
 	</div>
 		<div class="album-widget-title"
-				 style:opacity={songsVisible ? 1 : 0}
-				 style:visibility={songsVisible ? 'visible' : 'hidden'}
+				 class:title-open={songsVisible}
 		>
 			<h2>{formatAlbumName()}</h2>
 		</div>
@@ -93,7 +92,8 @@
 				 style:opacity={songsVisible ? 1 : 0}
 				 style:visibility={songsVisible ? 'visible' : 'hidden'}
 				 style:height={songsVisible ? 'fit-content' : '0'}
-				 style:width={songsVisible ? '90vw' : '0'}
+				 style:width={songsVisible ? '90dvw' : '0'}
+				 style:transition="opacity 500ms ease, visibility 500ms ease"
 		>
 			{#each album as song}
 				<div class="widget-song">
@@ -110,7 +110,7 @@
 					</div>
 					<div class="widget-song-info item3">
 						<div class="widget-song-descr">
-							<p>&emsp;Description: {song.trackDescription}</p>
+							<p>{song.trackDescription}</p>
 						</div>
 					</div>
 				</div>
@@ -135,6 +135,7 @@
 			gap: 2rem;
 
 			color: var(--text-standard);
+			max-width: 95dvw;
 
 			transition: height 300ms ease, width 250ms ease;
 			background-color: var(--primary-color);
@@ -170,14 +171,24 @@
 	.album-widget-title {
 			position: absolute;
 			display: flex;
+			flex-wrap: wrap;
 			align-items: center;
 
-			white-space: pre;
+			width: 60%;
 
 			font-family: var(--font-special);
 			font-size: 2rem;
-			transform: translateX(10rem);
-			transition: opacity, visibility 500ms ease;
+			transform: translateX(40%);
+
+			opacity: 0;
+			visibility: hidden;
+	}
+
+	.title-open {
+			visibility: visible;
+			opacity: 1;
+
+			transition: opacity 600ms ease, visibility 600ms ease;
 	}
 
 	.widget-content {
@@ -188,10 +199,8 @@
 			justify-content: center;
 			align-content: center;
 
-			white-space: pre;
 			gap: 0.5rem;
 			overflow: hidden;
-			transition: opacity, visibility 500ms ease;
   }
 
 	.widget-song {
@@ -204,7 +213,6 @@
 				"item3 item3";
 
 			align-items: center;
-
 
 			background-color: var(--secondary-color);
 			padding: 0.5rem;
@@ -247,6 +255,7 @@
       justify-content: flex-start;
       align-items: center;
 			font-size: 1rem;
+			line-height: 1.25rem;
 	}
 
   .widget-song-util {
@@ -263,8 +272,8 @@
 	}
 
 	.add-to-queue-button {
-			height: 2rem;
-			width: 2rem;
+			height: 2.5rem;
+			width: 2.5rem;
 			text-align: center;
 
 			border: none;
@@ -283,6 +292,16 @@
 			transform: scale(0.95);
 			opacity: 0.8;
       box-shadow: var(--secondary-color) 0 24px 24px;
+	}
+
+	@media only screen and (max-width: 768px) {
+			.album-widget-title {
+					font-size: 1.5rem;
+					transform: translateX(8.5rem);
+			}
+
+			.widget-song-descr {
+			}
 	}
 
 </style>

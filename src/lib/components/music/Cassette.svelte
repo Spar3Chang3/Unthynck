@@ -2,10 +2,13 @@
 	import { onMount } from 'svelte';
 	import { IconLinks } from '$lib/index.js';
 	import { getFileFromStorage } from '$lib/firebase.js';
-	import { audioStore, dequeueAudio, isAudioQueueEmpty } from '$lib/components/music/AudioStore.js';
+	import { audioStore, dequeueAudio, isAudioQueueEmpty, removeAudio } from '$lib/components/music/AudioStore.js';
 
 	const defaultAudio = '/audio/default.mp3';
 	const tapeAudio = '/audio/tape.mp3';
+
+	let cassetteWidth = $state(0);
+	let cassetteScaleStyle = $state("");
 
 	let volume = $state(50);
 	let muted = $state(false);
@@ -77,7 +80,6 @@
 			currentSong.play();
 		}
 
-
 	}
 
 	function mute(e) {
@@ -141,6 +143,17 @@
 			nextInQueue();
 		});
 
+		const cassette = document.querySelector('.cassette-body');
+		cassetteWidth = cassette.offsetWidth;
+
+		const maxAllowedWidth = window.innerWidth * (7 / 8); //87.5% of window width
+
+		let scaleFactor = cassetteWidth > maxAllowedWidth ? maxAllowedWidth / cassetteWidth : 1;
+
+		scaleFactor = Math.max(0.1, Math.min(1.0, scaleFactor));
+
+		cassetteScaleStyle = `transform: scale(${scaleFactor.toFixed(2)});`;
+
 		return () => {
 			currentSong.stop;
 			currentSong.pause();
@@ -151,6 +164,8 @@
 			tapeSfx.src = '';
 			tapeSfx = null;
 
+			removeAudio();
+
 			unsubscribe();
 		}
 	});
@@ -158,7 +173,7 @@
 </script>
 
 <section class="cassette" id="cassette">
-	<div class="cassette-body">
+	<div class="cassette-body" style={cassetteScaleStyle}>
 		<div class="dots"></div>
 		<div class="dots"></div>
 		<div class="dots"></div>
@@ -528,12 +543,14 @@
     /* Responsive */
 
     @media screen and (max-width: 768px) {
-        .cassette-body {
-            transform: scale(0.50);
-        }
+				.cassette {
+						justify-items: auto;
+						gap: 0;
+				}
 
 				.media-controls {
 						transform: scale(0.75);
+						gap: 1.5rem;
 				}
     }
 </style>

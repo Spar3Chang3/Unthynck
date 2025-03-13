@@ -78,12 +78,23 @@
     }
 
     main {
-        background-image: url("/backgrounds/standard-background.jpg");
-        background-repeat: repeat;
-        background-size: initial;
+        position: relative;
         overflow-x: hidden;
         min-height: 80vh;
         max-height: fit-content;
+    }
+
+    .background {
+        position: absolute;
+
+        min-height: 100%;
+        width: 100%;
+
+        background-image: url("/backgrounds/standard-background.jpg");
+        background-repeat: repeat-y;
+        background-size: initial;
+
+        filter: blur(4px);
     }
 
 </style>
@@ -91,7 +102,8 @@
 <header>
     <Header {isMobile}/>
 </header>
-<main class="adaptive">
+<main>
+    <div class="background"></div>
     {#if children}
         {@render children()}
     {:else}
