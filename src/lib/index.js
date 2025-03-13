@@ -28,11 +28,11 @@ export function GetFullDate() {
 }
 
 export const SiteLinks = {
-    landingPage: 'https://Unthynck.band/landing-page',
-    meetTheBand: 'https://Unthynck.band/meet-the-band',
+    landingPage: 'https://unthynck.band/landing-page',
+    meetTheBand: '/meet-the-band',
     eventSchedule: 'https://calendar.google.com/calendar/u/7?cid=NTQwYzQ0OWJhNjBkMzJhZTBhYzA1MmM4NzNmM2ZmMzc0ZDMyOTA5NTkxYzYzYmY5NWRmMmVmMWEyM2VjNDY1NUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t',
-    music: 'https://Unthynck.band/music',
-    contactUs: 'https://Unthynck.band/contact-us',
+    music: '/music',
+    contactUs: '/contact-us',
 }
 
 export const SocialLinks = {

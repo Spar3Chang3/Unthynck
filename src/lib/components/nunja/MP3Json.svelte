@@ -74,7 +74,8 @@
 		} else {
 			console.warn('Clipboard API is not supported in this environment');
 		}
-	})
+
+	});
 </script>
 
 <section class="nunja">
@@ -87,7 +88,7 @@
 			webkitdirectory
 			directory
 			multiple
-			on:change={handleDirectoryUpload}
+			onchange={handleDirectoryUpload}
 		/>
 	</div>
 
@@ -95,7 +96,7 @@
 		<div class="results-section">
 			<h2>Parsed Tracks</h2>
 			<pre>{JSON.stringify(parsedTracks, null, 2)}</pre>
-			<button on:click={copyToClipboard}>Copy JSON to Clipboard</button>
+			<button onclick={copyToClipboard}>Copy JSON to Clipboard</button>
 		</div>
 	{/if}
 

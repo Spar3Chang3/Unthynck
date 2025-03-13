@@ -15,7 +15,7 @@
 		height: songsVisible ? 'fit-content' : '8rem',
 		width: songsVisible ? '90vw' : '8rem',
 		padding: songsVisible ? 0 : 0,
-	})
+	});
 
 	function formatDuration(durationInSeconds) {
 		const minutes = Math.floor(durationInSeconds / 60);
@@ -34,14 +34,19 @@
 	function toggleWidget(e) {
 		e.preventDefault();
 
-		songsVisible = !songsVisible;
+		if (songsVisible) {
+			songsVisible = false;
+		} else {
+			songsVisible = true;
 
-		const widget = document.getElementById(index).querySelector('.widget-content');
-
-		widget.scrollIntoView({
-			behavior: 'smooth',
-			block: 'center',
-		});
+			const widget = document.getElementById(index).querySelector('.widget-content');
+			setTimeout(() => {
+				widget.scrollIntoView({
+					behavior: 'smooth',
+					block: 'start',
+				});
+			}, 100);
+		}
 
 	}
 
@@ -87,6 +92,8 @@
 		<div class="widget-content"
 				 style:opacity={songsVisible ? 1 : 0}
 				 style:visibility={songsVisible ? 'visible' : 'hidden'}
+				 style:height={songsVisible ? 'fit-content' : '0'}
+				 style:width={songsVisible ? '90vw' : '0'}
 		>
 			{#each album as song}
 				<div class="widget-song">
@@ -119,6 +126,7 @@
 </div>
 
 <style lang="css">
+
 	.album-widget {
 			position: relative;
 			display: flex;
@@ -128,7 +136,7 @@
 
 			color: var(--text-standard);
 
-			transition: height 300ms ease, width 300ms ease;
+			transition: height 300ms ease, width 250ms ease;
 			background-color: var(--primary-color);
 			padding: 1rem;
 	}
@@ -169,15 +177,13 @@
 			font-family: var(--font-special);
 			font-size: 2rem;
 			transform: translateX(10rem);
-      		transition: opacity 500ms ease;
+			transition: opacity, visibility 500ms ease;
 	}
 
 	.widget-content {
 			position: relative;
 			display: flex;
 			flex-direction: column;
-			height: fit-content;
-			width: 90vw;
 
 			justify-content: center;
 			align-content: center;
@@ -185,7 +191,7 @@
 			white-space: pre;
 			gap: 0.5rem;
 			overflow: hidden;
-      		transition: opacity 500ms ease;
+			transition: opacity, visibility 500ms ease;
   }
 
 	.widget-song {

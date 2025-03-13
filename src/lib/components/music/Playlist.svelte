@@ -8,6 +8,7 @@
 		artworkPath: null
 	}]);
 	let viewCurrentQueue = $state(false);
+	let songsAdded = $derived(!(currentQueue.some(song => (song.trackName === null && song.artworkPath === null))));
 
 	function togglePlaylistView(e) {
 		e.preventDefault();
@@ -29,7 +30,11 @@
 <section class="playlist">
 	<div class="song-up-next-container">
 		<h2>Up Next: </h2>
+		{#if songsAdded}
 		<SongWidget bind:song={currentQueue[0]} />
+		{:else}
+			<h3 style="font-size: 1.8rem; font-family: var(--font-standard)">No songs have been added to queue</h3>
+		{/if}
 		<button class="view-playlist-button" onclick={togglePlaylistView}>
 			View Playlist
 		</button>

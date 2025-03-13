@@ -1,28 +1,9 @@
-<meta http-equiv="Refresh" content="1;/landing-page">
 <script lang="js">
-	import { onMount } from 'svelte'
-
-	let count = $state(2);
-	let interval = $state();
-
-	function startCounter() {
-		interval = setInterval(() => {
-			count--;
-
-			if (count === 0) {
-				clearInterval(interval);
-			}
-		}, 1000);
-	}
+	import { goto } from '$app/navigation';
+	import { onMount } from 'svelte';
 
 	onMount(() => {
-		startCounter();
-
-		return(() => {
-			if (interval) {
-				clearInterval(interval);
-			}
-		});
+		goto('/landing-page');
 	});
 </script>
 <style>
@@ -71,6 +52,5 @@
 	<div class="content">
 		<h1>You are being redirected</h1>
 		<h2>Please wait...</h2>
-		<h2>{count}</h2>
 	</div>
 </section>

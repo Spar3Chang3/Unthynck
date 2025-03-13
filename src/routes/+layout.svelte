@@ -7,9 +7,6 @@
 
     let isMobile = $state(false);
 
-    //Stolen from Claude? Perhaps. But I understand it and didn't want to write it all out
-    //creates a query, then an event listener to change when updated
-    //I may be able to just do this from $derived, but eh this works
     function setupMediaListeners() {
         const mobileQuery = window.matchMedia('(max-width: 768px)');
 
@@ -77,6 +74,7 @@
 
     :global(html, body) {
         margin: 0;
+        scroll-padding-top: 12dvh; /* slightly more than header/footer for spacing */
     }
 
     main {

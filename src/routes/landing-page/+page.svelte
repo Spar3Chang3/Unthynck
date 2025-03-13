@@ -18,8 +18,8 @@
 	let slides = $state([]);
 
 	let observeElements = $state([
-		{id: 0, title: 'about-text', isVisible: false, visibleRatio: 0},
-		{id: 1, title: 'spotify-plugin', isVisible: false, visibleRatio: 0},
+		{id: 0, title: 'about-text', isVisible: false, visibleRatio: 0, hasBeenViewed: false},
+		{id: 1, title: 'spotify-plugin', isVisible: false, visibleRatio: 0, hasBeenViewed: false},
 	]);
 
 	let elementRefs = $state([null, null]);
@@ -85,10 +85,12 @@
 				);
 
 				if (targetIndex > -1) {
+
 					observeElements[targetIndex] = {
 						...observeElements[targetIndex],
 						isVisible: entry.isIntersecting,
 						visibleRatio: Math.round(entry.intersectionRatio * 100),
+						hasBeenViewed: entry.isIntersecting && observeElements[targetIndex].hasBeenViewed === false || observeElements[targetIndex].hasBeenViewed
 					}
 				}
 			});
@@ -183,7 +185,7 @@
 	>
 		<div
 			class="about-text-container"
-			style="opacity: {observeElements[0].isVisible ? 1 : 0}; transform: translateY({observeElements[0].isVisible ? '0' : '100vh'}); transition: opacity 0.4s ease, transform 0.5s ease;"
+			style="opacity: {observeElements[0].hasBeenViewed ? 1 : 0}; transform: translateY({observeElements[0].hasBeenViewed ? '0' : '100vh'}); transition: opacity 0.4s ease, transform 0.5s ease;"
 		>
 			<div class="about-text">
 				<h2>GRUNGY AND RUSTY</h2>
@@ -212,7 +214,7 @@
 		data-id="1"
 	>
 		<div
-			class="spotify-plugin-container" style="opacity: {observeElements[1].isVisible ? 1 : 0}; transform: translateY({observeElements[1].isVisible ? '0' : '100vh'}); transition: opacity 0.4s ease, transform 0.5s ease;"
+			class="spotify-plugin-container" style="opacity: {observeElements[1].hasBeenViewed ? 1 : 0}; transform: translateY({observeElements[1].hasBeenViewed ? '0' : '100vh'}); transition: opacity 0.4s ease, transform 0.5s ease;"
 		>
 			<iframe style="width: 100%; height: 75vh;"
 							src="https://open.spotify.com/embed/artist/3C3IxXuW9aRAlwvooDiCJM?utm_source=generator&theme=0"

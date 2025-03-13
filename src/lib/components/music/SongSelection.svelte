@@ -24,7 +24,7 @@
 
 	onMount(() => {
 		getJsons();
-	})
+	});
 
 </script>
 

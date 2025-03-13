@@ -4,45 +4,44 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fef13861-a6b7-4b36-b196-f43e2a04bbdb" name="Changes" comment="Contact-us properly works!">
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_1_7_2025_10_26_PM_[Changes]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_1_7_2025_10_26_PM__Changes_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/assets/0.CGXQEFjT.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/assets/2.DmEpJ3gN.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/assets/3.BFkTycPd.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/assets/5.Db6ZQfyr.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/assets/_layout.DHQMpyjA.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/assets/_page.BFkTycPd.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/assets/_page.Db6ZQfyr.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/assets/_page.DmEpJ3gN.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/chunks/each.D0Pwmnqw.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/chunks/if.I0_TII3s.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/chunks/index-client.DbyKbbhq.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/chunks/index.BulT-dvm.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/chunks/index.CEORl0OW.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/chunks/input.Bm4fFobX.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/chunks/lifecycle.DpDvCw1V.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/chunks/props.wRmurA5N.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/chunks/proxy.F_J2AGxx.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/chunks/render.BpUttAOF.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/chunks/template.B6k_Tk7a.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/chunks/this.ByRBVGu9.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/nodes/2.C4VrMfEN.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/nodes/3.B6FdR0-A.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/nodes/6.-mM8GuE1.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/_app/immutable/nodes/8.B1qi0XEy.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/icons/hand-click.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/icons/loader.svg" afterDir="false" />
+    <list default="true" id="fef13861-a6b7-4b36-b196-f43e2a04bbdb" name="Changes" comment="Tweaks all around, major css update to contact-us">
+      <change afterPath="$PROJECT_DIR$/.JsonTrackIndexes/Unthynck/index.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lib/components/layout/Background.svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/routes/testing/+page.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_1_7_2025_10_26_PM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_1_7_2025_10_26_PM__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/assets/7.B2lqyIP9.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/_app/immutable/assets/7.zjSKEC7E.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/assets/_page.B2lqyIP9.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/_app/immutable/assets/_page.zjSKEC7E.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/firebase.DcofS6UJ.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/_app/immutable/chunks/firebase.-1CFgVdz.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/5.ZyMngDPc.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/_app/immutable/nodes/5.B3IRYdiw.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_app/version.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/_app/version.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/_app/env.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/_app/immutable/assets/0.CGXQEFjT.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/_app/immutable/assets/1.CED5PXw8.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/_app/immutable/assets/2.DmEpJ3gN.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/_app/immutable/assets/2.DmEpJ3gN.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/_app/immutable/assets/3.BFkTycPd.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/_app/immutable/assets/3.BFkTycPd.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/_app/immutable/assets/5.Db6ZQfyr.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/_app/immutable/assets/5.Db6ZQfyr.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/_app/immutable/assets/6.vGFnj9ib.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/_app/immutable/assets/8.DggskGEn.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/_app/immutable/assets/_error.CED5PXw8.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/_app/immutable/assets/_layout.DHQMpyjA.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/_app/immutable/assets/_page.BFkTycPd.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/_app/immutable/assets/_page.BFkTycPd.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/_app/immutable/assets/_page.Db6ZQfyr.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/_app/immutable/assets/_page.Db6ZQfyr.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/_app/immutable/assets/_page.DggskGEn.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/_app/immutable/assets/_page.DmEpJ3gN.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/_app/immutable/assets/_page.DmEpJ3gN.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/_app/immutable/assets/_page.MEGrCswt.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/class.Bvena8yX.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/disclose-version.Bg9kRutz.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/firebase.-1CFgVdz.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/_app/immutable/chunks/firebase.-1CFgVdz.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/index.BFqC5wTN.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/_app/immutable/chunks/legacy.CtaTdtmd.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/_app/immutable/nodes/4.BkRNxWVr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/_app/version.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/components/music/Cassette.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/music/Cassette.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/music/AlbumWidget.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/music/AlbumWidget.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/music/Playlist.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/music/Playlist.svelte" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lib/components/music/SongSelection.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/music/SongSelection.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/components/music/SongWidget.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/music/SongWidget.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/nunja/MP3Json.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/nunja/MP3Json.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/+layout.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/+layout.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/+page.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/landing-page/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/landing-page/+page.svelte" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/music/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/music/+page.svelte" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -64,11 +63,12 @@
         <option value="SongSelection" />
         <option value="JavaScript File" />
         <option value="MP3Json" />
-        <option value="+page" />
         <option value="AlbumWidget" />
         <option value="Playlist" />
         <option value="SongWidget" />
         <option value="Toast" />
+        <option value="Background" />
+        <option value="+page" />
       </list>
     </option>
   </component>
@@ -83,7 +83,7 @@
 }</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/Spar3Chang3/Unthynck.git&quot;,
+    &quot;url&quot;: &quot;https://github.com/Spar3Chang3/Unthynck&quot;,
     &quot;accountId&quot;: &quot;7398f066-a024-4eda-a6df-e25fa531bd3e&quot;
   }
 }</component>
@@ -113,11 +113,12 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "prettierjs.PrettierConfiguration.Package": "C:\\Users\\trash\\WebstormProjects\\Unthynck\\node_modules\\prettier",
-    "ts.external.directory.path": "C:\\Development\\Editors\\WebStorm\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
+    "ts.external.directory.path": "C:\\Development\\Editors\\JetBrains\\WebStorm\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
     "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "TypeScript JSX",
       "ECMA Script Level 4",
       "JSON",
       "PLAIN_TEXT"
@@ -143,7 +144,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-WS-243.22562.112" />
+        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-WS-243.22562.222" />
       </set>
     </attachedChunks>
   </component>
@@ -181,6 +182,10 @@
       <workItem from="1735985695175" duration="161000" />
       <workItem from="1736029113550" duration="3183000" />
       <workItem from="1736311001907" duration="14653000" />
+      <workItem from="1736561625836" duration="1212000" />
+      <workItem from="1736966046965" duration="593000" />
+      <workItem from="1736968306135" duration="4000" />
+      <workItem from="1741816304291" duration="16049000" />
     </task>
     <task id="LOCAL-00001" summary="Bro I need to take a course on SvelteKit">
       <option name="closed" value="true" />

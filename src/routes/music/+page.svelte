@@ -5,6 +5,8 @@
 	import { Titles } from '$lib/index.js';
 	import { onMount } from 'svelte';
 
+	let showUpButton = $state(false);
+
 	function jumpToSongSelection(e) {
 		e.preventDefault();
 
@@ -23,12 +25,25 @@
 
 		cassette.scrollIntoView({
 			behavior: 'smooth',
-			block: 'end',
+			block: 'start',
 		});
+	}
+
+	function showJumpUp(e) {
+		e.preventDefault();
+
+		showUpButton = window.scrollY >= (window.innerHeight) / 4;
+
 	}
 
 	onMount(() => {
 		document.title = Titles.music
+
+		document.addEventListener('scroll', showJumpUp);
+
+		return(() => {
+			document.removeEventListener('scroll', showJumpUp);
+		})
 	});
 
 </script>
@@ -36,7 +51,7 @@
 	<div class="interact-tip">
 		<h2>Add a song to the playlist to get started</h2>
 		<button class="song-selection-jump jump" onclick={jumpToSongSelection}>
-			&darr;
+			Jump to Songs
 		</button>
 	</div>
 
@@ -47,7 +62,7 @@
 		<SongSelection />
 
 	<div class="jump-to-top">
-		<button class="cassette-jump jump" onclick={jumpToCassette}>
+		<button class="cassette-jump jump" class:hidden={!showUpButton} onclick={jumpToCassette} style="padding-top: 0;">
 			&uarr;
 		</button>
 	</div>
@@ -63,20 +78,21 @@
 			height: fit-content;
 			width: 100vw;
 
-			gap: 8rem;
+			gap: 4rem;
 
 			overflow-x: hidden;
 	}
 
   .interact-tip {
 			display: flex;
+			flex-direction: column;
       width: fit-content;
 
 			justify-content: center;
 			align-items: center;
 
-      padding: 0 1rem 0 1rem;
-			gap: 2rem;
+      padding: 1rem 1rem 0 1rem;
+			gap: 0.2rem;
 
       font-family: var(--font-special);
       font-size: 3rem;
@@ -86,12 +102,16 @@
 
 	.jump {
 			align-items: center;
-      padding: 0 1rem 0.5rem 1rem;
+      padding: 0.5rem 1rem 0.5rem 1rem;
       border: none;
 			background-color: var(--secondary-color);
 			color: var(--text-standard);
+			font-family: var(--font-standard);
 			font-size: 2rem;
 			transition: all 100ms ease;
+
+			opacity: 1;
+			visibility: visible;
 	}
 
 	.jump:active {
@@ -105,4 +125,9 @@
       right: 2rem;
 			z-index: 10;
   }
+
+	.hidden {
+			opacity: 0;
+			visibility: hidden;
+	}
 </style>
