@@ -4,10 +4,17 @@
 		<meta charset="utf-8" />
 		<link rel="icon" href="%sveltekit.assets%/favicon.ico" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-
-		<link rel="prefetch" href="/icons/spinning-note.gif" />
 		%sveltekit.head%
 	</head>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-99L1JC49Z1"></script>
+	<!-- Google tag (gtag.js) -->
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'G-99L1JC49Z1');
+	</script>
 	<body data-sveltekit-preload-data="hover">
 		<div>%sveltekit.body%</div>
 	</body>

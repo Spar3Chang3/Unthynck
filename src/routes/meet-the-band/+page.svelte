@@ -40,6 +40,7 @@ async function fetchMemberData() {
 					imagePath={member.imagePath}
 					position={member.position}
 					instagramLink={member.instagramLink}
+					facebookLink={member.facebookLink}
 				/>
 			{/each}
 		{:else}

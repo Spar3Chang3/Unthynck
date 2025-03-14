@@ -1,8 +1,9 @@
 <script lang="js">
 	import { onMount } from 'svelte';
-	import { IconLinks } from '$lib/index.js';
+	import { IconLinks, ShuffleArray } from '$lib/index.js';
 	import { getFileFromStorage } from '$lib/firebase.js';
 	import { audioStore, dequeueAudio, isAudioQueueEmpty, removeAudio } from '$lib/components/music/AudioStore.js';
+	import Modal from '$lib/components/layout/Modal.svelte';
 
 	const defaultAudio = '/audio/default.mp3';
 	const tapeAudio = '/audio/tape.mp3';
@@ -18,6 +19,7 @@
 	let tapeSfx = $state(null);
 	let duration = $state(0);
 	let currentSongName = $state();
+	let currentSongAlbumName = $state();
 
 	let currentQueue = $state();
 
@@ -37,6 +39,23 @@
 	let shuffleIcon = $derived(applyShuffleIcon());
 
 	let allSongs = $state([]);
+	let pending = $state();
+	let { songsLoaded = (new Promise(resolve => resolve = pending)) } = $props();
+
+	let showPopup = $state(false);
+
+	function togglePopup(e) {
+		e.preventDefault();
+
+		showPopup = !showPopup;
+	}
+
+	async function queryAllSongs() {
+		await songsLoaded.then(() => {
+			const nodeList = document.querySelectorAll('.add-to-queue-button');
+			allSongs = ShuffleArray(Array.from(nodeList));
+		});
+	}
 
 	function applyPlayIcon() {
 		if (paused) {
@@ -103,7 +122,7 @@
 	}
 
 
-	//This shuffle is quite basic, BUT it DOES work... I think...
+	//This shuffle is quite basic, BUT it DOES work... mostly...
 	function shuffle(e) {
 		e.preventDefault();
 		shuffled = !shuffled;
@@ -117,12 +136,11 @@
 
 	function getNextShuffle() {
 		if (allSongs.length === 0) {
-			allSongs = document.querySelectorAll('.add-to-queue-button');
+			const nodeList = document.querySelectorAll('.add-to-queue-button');
+			allSongs = ShuffleArray(Array.from(nodeList));
 		}
 
-		const randomIndex = Math.floor(Math.random() * allSongs.length);
-
-		allSongs[randomIndex].click();
+		allSongs.pop().click();
 	}
 
 	async function nextInQueue() {
@@ -136,11 +154,25 @@
 
 		const audioData = dequeueAudio();
 		currentSongName = audioData.fileName;
+		currentSongAlbumName = audioData.trackPath.split('/')[1]; //Should always be chill, but need to update with proper property
 		await getFileFromStorage(audioData.trackPath, audioData.fileName).then((src) => {
 			currentSong.src = src;
 		});
 		paused = false;
 		currentSong.play();
+	}
+
+	function calculateCassetteSize() {
+		const cassette = document.querySelector('.cassette-body');
+		cassetteWidth = cassette.offsetWidth;
+
+		const maxAllowedWidth = window.innerWidth * (7 / 8); //87.5% of window width
+
+		let scaleFactor = cassetteWidth > maxAllowedWidth ? maxAllowedWidth / cassetteWidth : 1;
+
+		scaleFactor = Math.max(0.1, Math.min(1.0, scaleFactor));
+
+		cassetteScaleStyle = `transform: scale(${scaleFactor.toFixed(2)});`;
 	}
 
 	onMount(() => {
@@ -155,35 +187,47 @@
 			currentQueue = queue;
 		});
 
+		const loadedMetaData = () => {
+			duration = Math.round(currentSong.duration);
+		}
+
+		const ended = () => {
+			paused = true;
+			nextInQueue();
+		}
+
 		tapeSfx = new Audio(tapeAudio);
 		tapeSfx.volume = 0.5;
 		duration = Math.round(currentSong.duration);
 
-		currentSong.addEventListener('loadedmetadata', () => {
-			duration = Math.round(currentSong.duration);
-		});
+		calculateCassetteSize();
 
-		currentSong.addEventListener('ended', () => {
-			paused = true;
-			nextInQueue();
-		});
+		currentSong.addEventListener('loadedmetadata', loadedMetaData);
 
-		const cassette = document.querySelector('.cassette-body');
-		cassetteWidth = cassette.offsetWidth;
+		currentSong.addEventListener('ended', ended);
 
-		const maxAllowedWidth = window.innerWidth * (7 / 8); //87.5% of window width
+		const mediaQuery = window.matchMedia('(max-width: 768px)');
 
-		let scaleFactor = cassetteWidth > maxAllowedWidth ? maxAllowedWidth / cassetteWidth : 1;
+		mediaQuery.addEventListener('change', calculateCassetteSize)
 
-		scaleFactor = Math.max(0.1, Math.min(1.0, scaleFactor));
-
-		cassetteScaleStyle = `transform: scale(${scaleFactor.toFixed(2)});`;
+		queryAllSongs();
 
 		return () => {
 			currentSong.stop;
 			currentSong.pause();
 			currentSong.src = '';
 			currentSong = null;
+
+			try {
+currentSong.removeEventListener('loadedmetadata', loadedMetaData);
+
+				currentSong.removeEventListener('ended', ended);
+
+				mediaQuery.removeEventListener('change', calculateCassetteSize);
+				//eslint-disable-next-line no-unused-vars
+			} catch (error) {
+				console.error("Looks like you left without even trying any music. What a shame");
+			}
 
 			tapeSfx.pause();
 			tapeSfx.src = '';
@@ -198,6 +242,28 @@
 </script>
 
 <section class="cassette" id="cassette">
+
+	<Modal
+		bind:isOpen={showPopup}
+		title="Looking for more features?"
+		alignItems="center"
+		width="80dvw"
+		offset="-10dvh"
+		backgroundColor="var(--banner-accent)"
+		showExitButton={true}
+	>
+		<h2 style="font-family: var(--font-standard); text-align: center;">Check us out on Spotify!</h2>
+		<br/>
+		<iframe style="width: 100%; height: 70dvh;"
+						src="https://open.spotify.com/embed/artist/3C3IxXuW9aRAlwvooDiCJM?utm_source=generator&theme=0"
+						height="700" frameBorder="0" allowFullScreen={false}
+						allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+						datatype={'audio/mpeg'}
+						itemProp={'audio'}
+						title={'Unthynck'}
+						loading="lazy"></iframe>
+	</Modal>
+
 	<div class="cassette-body" style={cassetteScaleStyle}>
 		<div class="dots"></div>
 		<div class="dots"></div>
@@ -205,6 +271,9 @@
 		<div class="dots"></div>
 		<div class="label">
 			<div class="label-descp">
+				<div class="album-name">
+					<h2>{currentSongAlbumName}</h2>
+				</div>
 				<div class="line"></div>
 				<div class="song-name">
 					<h3>{currentSongName}</h3>
@@ -241,26 +310,29 @@
 		</div>
 	</div>
 
-	<div class="media-controls">
-		<div class="playback-control">
-			<button class="control-button" onclick={updatePlayback}><img class="icon" src={playIcon} alt="playback control" title={paused ? "Music Paused" : "Music Playing"}/></button>
+		<div class="media-controls">
+			<div class="playback-control">
+				<button class="control-button" onclick={updatePlayback}><img class="icon" src={playIcon} alt="playback control" title={paused ? "Music Paused" : "Music Playing"}/></button>
+			</div>
+			<div class="volume-control">
+				<button class="control-button" onclick={mute} title={muted ? "Music Muted" : "Music Unmuted"}><img class="icon" src={volumeIcon} alt="volume control"/></button>
+				<input
+					type="range"
+					bind:value={volume}
+					min="0"
+					max="100"
+					class="volume-slider"
+					disabled={muted}
+					title={volume}
+				/>
+			</div>
+			<div class="shuffle-control">
+				<button class="control-button" onclick={shuffle} title={shuffled ? "Shuffling Enabled" : "Shuffling Disabled"} disabled={allSongs.length === 0}><img class="icon" src={shuffleIcon} alt="shuffle control"/></button>
+			</div>
+			<div class="tooltip">
+				<button onclick={togglePopup}>?</button>
+			</div>
 		</div>
-		<div class="volume-control">
-			<button class="control-button" onclick={mute} title={muted ? "Music Muted" : "Music Unmuted"}><img class="icon" src={volumeIcon} alt="volume control"/></button>
-			<input
-				type="range"
-				bind:value={volume}
-				min="0"
-				max="100"
-				class="volume-slider"
-				disabled={muted}
-				title={volume}
-			/>
-		</div>
-		<div class="shuffle-control">
-			<button class="control-button" onclick={shuffle} title={shuffled ? "Shuffling Enabled" : "Shuffling Disabled"}><img class="icon" src={shuffleIcon} alt="shuffle control"/></button>
-		</div>
-	</div>
 </section>
 
 
@@ -403,11 +475,18 @@
         width: 95%;
     }
 
+		.album-name {
+				position: absolute;
+				top: -20px;
+				font-family: var(--font-special);
+				font-size: 2.5rem;
+		}
+
 		.song-name {
 				position: absolute;
-				top: 25px;
-				font-family: "Unthynck Branding", sans-serif;
-				font-size: 2rem;
+				top: 40px;
+				font-family: var(--font-standard);
+				font-size: 1.25rem;
 		}
 
     .player {
@@ -537,6 +616,42 @@
 				border: none;
 				background-color: transparent;
 				cursor: pointer;
+		}
+
+		.tooltip {
+				position: absolute;
+				display: grid;
+
+				height: 100%;
+				width: fit-content;
+
+				place-items: center;
+				padding: 1rem;
+
+				left: 100%;
+		}
+
+		.tooltip button {
+				height: 2rem;
+				width: 2rem;
+
+				text-align: center;
+
+				border-radius: 50%;
+				background-color: var(--secondary-color);
+				border: none;
+				font-size: 1.5rem;
+				color: whitesmoke;
+        box-shadow: 0 4px 5px rgba(0, 0, 0, 0.08);
+				transition: 200ms ease;
+    }
+
+		.tooltip button:hover {
+				transform: scale(1.05);
+		}
+
+		.tooltip button:active {
+				transform: scale(0.95);
 		}
 
 		.playback-control, .shuffle-control {

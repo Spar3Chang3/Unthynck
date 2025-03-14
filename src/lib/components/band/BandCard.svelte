@@ -12,6 +12,7 @@
 		id,
 		imagePath,
 		instagramLink = "#",
+		facebookLink = "#",
 		name,
 		position
 	} = $props();
@@ -68,8 +69,11 @@
 					</div>
 
 					<div class="socials">
-						<a href={instagramLink} target="_blank">
+						<a href={instagramLink} target="_blank" style:display={instagramLink.length <= 2 ? 'none' : ''}>
 							<img src={IconLinks.instagram} alt={"Instagram"}/>
+						</a>
+						<a href={facebookLink} target="_blank" style:display={facebookLink.length <= 2 ? 'none' : ''}>
+							<img src={IconLinks.facebook} alt={"Facebook"}/>
 						</a>
 					</div>
 				</div>

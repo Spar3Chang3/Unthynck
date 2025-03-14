@@ -10,14 +10,14 @@
     function setupMediaListeners() {
         const mobileQuery = window.matchMedia('(max-width: 768px)');
 
-        // Set initial values
+        //Set initial values
         isMobile = mobileQuery.matches;
 
         const updateMobile = (e) => isMobile = e.matches;
-        // Add listeners
+        //Add listeners
         mobileQuery.addEventListener('change', updateMobile);
 
-        // Return cleanup function
+        //Return cleanup function
         return () => {
             mobileQuery.removeEventListener('change', updateMobile);
         };
@@ -28,8 +28,8 @@
         const cleanup = setupMediaListeners();
         return cleanup;
     });
-</script>
 
+</script>
 <style lang="css">
 
     @font-face {
@@ -90,17 +90,18 @@
         min-height: 100%;
         width: 100%;
 
-        background-image: url("/backgrounds/standard-background.jpg");
-        background-repeat: repeat-y;
+        background-image: var(--background-standard);
+        background-repeat: repeat;
         background-size: initial;
+        background-position: center;
 
-        filter: blur(4px);
+        filter: blur(1px);
     }
 
 </style>
 
 <header>
-    <Header {isMobile}/>
+    <Header {isMobile} />
 </header>
 <main>
     <div class="background"></div>
@@ -111,5 +112,5 @@
     {/if}
 </main>
 <footer>
-    <Footer/>
+    <Footer />
 </footer>

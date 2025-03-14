@@ -246,6 +246,7 @@
       justify-content: flex-start;
 			align-items: center;
 			font-size: 1.2rem;
+			padding-right: 5px;
 	}
 
   .widget-song-descr {
@@ -280,20 +281,25 @@
 			border: none;
 			background-color: transparent;
 			cursor: pointer;
+
+			transition: scale 200ms ease;
 	}
 
 	.icon {
 			height: 100%;
 			width: 100%;
 			object-fit: cover;
-
   }
 
-	.icon:active {
-			transform: scale(0.95);
-			opacity: 0.8;
-      box-shadow: var(--secondary-color) 0 24px 24px;
+	.icon:hover {
+			transform: scale(1.05);
 	}
+
+  .icon:active {
+      transform: scale(0.95);
+      opacity: 0.8;
+      box-shadow: var(--secondary-color) 0 24px 24px;
+  }
 
 	@media only screen and (max-width: 768px) {
 			.album-widget-title {

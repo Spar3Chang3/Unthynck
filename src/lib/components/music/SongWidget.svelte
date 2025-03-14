@@ -87,17 +87,22 @@
 	}
 
 	.dequeue-song-button {
-			height: 2rem;
-			width: 2rem;
+			height: 2.5rem;
+			width: 2.5rem;
 			background: transparent;
 			border: none;
 			cursor: pointer;
+			transition: scale 200ms ease;
 	}
 
 	.icon {
 			height: 100%;
 			width: 100%;
 			object-fit: cover;
+	}
+
+	.icon:hover {
+			transform: scale(1.05);
 	}
 
   .icon:active {

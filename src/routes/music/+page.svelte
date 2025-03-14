@@ -7,6 +7,8 @@
 
 	let showUpButton = $state(false);
 	let songsAdded = $state(false);
+	let resolveReady = $state();
+	let songsLoaded = $state(new Promise(resolve => resolveReady = resolve));
 
 	function jumpToSongSelection(e) {
 		e.preventDefault();
@@ -15,14 +17,14 @@
 
 		songSelection.scrollIntoView({
 			behavior: 'smooth',
-			block: 'end',
+			block: 'start',
 		});
 	}
 
 	function jumpToCassette(e) {
 		e.preventDefault();
 
-		const cassette = document.getElementById('cassette');
+		const cassette = document.getElementById('interact-tip');
 
 		cassette.scrollIntoView({
 			behavior: 'smooth',
@@ -48,22 +50,116 @@
 	});
 
 </script>
+<style lang="css">
+    .music {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        height: fit-content;
+        width: 100vw;
+
+        gap: 4rem;
+
+        overflow-x: hidden;
+    }
+
+    .interact-tip {
+        display: flex;
+        flex-direction: column;
+        width: fit-content;
+
+        justify-content: center;
+        align-items: center;
+
+        padding: 1rem 1rem 0 1rem;
+        gap: 0.2rem;
+
+        font-family: var(--font-special);
+        font-size: 3rem;
+        line-height: 1.5rem;
+        color: var(--text-standard);
+    }
+
+    .jump {
+        align-items: center;
+        padding: 0.5rem 1rem 0.5rem 1rem;
+        border: none;
+        background-color: var(--secondary-color);
+        color: var(--text-standard);
+        font-family: var(--font-standard);
+        font-size: 1.5rem;
+        transition: all 100ms ease;
+        cursor: pointer;
+
+        box-shadow: 0 4px 5px rgba(0, 0, 0, 0.08);
+
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .jump:active {
+        transform: scale(0.95);
+        opacity: 0.8;
+    }
+
+    .cassette-jump {
+        font-size: 3rem;
+    }
+
+    .jump-to-top {
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        z-index: 10;
+    }
+
+    .hidden {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    @media only screen and (max-width: 768px) {
+
+        .music {
+            gap: 1rem;
+        }
+
+        .interact-tip {
+            font-size: 2rem;
+            line-height: 2rem;
+            text-align: center;
+
+            gap: 0;
+        }
+
+        .jump {
+            font-size: 1.2rem;
+        }
+
+        .cassette-jump {
+            font-size: 2rem;
+        }
+    }
+</style>
 <section class="music">
-	<div class="interact-tip">
+	<div class="interact-tip" id="interact-tip">
 		<h2
 			style:visibility={songsAdded ? 'hidden' : 'visible'}
-			style:height={songsAdded ? '0' : ''}
+			style:height={songsAdded ? '0' : 'auto'}
 		>Add a song to the playlist to get started</h2>
 		<button class="song-selection-jump jump" onclick={jumpToSongSelection}>
 			Jump to Songs
 		</button>
 	</div>
 
-		<Cassette />
+		<Cassette songsLoaded={songsLoaded} />
 
 		<Playlist bind:songsAdded={songsAdded} />
 
-		<SongSelection />
+		<SongSelection bind:resolveReady={resolveReady} />
 
 	<div class="jump-to-top">
 		<button class="cassette-jump jump" class:hidden={!showUpButton} onclick={jumpToCassette} style="padding-top: 0;">
@@ -71,97 +167,3 @@
 		</button>
 	</div>
 </section>
-<style lang="css">
-	.music {
-			position: relative;
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			align-items: center;
-
-			height: fit-content;
-			width: 100vw;
-
-			gap: 4rem;
-
-			overflow-x: hidden;
-	}
-
-  .interact-tip {
-			display: flex;
-			flex-direction: column;
-      width: fit-content;
-
-			justify-content: center;
-			align-items: center;
-
-      padding: 1rem 1rem 0 1rem;
-			gap: 0.2rem;
-
-      font-family: var(--font-special);
-      font-size: 3rem;
-      line-height: 1.5rem;
-      color: var(--text-standard);
-  }
-
-	.jump {
-			align-items: center;
-      padding: 0.5rem 1rem 0.5rem 1rem;
-      border: none;
-			background-color: var(--secondary-color);
-			color: var(--text-standard);
-			font-family: var(--font-standard);
-			font-size: 1.5rem;
-			transition: all 100ms ease;
-			cursor: pointer;
-
-      box-shadow: 0 4px 5px rgba(0, 0, 0, 0.08);
-
-			opacity: 1;
-			visibility: visible;
-	}
-
-	.jump:active {
-			transform: scale(0.95);
-      opacity: 0.8;
-  }
-
-	.cassette-jump {
-			font-size: 3rem;
-	}
-
-  .jump-to-top {
-      position: fixed;
-      bottom: 2rem;
-      right: 2rem;
-			z-index: 10;
-  }
-
-	.hidden {
-			opacity: 0;
-			visibility: hidden;
-	}
-
-	@media only screen and (max-width: 768px) {
-
-			.music {
-					gap: 1rem;
-			}
-
-			.interact-tip {
-					font-size: 2rem;
-					line-height: 2rem;
-					text-align: center;
-
-					gap: 0;
-			}
-
-			.jump {
-					font-size: 1.2rem;
-			}
-
-			.cassette-jump {
-					font-size: 2rem;
-			}
-	}
-</style>

@@ -1,11 +1,12 @@
 <script lang="js">
-	import { onMount } from 'svelte';
+	import { onMount, tick } from 'svelte';
 	import { getJsonIndexDownloads, initStorage } from '$lib/firebase.js';
 	import AlbumWidget from '$lib/components/music/AlbumWidget.svelte';
 	import { IconLinks } from '$lib/index.js';
 
 	let indexArr = $state([]);
 	let indexRetrieved = $state(false);
+	let { resolveReady = $bindable() } = $props();
 
 	async function getJsons() {
 		initStorage();
@@ -24,9 +25,16 @@
 		}
 	}
 
+	async function setSongsAdded() {
+		await tick().then(() => {
+			resolveReady();
+		});
+	}
+
 	onMount(() => {
 		getJsons().then(() => {
 			indexRetrieved = true;
+			setSongsAdded();
 		});
 	});
 

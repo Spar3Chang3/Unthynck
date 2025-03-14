@@ -1,6 +1,6 @@
 <script>
 
-	let { isOpen = $bindable(), title = "Penis", showExitButton = false, showTitle = true, children } = $props();
+	let { isOpen = $bindable(), title = "Penis", showExitButton = false, showTitle = true, alignItems = 'flex-start', width = '100dvw', offset = '0', backgroundColor = 'black', children } = $props();
 	function closeModal() {
 		isOpen = false;
 	}
@@ -25,12 +25,17 @@
 		class="modal-backdrop"
 		style:visibility="{isOpen ? 'visible' : 'hidden'}"
 		style:opacity="{isOpen ? 1 : 0}"
+		style:align-items={alignItems}
 		onclick={handleOutsideClick}
 		onkeydown={handleOutsideClick}
 		role="tabpanel"
 		tabindex="0"
 	>
-		<div class="modal">
+		<div class="modal"
+				 style:width={width}
+				 style:margin-top={offset}
+				 style:background-color={backgroundColor}
+		>
 			{#if showTitle}
 				<div class="modal-header">
 					<h2>{title}</h2>
@@ -55,7 +60,6 @@
         background-color: rgba(0, 0, 0, 0.5);
         display: flex;
         justify-content: space-evenly;
-        align-items: flex-start;
         z-index: 100;
 
         color: var(--text-standard);
@@ -66,12 +70,8 @@
 
     .modal {
 				position: relative;
-        background-color: var(--banner-standard);
-        border-radius: 4px;
-        width: 100vw;
-        max-height: 90vh;
         overflow-y: auto;
-				padding: 25px 0 25px 0;
+				padding: 0.5rem;
     }
 
     .modal-header {
@@ -79,6 +79,7 @@
         justify-content: space-between;
         align-items: center;
         margin-bottom: 15px;
+				font-family: var(--font-standard);
     }
 
     .close-button {
