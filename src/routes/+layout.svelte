@@ -92,8 +92,7 @@
 
         background-image: var(--background-standard);
         background-repeat: repeat;
-        background-size: initial;
-        background-position: center;
+        background-position: center top;
 
         filter: blur(1px);
     }

@@ -41,4 +41,14 @@
 		<h1>You are being redirected</h1>
 		<h2>Please wait...</h2>
 	</div>
+	<div style="visibility: hidden; height: 0;">
+		<iframe style="width: 100%; height: 75vh;"
+						src="https://open.spotify.com/embed/artist/3C3IxXuW9aRAlwvooDiCJM?utm_source=generator&theme=0"
+						width="50%" height="700" frameBorder="0" allowFullScreen={false}
+						allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+						datatype={'audio/mpeg'}
+						itemProp={'audio'}
+						title={'Unthynck'}
+		></iframe>
+	</div>
 </section>

@@ -40,7 +40,10 @@
 				<div class="modal-header">
 					<h2>{title}</h2>
 					{#if showExitButton}
-						<button class="close-button" onclick={closeModal}>×</button>
+						<button
+							class="close-button"
+							onclick={closeModal}
+						>×</button>
 					{/if}
 				</div>
 			{/if}
@@ -75,24 +78,43 @@
     }
 
     .modal-header {
+				position: relative;
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
+				text-align: center;
         margin-bottom: 15px;
 				font-family: var(--font-standard);
+				font-size: 1.75rem;
     }
 
     .close-button {
+				position: absolute;
+				top: 0;
+				right: 0;
+
         background: none;
         border: none;
         cursor: pointer;
         padding: 0;
-        margin: 0;
-				font-size: 2rem;
+				font-size: 2.5rem;
 				color: var(--text-standard);
+				transition: 200ms ease;
+				margin-right: 15px;
     }
 
     .close-button:hover {
+				transform: scale(1.05);
         opacity: 0.7;
     }
+
+		.close-button:active {
+				transform: scale(0.95);
+		}
+
+		@media only screen and (max-width: 768px) {
+				.modal-header {
+						font-size: 1.25rem;
+				}
+		}
 </style>

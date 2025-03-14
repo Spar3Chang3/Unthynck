@@ -252,9 +252,9 @@ currentSong.removeEventListener('loadedmetadata', loadedMetaData);
 		backgroundColor="var(--banner-accent)"
 		showExitButton={true}
 	>
-		<h2 style="font-family: var(--font-standard); text-align: center;">Check us out on Spotify!</h2>
+		<h2 style="font-family: var(--font-standard); text-align: center; font-size: 1.5rem;">Check us out on Spotify!</h2>
 		<br/>
-		<iframe style="width: 100%; height: 70dvh;"
+		<iframe style="width: 100%; height: 65dvh;"
 						src="https://open.spotify.com/embed/artist/3C3IxXuW9aRAlwvooDiCJM?utm_source=generator&theme=0"
 						height="700" frameBorder="0" allowFullScreen={false}
 						allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
@@ -330,7 +330,7 @@ currentSong.removeEventListener('loadedmetadata', loadedMetaData);
 				<button class="control-button" onclick={shuffle} title={shuffled ? "Shuffling Enabled" : "Shuffling Disabled"} disabled={allSongs.length === 0}><img class="icon" src={shuffleIcon} alt="shuffle control"/></button>
 			</div>
 			<div class="tooltip">
-				<button onclick={togglePopup}>?</button>
+				<button onclick={togglePopup} title="Other Features?">?</button>
 			</div>
 		</div>
 </section>
@@ -626,7 +626,7 @@ currentSong.removeEventListener('loadedmetadata', loadedMetaData);
 				width: fit-content;
 
 				place-items: center;
-				padding: 1rem;
+				padding: clamp(0.5rem, 1rem, 1.5rem);
 
 				left: 100%;
 		}
@@ -636,6 +636,8 @@ currentSong.removeEventListener('loadedmetadata', loadedMetaData);
 				width: 2rem;
 
 				text-align: center;
+
+				cursor: pointer;
 
 				border-radius: 50%;
 				background-color: var(--secondary-color);

@@ -26,6 +26,10 @@
 		removeAudio(index);
 	}
 
+	function getAlbumName() {
+		return song.trackPath.split('/')[1];
+	}
+
 	$effect(() => {
 		if (song.artworkPath) {
 			fetchAlbumArt();
@@ -34,13 +38,13 @@
 
 </script>
 
-<div class="song-widget">
+<div class="song-widget" title="{song.trackName} - {getAlbumName()}">
 	<div class="song-widget-art-container">
 		<img class="song-widget-art" src={currentAlbumCover} alt="Song Album Cover"/>
 	</div>
 	<div class="song-widget-utils">
 		<p>{song.trackName}</p>
-		<button class="dequeue-song-button" onclick={removeFromPlaylist}>
+		<button class="dequeue-song-button" onclick={removeFromPlaylist} title="Remove From Queue">
 			<img class="icon" src={IconLinks.playlistRemove} alt="Dequeue Song"/>
 		</button>
 	</div>

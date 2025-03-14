@@ -74,6 +74,7 @@
 			line-height: 1rem;
 			margin: 0 auto;
 			overflow: hidden;
+			padding-bottom: 0.5rem;
 	}
 
   .navigation {
