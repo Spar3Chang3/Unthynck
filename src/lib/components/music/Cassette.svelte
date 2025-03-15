@@ -1,5 +1,6 @@
 <script lang="js">
 	import { onMount } from 'svelte';
+	import { afterNavigate } from '$app/navigation';
 	import { IconLinks, ShuffleArray } from '$lib/index.js';
 	import { getFileFromStorage } from '$lib/firebase.js';
 	import { audioStore, dequeueAudio, isAudioQueueEmpty, removeAudio } from '$lib/components/music/AudioStore.js';
@@ -101,6 +102,10 @@
 			currentSong.play();
 		}
 
+		if (currentSong.src === '') {
+			nextInQueue();
+			updatePlayback(new Event('click'));
+		}
 	}
 
 	function mute(e) {
@@ -200,26 +205,26 @@
 		tapeSfx.volume = 0.5;
 		duration = Math.round(currentSong.duration);
 
-		calculateCassetteSize();
-
 		currentSong.addEventListener('loadedmetadata', loadedMetaData);
 
 		currentSong.addEventListener('ended', ended);
 
 		const mediaQuery = window.matchMedia('(max-width: 768px)');
 
-		mediaQuery.addEventListener('change', calculateCassetteSize)
+		mediaQuery.addEventListener('change', calculateCassetteSize);
+
+		calculateCassetteSize();
 
 		queryAllSongs();
 
 		return () => {
-			currentSong.stop;
 			currentSong.pause();
+			currentSong.stop;
 			currentSong.src = '';
 			currentSong = null;
 
 			try {
-currentSong.removeEventListener('loadedmetadata', loadedMetaData);
+				currentSong.removeEventListener('loadedmetadata', loadedMetaData);
 
 				currentSong.removeEventListener('ended', ended);
 
@@ -237,6 +242,13 @@ currentSong.removeEventListener('loadedmetadata', loadedMetaData);
 
 			unsubscribe();
 		}
+	});
+
+	afterNavigate(() => {
+		currentSong.pause();
+		paused = true;
+
+		currentSong.src = '';
 	});
 
 </script>

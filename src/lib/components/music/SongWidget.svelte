@@ -27,7 +27,11 @@
 	}
 
 	function getAlbumName() {
-		return song.trackPath.split('/')[1];
+		if (song?.trackPath) {
+			return song.trackPath.split('/')[1];
+		} else {
+			return "Unknown";
+		}
 	}
 
 	$effect(() => {
@@ -43,7 +47,7 @@
 		<img class="song-widget-art" src={currentAlbumCover} alt="Song Album Cover"/>
 	</div>
 	<div class="song-widget-utils">
-		<p>{song.trackName}</p>
+		<p style="box-shadow: 0 4px 5px rgba(0, 0, 0, 0.1); padding: 1px;">{song.trackName}</p>
 		<button class="dequeue-song-button" onclick={removeFromPlaylist} title="Remove From Queue">
 			<img class="icon" src={IconLinks.playlistRemove} alt="Dequeue Song"/>
 		</button>
@@ -71,16 +75,19 @@
 			color: var(--text-standard);
 	}
 
-	.song-widget-art-container {
-      height: 6rem;
-      width: 6rem;
-	}
+  .song-widget-art-container {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+  }
 
-	.song-widget-art {
-			height: 6rem;
-			width: 6rem;
-			object-fit: contain;
-	}
+  .song-widget-art {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+
+      filter: blur(4px);
+  }
 
 	.song-widget-utils {
 			display: flex;
@@ -88,6 +95,7 @@
 			justify-content: center;
 			align-items: center;
 			text-align: center;
+			z-index: 5;
 	}
 
 	.dequeue-song-button {
@@ -117,12 +125,6 @@
 	@media only screen and (max-width: 768px) {
 			.song-widget {
 					max-height: 8rem;
-			}
-
-			.song-widget-art-container, .song-widget-art {
-					visibility: hidden;
-					height: 0;
-					width: 0;
 			}
 	}
 

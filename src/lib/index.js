@@ -9,7 +9,6 @@ export function RedirectOutWindow(link) {
 export function GetFullDate() {
     const date = new Date();
 
-// Get the UTC components
     const day = String(date.getUTCDate()).padStart(2, '0');
     const month = String(date.getUTCMonth() + 1).padStart(2, '0'); // +1 for 0-based month indexing
     const year = String(date.getUTCFullYear());  // Get UTC year
@@ -17,7 +16,6 @@ export function GetFullDate() {
     const minutes = String(date.getUTCMinutes()).padStart(2, '0');
     const seconds = String(date.getUTCSeconds()).padStart(2, '0');
 
-// Get the timezone offset in minutes (local to UTC)
     const zone = String(date.getTimezoneOffset());  // In minutes, positive if local is behind UTC
 
     return {
@@ -33,6 +31,22 @@ export function ShuffleArray(arr) {
         [arr[i], arr[j]] = [arr[j], arr[i]];  // Swap elements
     }
     return arr;
+}
+
+export function CreateMobileListener(callback) {
+    const mediaQuery = window.matchMedia('(max-width: 768px)');
+
+    const listener = (event) => callback(event.matches);
+
+    mediaQuery.addEventListener('change', listener);
+
+    return { mediaQuery, listener }
+}
+
+export function RemoveMobileListener(listenerObj) {
+    if (listenerObj?.mediaQuery && listenerObj?.listener) {
+        listenerObj.mediaQuery.removeEventListener('change', listenerObj.listener);
+    }
 }
 
 

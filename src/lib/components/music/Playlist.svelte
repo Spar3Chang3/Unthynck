@@ -1,11 +1,12 @@
-<script lang="js">
+	<script lang="js">
 	import { audioStore, isAudioQueueEmpty } from '$lib/components/music/AudioStore.js';
 	import SongWidget from '$lib/components/music/SongWidget.svelte';
 	import { onMount } from 'svelte';
 
 	let currentQueue = $state([{
 		trackName: null,
-		artworkPath: null
+		artworkPath: null,
+		trackPath: null,
 	}]);
 	let viewCurrentQueue = $state(false);
 	let { songsAdded = $bindable(false) } = $props();
@@ -41,13 +42,15 @@
 		</button>
 	</div>
 
-	{#if viewCurrentQueue }
-		<div class="playlist-container">
-			{#each currentQueue as song, index}
-				<SongWidget song={song} index={index} />
-			{/each}
-		</div>
-	{/if}
+	<div class="playlist-container"
+			 style:height={viewCurrentQueue ? 'fit-content' : '0'}
+			 style:visibility={viewCurrentQueue ? 'visible' : 'hidden'}
+			 style:opacity={viewCurrentQueue ? '1' : '0'}
+	>
+		{#each currentQueue as song, index}
+			<SongWidget song={song} index={index} />
+		{/each}
+	</div>
 </section>
 
 <style lang="css">
@@ -59,7 +62,7 @@
 			align-items: center;
 
 			height: fit-content;
-			width: 90vw;
+			width: 90dvw;
 	}
 
 	.song-up-next-container {
@@ -68,7 +71,7 @@
 			grid-template-rows: auto auto;
 
 			height: fit-content;
-			width: 90vw;
+			width: 90dvw;
 
 			justify-content: center;
 			justify-items: center;
@@ -115,14 +118,17 @@
 			display: flex;
 			flex-wrap: wrap;
 
-			height: fit-content;
-			width: 85vw;
+			width: 90dvw;
+
+			justify-content: center;
 
 			background-color: var(--primary-color);
 
 			gap: 1rem;
 			margin-top: 0.5rem;
 			padding: 0.5rem;
+
+      transition: height 200ms ease, opacity 200ms ease, visibility 200ms ease;
 	}
 
 	@media only screen and (max-width: 768px) {
