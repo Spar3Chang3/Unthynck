@@ -3,7 +3,7 @@
   "rules": {
     "public": {
       ".read": true,
-      ".write": false
+      ".write": "auth != null"
     },
     "private": {
       ".read": false,

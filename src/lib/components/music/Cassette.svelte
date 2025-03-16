@@ -1,6 +1,5 @@
 <script lang="js">
 	import { onMount } from 'svelte';
-	import { afterNavigate } from '$app/navigation';
 	import { IconLinks, ShuffleArray } from '$lib/index.js';
 	import { getFileFromStorage } from '$lib/firebase.js';
 	import { audioStore, dequeueAudio, isAudioQueueEmpty, removeAudio } from '$lib/components/music/AudioStore.js';
@@ -102,10 +101,6 @@
 			currentSong.play();
 		}
 
-		if (currentSong.src === '') {
-			nextInQueue();
-			updatePlayback(new Event('click'));
-		}
 	}
 
 	function mute(e) {
@@ -242,13 +237,6 @@
 
 			unsubscribe();
 		}
-	});
-
-	afterNavigate(() => {
-		currentSong.pause();
-		paused = true;
-
-		currentSong.src = '';
 	});
 
 </script>
