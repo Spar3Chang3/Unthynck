@@ -78,8 +78,8 @@ async function fetchMemberData() {
 	}
 
   .loading-model img {
-      height: 10vh;
-      width: 10vh;
+      height: 10dvh;
+      width: 10dvh;
       object-fit: contain;
 
       animation: rotate 1s infinite linear;
