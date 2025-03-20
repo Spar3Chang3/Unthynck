@@ -2,7 +2,9 @@
 	import Carousel from 'svelte-carousel';
 	import { Titles } from '$lib/index.js';
 	import { onMount } from 'svelte';
-	import { getDownloadsFromStorage, initStorage } from '$lib/firebase.js';
+	import { getDownloadsFromStorage, initStorage, getDataFromDatabase, initDatabase } from '$lib/firebase.js';
+
+	const introTextPath = 'public/landingPage/text';
 
 	let backgroundPath = $state("");
 	let backgroundOpacity = $state(1);
@@ -10,7 +12,7 @@
 	let showCarousel = $state(false);
 
 	let parallaxScrollY = $state([0, 0, 0]);
-
+	let introText = $state();
 
 	let isMobile = $state(false);
 	let slideImagePath;
@@ -70,6 +72,12 @@
 
 		const cleanup = setupMediaListeners();
 		slideImagePath = isMobile ? 'images/slideshow/mobile' : 'images/slideshow/desktop';
+
+		initDatabase();
+
+		getDataFromDatabase(introTextPath).then((res) => {
+			introText = res;
+		});
 
 		fetchSlides().then(() => {
 			showCarousel = true;
@@ -185,15 +193,8 @@
 					<a href="https://www.springfield.il.us/">Springfield, IL</a>
 				</p>
 
-				<p>
-					Our sound is a blend of grunge, hardcore punk, alt metal, thrash, and more.
-					If you're looking for vibes, or just hailing Psybin, you've come to the right place.
-					From the basement to Parker's bedroom to you ears, we're here to stay
-				</p>
-
-				<p>
-					Check out our latest albums, get to know us, and find your next night out.
-					Catch us on Spotify, Apple Music, YouTube, or right here!
+				<p style="white-space: pre; text-wrap: wrap;">
+					{introText}
 				</p>
 			</div>
 		</div>
