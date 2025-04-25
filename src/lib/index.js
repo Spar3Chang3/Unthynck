@@ -21,7 +21,8 @@ export function GetFullDate() {
     return {
       day: `${day}/${month}/${year}`,
       time: `${hours}:${minutes}:${seconds}`,
-      zone: zone
+      zone: zone,
+      unix: Date.now()
     }
 }
 
