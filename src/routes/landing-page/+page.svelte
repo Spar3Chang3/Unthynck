@@ -19,6 +19,8 @@
 
 	let slides = $state([]);
 
+	let isFullscreen = $state(false);
+
 	let observeElements = $state([
 		{id: 0, title: 'about-text', isVisible: false, visibleRatio: 0, hasBeenViewed: false},
 		{id: 1, title: 'spotify-plugin', isVisible: false, visibleRatio: 0, hasBeenViewed: false},
@@ -65,6 +67,19 @@
 	function showNextSlide(e) {
 		e.preventDefault();
 		carousel.goToNext();
+	}
+
+	function toggleFullscreen(e) {
+		e.preventDefault();
+
+		isFullscreen = !!document.fullscreenElement;
+
+		const slideshow = document.getElementById('slideshow-fullscreen');
+		if (isFullscreen) {
+			document.exitFullscreen();
+		} else {
+			slideshow.requestFullscreen();
+		}
 	}
 
 	onMount(() => {
@@ -120,7 +135,12 @@
 			parallaxScrollY[0] = window.scrollY;
 		}
 
+		const updateFullscreen = () => {
+			isFullscreen = !!document.fullscreenElement;
+		}
+
 		window.addEventListener('scroll', setSlideParallax);
+		document.addEventListener('fullscreenchange', updateFullscreen);
 
 		return () => {
 			cleanup;
@@ -132,6 +152,7 @@
 			});
 
 			window.removeEventListener('scroll', setSlideParallax);
+			document.removeEventListener('fullscreenchange', updateFullscreen);
 		};
 
 	});
@@ -142,7 +163,7 @@
 
 <section class="landing-page">
 
-	<section class="slideshow-wrapper">
+	<section class="slideshow-wrapper" id="slideshow-fullscreen">
 		<div class="slideshow-container">
 			{#if showCarousel}
 							<Carousel
@@ -175,6 +196,20 @@
 		</div>
 		<div class="slideshow-image-background"
 					style:opacity="{backgroundOpacity}" style:background-image="url({backgroundPath})" style:margin-top="{parallaxScrollY[0]}px"></div>
+		<button class="fullscreen-button" aria-label="fullscreen button" title="{isFullscreen ? 'Exit Fullscreen' : 'Enter Fullscreen'}" onclick={toggleFullscreen}>
+			{#if isFullscreen}
+				<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="lightgray" stroke-width="2">
+					<path d="M9 3H3v6M3 3l6 6"/>
+					<path d="M15 3h6v6M21 3l-6 6"/>
+					<path d="M3 15v6h6M3 21l6-6"/>
+					<path d="M21 15v6h-6M21 21l-6-6"/>
+				</svg>
+			{:else}
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="lightgray">
+					<path d="M3 3h7v2H5v5H3V3zm18 0v7h-2V5h-5V3h7zM3 21v-7h2v5h5v2H3zm18-7h-2v5h-5v2h7v-7z"/>
+				</svg>
+			{/if}
+		</button>
 	</section>
 
 
@@ -343,6 +378,24 @@
 			transition: opacity 550ms ease;
 			background-color: var(--primary-color);
 			filter: blur(12px);
+	}
+
+	.fullscreen-button {
+			position: absolute;
+			border: none;
+			background-color: transparent;
+			aspect-ratio: 1 / 1;
+
+			height: fit-content;
+			width: fit-content;
+
+			padding: 1rem;
+
+			bottom: 2.5%;
+			right: 2.5%;
+			z-index: 8;
+
+			cursor: pointer;
 	}
 
 	.about-wrapper {
