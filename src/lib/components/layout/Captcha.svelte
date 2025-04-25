@@ -144,14 +144,36 @@
 				padding: 1rem;
     }
 
-		.captcha-container p {
+		.game-container {
+				display: grid;
+				place-items: center;
+
+				height: 525px;
+				width: fit-content;
+
+        transition: 200ms ease;
+		}
+
+		.game-container p {
 				text-align: center;
 				font-size: 1.5rem;
 		}
 
-		.captcha-container h2 {
+		.game-container h2 {
 				text-align: center;
 				font-size: 2rem;
+		}
+
+		.game-completed {
+				height: 0;
+		}
+
+		.game-completed h2 {
+				visibility: hidden;
+		}
+
+		.game-completed p {
+				visibility: hidden;
 		}
 
     .game-area {
@@ -161,10 +183,13 @@
         border: 2px dashed #ddd;
         margin: 20px 0;
         overflow: hidden;
+
+				transition: 200ms ease;
     }
 
     .game-area-completed {
-        border: 2px dashed green;
+				border: none;
+				height: 0;
     }
 
     .circle {
@@ -186,7 +211,7 @@
 
     .error {
         margin-top: 10px;
-        color: red;
+        color: lightcoral;
         font-size: 1rem;
     }
 
@@ -205,6 +230,7 @@
 <div class="captcha-container">
 
 	{#if gameStarted}
+		<div class="game-container" class:game-completed={gameCompleted}>
 
 		<h2>Prove You're Human</h2>
 		<p>
@@ -224,6 +250,7 @@
 		</div>
 
 		<p>Score: {score}</p>
+		</div>
 	{/if}
 
 
@@ -243,7 +270,7 @@
 
 	{#if isHuman && checkboxChecked}
 		<div class="status" style="color: green;">
-			✅ Human verified! Thank you.
+			Human verified! Thank you.
 		</div>
 	{/if}
 </div>

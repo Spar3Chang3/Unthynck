@@ -13,7 +13,6 @@ async function fetchMemberData() {
 		initDatabase();
 		await getDataFromDatabase(memberDataPath).then((data) => {
 			memberSet = Object.values(data);
-			console.log(memberSet);
 		}).catch((err) => {
 			alert(("Could not obtain members :( Please try refreshing or come back later - " + err));
 		});
@@ -67,8 +66,8 @@ async function fetchMemberData() {
 			flex-direction: row;
 			flex-wrap: wrap;
 
-			height: 100%;
-			width: 100%;
+			min-height: 80dvh;
+			width: 100dvw;
 
 			justify-content: center;
 			align-items: center;

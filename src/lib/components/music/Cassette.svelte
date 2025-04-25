@@ -40,6 +40,7 @@
 
 	let allSongs = $state([]);
 	let pending = $state();
+	// eslint-disable-next-line no-unused-vars
 	let { songsLoaded = (new Promise(resolve => resolve = pending)) } = $props();
 
 	let showPopup = $state(false);
@@ -89,7 +90,11 @@
 	function updatePlayback(e) {
 		e.preventDefault();
 
-		if (!currentSong && !tapeSfx || isAudioQueueEmpty() && currentSong.currentTime === currentSong.duration) {
+		if (!currentSong && !tapeSfx || isAudioQueueEmpty() && currentSong.currentTime === currentSong.duration || isAudioQueueEmpty() && currentSong.src.endsWith("default.mp3")) {
+			document.getElementById('song-selection').scrollIntoView({
+				behavior: 'smooth',
+				block: 'start',
+			});
 			return;
 		}
 

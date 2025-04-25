@@ -108,7 +108,7 @@
 								 style:opacity={inquiry.type === confusionPrompt ? 1 : 0}
 
 						>
-							<p class="confusion-prompt" style="color: red">Please do not put your personal message in the box below</p>
+							<p class="confusion-prompt">Please do not put your personal message in the box below</p>
 							<p class="confusion-prompt">We will contact you later for the personal message if your inquiry is accepted</p>
 						</div>
 				</div>
@@ -143,15 +143,18 @@
 </section>
 
 <style lang="css">
+		label {
+				margin-bottom: 10px;
+		}
+
 		.contact-us {
 				position: relative;
-				display: flex;
+				display: grid;
 				flex-direction: column;
-				width: 100vw;
-				height: fit-content;
+				width: 100dvw;
+				min-height: 80dvh;
 
-				justify-content: center;
-				align-items: center;
+				place-items: center;
 
 				font-family: "Comic Sans MS", sans-serif;
 				color: var(--text-standard);
@@ -162,8 +165,9 @@
 		.contact-prompt {
 				text-align: center;
 				margin-top: 2rem;
-				font-family: var(--font-standard);
-				font-size: 2rem;
+				font-family: var(--font-special);
+				font-size: clamp(1.5rem, 2rem, 2.5rem);
+				line-height: 1rem;
 		}
 
 		.loading-model {
@@ -182,7 +186,7 @@
 				position: relative;
 				display: flex;
 				flex-direction: column;
-				width: 80vw;
+        max-width: 700px;
 				height: fit-content;
 
 				padding: 2rem;
@@ -193,6 +197,7 @@
 				background-color: var(--primary-color);
 				font-family: var(--font-standard);
 				font-size: 1.8rem;
+        box-shadow: 0 4px 5px rgba(0, 0, 0, 0.08);
 
 				margin-bottom: 2rem;
 		}
@@ -209,6 +214,10 @@
 				font-size: 1.2rem;
 				font-family: Roboto Light, sans-serif;
 				margin-bottom: 1rem;
+		}
+
+		.name {
+				margin-bottom: 2rem;
 		}
 
 		.user-dropdown, .user-message {
@@ -240,7 +249,8 @@
 				flex-wrap: wrap;
 				text-wrap: wrap;
 				line-height: 1rem;
-				font-size: 1.2rem;
+				font-size: 1rem;
+				color: lightcoral;
 				width: 100%;
 		}
 
@@ -281,6 +291,19 @@
 		.disabled {
 				background-color: #5d5d5d;
 				cursor: not-allowed;
+		}
+
+		@media only screen and (max-width: 768px) {
+				.contact-prompt {
+						line-height: 2.5rem;
+						margin-top: 1rem;
+						margin-bottom: -0.5rem;
+				}
+
+				.contact-info {
+						max-width: 400px;
+						padding: 1rem;
+				}
 		}
 
 		@keyframes rotate {

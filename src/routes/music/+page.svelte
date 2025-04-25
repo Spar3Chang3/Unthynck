@@ -51,6 +51,18 @@
 
 </script>
 <style lang="css">
+
+    @keyframes bounce {
+        0%   { transform: translateY(0); }
+        15%  { transform: translateY(-15px); }
+        30%  { transform: translateY(0); }
+        45%  { transform: translateY(-10px); }
+        60%  { transform: translateY(0); }
+        75%  { transform: translateY(-5px); }
+        90%  { transform: translateY(0); }
+        100% { transform: translateY(0); }
+    }
+
     .music {
         position: relative;
         display: flex;
@@ -79,9 +91,14 @@
 
         font-family: var(--font-special);
         font-size: 3rem;
+				text-shadow: 10px 10px 10px var(--secondary-color);
         line-height: 1.5rem;
         color: var(--text-standard);
     }
+
+		.interact-tip h2 {
+        animation: bounce 1.2s cubic-bezier(0.33, 1, 0.68, 1);
+		}
 
     .jump {
         align-items: center;
@@ -95,6 +112,7 @@
         cursor: pointer;
 
         box-shadow: 0 4px 5px rgba(0, 0, 0, 0.08);
+				text-align: center;
 
         opacity: 1;
         visibility: visible;
@@ -106,7 +124,10 @@
     }
 
     .cassette-jump {
-        font-size: 3rem;
+				padding: 0.75rem 0.75rem 0.65rem 0.75rem;
+				aspect-ratio: 1/1;
+				height: fit-content;
+				width: fit-content;
     }
 
     .jump-to-top {
@@ -138,10 +159,6 @@
         .jump {
             font-size: 1.2rem;
         }
-
-        .cassette-jump {
-            font-size: 2rem;
-        }
     }
 </style>
 <section class="music">
@@ -162,8 +179,17 @@
 		<SongSelection bind:resolveReady={resolveReady} />
 
 	<div class="jump-to-top">
-		<button class="cassette-jump jump" class:hidden={!showUpButton} onclick={jumpToCassette} style="padding-top: 0;">
-			&uarr;
+		<button class="cassette-jump jump" class:hidden={!showUpButton} onclick={jumpToCassette}>
+			<svg width="32" height="32" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+				<!-- Sloppy left pointer -->
+				<path d="M12 3 L6.8 9.5" />
+
+				<!-- Sloppy right pointer -->
+				<path d="M12 3 L17.2 9.3" />
+
+				<!-- Janky stick body with a gentle wiggle -->
+				<path d="M12 9 C11.7 12, 12.3 14, 12 18" />
+			</svg>
 		</button>
 	</div>
 </section>

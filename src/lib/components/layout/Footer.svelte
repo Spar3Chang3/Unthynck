@@ -1,6 +1,12 @@
 <script lang="js">
-	import { IconLinks, SocialLinks, SiteLinks } from '$lib/index.js';
+	import { IconLinks, SocialLinks, SiteLinks } from '$lib/index.js'
+	import { onMount } from 'svelte';
 
+	let date = $state();
+
+	onMount(() => {
+		date = new Date().getFullYear();
+	});
 </script>
 
 <section class="main-footer">
@@ -11,7 +17,7 @@
 	</div>
 
 	<div class="footer-copyright-message">
-		<p>© 2024 Unthynck - All Rights Reserved</p>
+		<p>© {date} Unthynck - All Rights Reserved</p>
 	</div>
 
 	<div class="footer-social-links">
