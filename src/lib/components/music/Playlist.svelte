@@ -33,7 +33,10 @@
 	<div class="song-up-next-container">
 		<h2>Up Next: </h2>
 		{#if songsAdded}
-		<SongWidget bind:song={currentQueue[0]} />
+			<div class="inline">
+				<SongWidget bind:song={currentQueue[0]} />
+				<small>and {currentQueue.length - 1} more...</small>
+			</div>
 		{:else}
 			<h3 class="playlist-empty-notifier">No songs are up next</h3>
 		{/if}
@@ -81,6 +84,27 @@
 
 			color: var(--text-standard);
 			background-color: var(--primary-color);
+	}
+
+	.inline {
+			position: relative;
+			display: flex;
+			flex-direction: row;
+
+			height: 100%;
+			width: 100%;
+
+			justify-content: center;
+			align-items: center;
+
+			font-family: var(--font-standard);
+	}
+
+	.inline small {
+			position: absolute;
+
+			bottom: 0.75rem;
+			left: calc(50% + 4rem);
 	}
 
 	.song-up-next-container h2 {
